@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIT DE REELS · HIGGSFIELD — MONSTER KEBABS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+<style>
+  :root{--tinta:#0B0A09;--hueso:#EFE9DF;--ember:#FF4E1B;--humo:#B5AEA4;--line:#232019}
+  body{background:var(--tinta);color:var(--hueso);font-family:'Inter',sans-serif}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+
+  header{text-align:center;padding:56px 20px 30px}
+  header .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:var(--ember);text-transform:uppercase}
+  header h1{font-family:'Anton',sans-serif;font-size:clamp(34px,7vw,64px);text-transform:uppercase;line-height:.96;margin-top:14px}
+  header p{color:var(--humo);font-size:14px;line-height:1.7;max-width:600px;margin:16px auto 0}
+
+  h2{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(22px,4vw,32px);margin:52px 0 6px;letter-spacing:.01em}
+  h2 .o{color:var(--ember)}
+  .lead{color:var(--humo);font-size:13.5px;line-height:1.7;margin-bottom:20px;max-width:640px}
+
+  /* pasos de flujo */
+  .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0}
+  .step{border:1px solid var(--line);border-radius:10px;padding:18px}
+  .step .n{font-family:'Anton',sans-serif;font-size:26px;color:var(--ember);line-height:1}
+  .step h3{font-family:'Inter',sans-serif;font-weight:700;font-size:14px;margin:8px 0 6px}
+  .step p{color:var(--humo);font-size:12.5px;line-height:1.6}
+
+  /* ficha por asset */
+  .asset{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:16px 0;background:#100E0C}
+  .asset .head{display:flex;align-items:center;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line)}
+  .asset .thumb{width:66px;height:66px;border-radius:8px;object-fit:cover;flex:0 0 auto;background:var(--tinta)}
+  .asset .ht{flex:1}
+  .asset .ht .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase}
+  .asset .ht h3{font-family:'Anton',sans-serif;font-size:22px;text-transform:uppercase;line-height:1;margin-top:3px}
+  .asset .ht .role{color:var(--humo);font-size:12px;margin-top:4px}
+  .asset .body{padding:16px 18px}
+  .row{margin-bottom:14px}
+  .row:last-child{margin-bottom:0}
+  .row .lbl{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:var(--humo);text-transform:uppercase;margin-bottom:5px}
+  .row .val{font-size:13px;line-height:1.55;color:var(--hueso)}
+  .preset{display:inline-block;border:1px solid var(--ember);color:var(--ember);font-family:'IBM Plex Mono',monospace;font-size:11px;padding:3px 9px;border-radius:5px;margin:2px 4px 2px 0}
+  .prompt{background:var(--tinta);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:#d8d2c8;white-space:pre-wrap}
+
+  /* estructura reel */
+  .beat{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .beat:last-child{border-bottom:none}
+  .beat .t{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ember);flex:0 0 74px;padding-top:2px}
+  .beat .c b{font-weight:700;font-size:13.5px}
+  .beat .c p{color:var(--humo);font-size:12.5px;line-height:1.55;margin-top:3px}
+
+  ul.clean{list-style:none;padding:0;margin:10px 0}
+  ul.clean li{position:relative;padding-left:20px;color:var(--humo);font-size:13px;line-height:1.75}
+  ul.clean li::before{content:'▸';position:absolute;left:0;color:var(--ember)}
+  ul.clean li b{color:var(--hueso)}
+
+  .note{border-left:2px solid var(--ember);padding:10px 0 10px 16px;margin:16px 0;color:var(--humo);font-size:12.5px;line-height:1.65}
+  footer{text-align:center;color:#6a655c;font-size:11px;padding:50px 20px 60px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">PRODUCCIÓN DE CONTENIDO · REELS HD</div>
+  <h1>Kit de Reels<br><span style="color:var(--ember)">Higgsfield</span></h1>
+  <p>Todo listo para que generes los Reels de alta calidad tú mismo, sin adivinar. Para cada monstruo y platillo:
+  qué imagen subir, el prompt exacto y el preset de movimiento. Copiar, pegar, generar.</p>
+</header>
+
+<div class="wrap">
+
+  <!-- FLUJO -->
+  <h2>El <span class="o">flujo</span> en 4 pasos</h2>
+  <p class="lead">Higgsfield convierte una foto fija en un clip cinematográfico con control real de cámara. Nosotros ya tenemos las fotos de marca (fondo negro, luz de comida). Solo las animamos.</p>
+  <div class="flow">
+    <div class="step"><div class="n">1</div><h3>Sube el frame</h3><p>Entra a higgsfield.ai → "Image to Video". Arrastra la foto del monstruo o platillo (las que ya están en la carpeta <b>fotos/</b>).</p></div>
+    <div class="step"><div class="n">2</div><h3>Pega el prompt</h3><p>Copia el prompt de la ficha de abajo. Descríbele el movimiento y la emoción, no el aspecto (eso ya lo da la foto).</p></div>
+    <div class="step"><div class="n">3</div><h3>Elige el preset</h3><p>Aplica el preset de cámara sugerido (Higgsfield tiene motion presets nombrados). Formato <b>9:16</b>, 5 s.</p></div>
+    <div class="step"><div class="n">4</div><h3>Genera y baja</h3><p>Generar → descargar el .mp4 → guardar en <b>reels/</b>. Editar en CapCut con música + texto de marca.</p></div>
+  </div>
+  <div class="note"><b>Ajuste fino:</b> si Higgsfield deforma la cara o la playera del monstruo, baja la "motion strength" a ~40-50%. Los títeres se ven mejor con movimiento sutil que con cámara agresiva.</div>
+
+  <!-- ASSETS -->
+  <h2>Fichas <span class="o">por personaje</span></h2>
+  <p class="lead">Presets escritos como los nombra Higgsfield. Si el nombre exacto cambió en tu versión, usa el equivalente descrito entre paréntesis.</p>
+
+  <!-- KEBO -->
+  <div class="asset">
+    <div class="head">
+      <img class="thumb" src="fotos/estudio-kebo.jpg" alt="">
+      <div class="ht"><div class="k">FRAME · estudio-kebo.jpg</div><h3>Kebo</h3><div class="role">La cara de la marca · el hambriento</div></div>
+    </div>
+    <div class="body">
+      <div class="row"><div class="lbl">Preset de cámara</div>
+        <span class="preset">Slow Push-In</span><span class="preset">Dolly In (acercamiento lento)</span></div>
+      <div class="row"><div class="lbl">Prompt</div>
+        <div class="prompt">The monster puppet slowly turns his head toward the camera and breaks into a hungry toothy grin; a wisp of steam drifts past his face. Subtle fur movement, warm side light flickering, cinematic slow push-in, film grain.</div></div>
+      <div class="row"><div class="lbl">Uso</div><div class="val">Clip de apertura de marca / foto de perfil animada / primer Reel del feed.</div></div>
+    </div>
+  </div>
+
+  <!-- BRASA -->
+  <div class="asset">
+    <div class="head">
+      <img class="thumb" src="fotos/equipo-brasa.jpg" alt="">
+      <div class="ht"><div class="k">FRAME · equipo-brasa.jpg</div><h3>Brasa</h3><div class="role">El parrillero · crin de espinas</div></div>
+    </div>
+    <div class="body">
+      <div class="row"><div class="lbl">Preset de cámara</div>
+        <span class="preset">Crash Zoom</span><span class="preset">Orbit (giro alrededor)</span></div>
+      <div class="row"><div class="lbl">Prompt</div>
+        <div class="prompt">Brasa turns a sizzling döner kebab over an open flame grill; embers and sparks rise, orange firelight flickers across his fur and amber eyes. He glances at the camera with a confident grin. Heat haze, smoke, cinematic, film grain.</div></div>
+      <div class="row"><div class="lbl">Uso</div><div class="val">Reel "así se hace tu kebab" · humo + fuego = el mejor gancho de comida.</div></div>
+    </div>
+  </div>
+
+  <!-- TURBO -->
+  <div class="asset">
+    <div class="head">
+      <img class="thumb" src="fotos/equipo-turbo.jpg" alt="">
+      <div class="ht"><div class="k">FRAME · equipo-turbo.jpg</div><h3>Turbo</h3><div class="role">El repartidor · velocidad</div></div>
+    </div>
+    <div class="body">
+      <div class="row"><div class="lbl">Preset de cámara</div>
+        <span class="preset">Whip Pan</span><span class="preset">Fast Tracking (seguimiento lateral)</span></div>
+      <div class="row"><div class="lbl">Prompt</div>
+        <div class="prompt">Turbo the delivery monster rushes forward holding a paper bag of kebabs, motion blur streaking past, city night lights bokeh behind him. Energetic hand-held camera, quick push toward his excited face, cinematic, film grain.</div></div>
+      <div class="row"><div class="lbl">Uso</div><div class="val">Reel de delivery "en tu puerta" · cierre con apps (Uber/Rappi/DiDi).</div></div>
+    </div>
+  </div>
+
+  <!-- PRODUCTO -->
+  <div class="asset">
+    <div class="head">
+      <img class="thumb" src="fotos/kebo-clasico.jpg" alt="">
+      <div class="ht"><div class="k">FRAME · kebo-clasico.jpg / la-bestia.jpg</div><h3>El Producto</h3><div class="role">B-roll de antojo · sin personaje</div></div>
+    </div>
+    <div class="body">
+      <div class="row"><div class="lbl">Preset de cámara</div>
+        <span class="preset">Product Reveal</span><span class="preset">360 Orbit</span><span class="preset">Slow Push-In</span></div>
+      <div class="row"><div class="lbl">Prompt</div>
+        <div class="prompt">Macro food shot: the kebab slowly rotates on black background, melted cheese stretches, steam rising, juicy meat glistening under warm key light. Ultra appetizing, shallow depth of field, cinematic, film grain, no text.</div></div>
+      <div class="row"><div class="lbl">Uso</div><div class="val">El "money shot" del antojo. Va a media narrativa de casi todo Reel. Repetir con cada platillo.</div></div>
+    </div>
+  </div>
+
+  <!-- ESTRUCTURA -->
+  <h2>Estructura de un <span class="o">Reel que vende</span></h2>
+  <p class="lead">~8-12 segundos. Regla de oro: engancha en el primer segundo o pierdes al 80%.</p>
+  <div style="border:1px solid var(--line);border-radius:12px;padding:8px 18px;margin-top:8px">
+    <div class="beat"><div class="t">0.0-1.5s</div><div class="c"><b>GANCHO — el monstruo</b><p>Kebo o Brasa voltea a cámara y gruñe/sonríe. Texto grande: "TENEMOS HAMBRE." Sonido fuerte de entrada.</p></div></div>
+    <div class="beat"><div class="t">1.5-5s</div><div class="c"><b>ANTOJO — el producto</b><p>Corte al B-roll del kebab girando, queso estirándose, humo. Aquí es donde se les hace agua la boca.</p></div></div>
+    <div class="beat"><div class="t">5-8s</div><div class="c"><b>MARCA — quién eres</b><p>Logo garra + "MONSTER KEBABS · Dark Kitchen · Morelia". Medio segundo, que quede grabado.</p></div></div>
+    <div class="beat"><div class="t">8-11s</div><div class="c"><b>CTA — cómo pedir</b><p>"Pídelo ya 👉 Uber · Rappi · DiDi" + la promo de reseña 5★ = bebida al 50%.</p></div></div>
+  </div>
+
+  <!-- EDICIÓN -->
+  <h2>Edición y <span class="o">publicación</span></h2>
+  <ul class="clean">
+    <li><b>App:</b> CapCut (gratis, en el cel). Ahí pegas los clips de Higgsfield, música y texto.</li>
+    <li><b>Música:</b> usa audio en tendencia DENTRO de Instagram/TikTok (no de CapCut) — el algoritmo premia audios trending. Busca algo oscuro/trap/épico que pegue con el mood monstruo.</li>
+    <li><b>Texto de marca:</b> Anton en mayúsculas, blanco hueso, con la garra ember. Tapa la marquita ✦ de la IA con tu logo o recorta 3% del borde inferior.</li>
+    <li><b>Cadencia:</b> 3-4 Reels por semana al arrancar. Es el formato que más alcance orgánico da hoy.</li>
+    <li><b>Cierre SIEMPRE igual:</b> logo garra + apps + promo. Consistencia = marca.</li>
+  </ul>
+
+  <div class="note"><b>Realidad de créditos:</b> Higgsfield es de paga por créditos. Empieza con 3-4 clips maestros (Kebo, Brasa, 1 producto girando, 1 delivery) y reúsalos/recórtalos en muchos Reels distintos. No necesitas un clip nuevo por post.</div>
+
+</div>
+
+<footer>MONSTER KEBABS · KIT DE REELS · FEED THE MONSTER</footer>
+
+</body>
+</html>
