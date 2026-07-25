@@ -185,6 +185,9 @@
   .perk .pd{font-size:11.5px;color:var(--humo);line-height:1.5;margin-top:5px}
   .perk .pd b{color:var(--hueso)}
   .unete-nota{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:var(--humo);text-transform:uppercase;margin-top:16px}
+  .donde{margin:22px 0 4px}
+  .donde-l{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--ember);text-transform:uppercase}
+  .donde-apps{font-family:'Anton',sans-serif;font-size:clamp(20px,4.5vw,32px);text-transform:uppercase;margin-top:8px}
   @media(max-width:720px){.unete-grid{grid-template-columns:1fr}.qr-card{max-width:240px;margin:0 auto}.perks{grid-template-columns:1fr}}
   /* ══ 4 PANELES (carrusel web) ══ */
   html{scroll-snap-type:y proximity;scroll-padding-top:52px}
@@ -214,7 +217,7 @@
 </head>
 <body>
 
-<div class="priv">MENÚ BRANDEADO — LO REPARTEN LOS MESEROS EN LAS MESAS · IMPRIMIR EN CARTA O TABLOIDE</div>
+<div class="priv">MONSTER KEBABS · DARK KITCHEN · MORELIA — MENÚ DIGITAL</div>
 <div class="topbar">
   <div><b>MONSTER KEBABS</b><span class="dot"> ●</span> MENÚ</div>
   <nav class="nav"><a href="index.html">← MARCA</a><a href="convenio.html">CONVENIO</a><a href="sistema.html">SISTEMA</a><a href="landing.html">LANDING</a></nav>
@@ -237,8 +240,7 @@
     </svg>
     <h1>MONSTER<span>KEBABS</span></h1>
     <div class="tag">FEED THE MONSTER.</div>
-    <div class="sub2">DÖNER DE MONSTRUO · AL FUEGO · MORELIA, MICH.</div>
-    <div class="desde">KEBABS DESDE <b>89</b></div>
+    <div class="sub2">DARK KITCHEN</div>
   </div>
 
   </section>
@@ -406,12 +408,12 @@
   <div class="panel-intro">
     <div class="pi-tag">LA RECOMENDACIÓN DE LA CASA</div>
     <div class="pi-h">Lo que pedimos <span>nosotros</span></div>
-    <p class="pi-sub">La botana que marida con cerveza, los paquetes que rinden y la charola que se ve desde tres mesas.</p>
+    <p class="pi-sub">La botana que nunca falla, los paquetes que rinden y la charola que alcanza para toda la manada.</p>
   </div>
   <!-- MONSTER BITES -->
   <div class="m-sec">
     <div class="m-lbl">02 — MONSTER BITES · PAPA CAMBRAY</div>
-    <div class="m-sub">Papa cambray confitada, frita y aplastada. La botana de la mesa: <b>pídelos de entrada</b>. Maridan con cerveza fría.</div>
+    <div class="m-sub">Papa cambray confitada, frita y aplastada. <b>La botana que hace que todo pedido crezca.</b></div>
     <div class="bites-row" style="justify-content:center;gap:40px;margin-bottom:20px">
       <div class="b"><div class="bn">6</div><div class="bnm">Cría</div><div class="bpz">B6 · PA' UNO</div><div class="bp">69</div></div>
       <div class="b"><div class="bn">9</div><div class="bnm">Manada</div><div class="bpz">B9 · PA' DOS</div><div class="bp">89</div></div>
@@ -442,7 +444,7 @@
           <div class="salsa"><img src="fotos/salsa-garra.jpg" alt="Salsa Garra" loading="lazy"><div class="sn">S2 · Garra <i class="pic">●●</i></div><div class="sl">BRAVO</div><div class="sd">roja brava de chile de árbol y ajo</div></div>
           <div class="salsa diablo"><img src="fotos/salsa-diablo.jpg" alt="Salsa Modo Diablo" loading="lazy"><div class="sn">S3 · Modo Diablo <i class="pic">●●●</i></div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">habanero y árbol tatemados — se pregunta antes de servirse</div></div>
         </div>
-        <div class="salsas-nota">PIDE LAS QUE QUIERAS — VAN POR LA CASA, POR MESA · PICOR: ● SUAVE · ●● BRAVO · ●●● EXTREMO</div>
+        <div class="salsas-nota">VAN INCLUIDAS EN TODO PEDIDO — SIN COSTO · PICOR: ● SUAVE · ●● BRAVO · ●●● EXTREMO</div>
   </div>
 
   <!-- LA MONSTRUOSA -->
@@ -494,7 +496,7 @@
   <!-- BEBIDAS -->
   <div class="m-sec">
     <div class="m-lbl">04 — BEBIDAS DE LA CASA</div>
-    <div class="m-sub">(La cerveza pídesela al mesero — de eso sabe la casa.)</div>
+    <div class="m-sub">Hechas en casa. El acompañante perfecto de cualquier kebab.</div>
     <div class="beb-wrap">
       <div>
         <div class="item"><div><div class="iname">Tinta</div><div class="idesc">Limonada negra de carbón activado. Sí, es real. La vas a fotografiar.</div></div><div class="iprice">55</div></div>
@@ -555,14 +557,6 @@
     </div>
   </div>
 
-  <!-- PEDIR -->
-  <div class="pedir">
-    <div class="grande">¿No puedes venir?<br><span>Te lo llevamos a tu casa.</span></div>
-    <p class="sub">Todo lo que ves aquí nació para una cerveza fría. No lo dejes comer solo.<br>
-    <b style="color:var(--hueso)">Va en tu misma cuenta.</b> Precios en pesos mexicanos.</p>
-    <p class="sub" style="font-size:10.5px;margin-top:6px">SALSA KEBO Y SALSA BLANCA CONTIENEN LÁCTEOS · EL HERBÍVORO PUEDE PEDIRSE VEGANO (SIN SALSA BLANCA)</p>
-  </div>
-
   <!-- ÚNETE A LA MANADA (QR + incentivos) -->
   <div class="m-sec unete">
     <div class="m-lbl">ÚNETE A LA MANADA</div>
@@ -575,8 +569,8 @@
       </div>
       <div class="perks">
         <div class="perk"><span class="pn">01</span>
-          <div><div class="pt">Reséñanos = bebida al 50%</div>
-          <div class="pd">Califícanos con foto en Uber/Rappi/DiDi y muéstrala en tu próximo pedido — <b>50% en cualquier bebida de la casa</b>.</div></div>
+          <div><div class="pt">Califícanos en Google 5★</div>
+          <div class="pd">Déjanos una reseña rápida en Google y <b>obtén 50% en tu bebida</b>.</div></div>
         </div>
         <div class="perk"><span class="pn">02</span>
           <div><div class="pt">Story = papas gratis</div>
@@ -593,6 +587,15 @@
       </div>
     </div>
     <div class="unete-nota">PROMOCIONES DE LANZAMIENTO · UNA POR CLIENTE POR VISITA · NO ACUMULABLES · SUJETAS A CAMBIO</div>
+  </div>
+
+  <!-- CIERRE FINAL -->
+  <div class="pedir">
+    <div class="grande">¿No puedes venir?<br><span>Te lo llevamos a tu casa.</span></div>
+    <div class="donde">
+      <div class="donde-l">DÓNDE NOS ENCUENTRAS</div>
+      <div class="donde-apps">Uber Eats · Rappi · DiDi Food</div>
+    </div>
   </div>
   </section>
 </div>
