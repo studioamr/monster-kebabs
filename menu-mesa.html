@@ -88,7 +88,8 @@
   .mo-body .md b{color:var(--hueso)}
   .mo-body .mp{font-family:'IBM Plex Mono',monospace;font-size:30px;color:var(--ember)}
   /* SALSAS */
-  .salsas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .salsas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:16px}
+  .salsas-nota{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:10px}
   .salsa{background:var(--tinta);padding:18px 20px;text-align:center}
   .salsa .sn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
   .salsa .sl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:4px}
@@ -101,6 +102,14 @@
   .item .iname{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
   .item .idesc{font-size:12px;color:var(--humo);line-height:1.5;margin-top:2px;max-width:420px}
   .item .iprice{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--hueso);white-space:nowrap}
+  /* EQUIPO */
+  .equipo{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .emember{background:var(--tinta2);border:1px solid var(--line)}
+  .emember img{width:100%;aspect-ratio:1/1.12;object-fit:cover;display:block}
+  .einfo{padding:12px 14px 15px}
+  .einfo .en{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;line-height:1}
+  .einfo .er{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:var(--ember);text-transform:uppercase;margin:5px 0 7px}
+  .einfo .eb{font-size:11px;color:var(--humo);line-height:1.5}
   /* PEDIR */
   .pedir{text-align:center;padding:34px 0 42px}
   .pedir .grande{font-family:'Anton',sans-serif;font-size:clamp(24px,5vw,38px);text-transform:uppercase;line-height:1.1}
@@ -111,6 +120,8 @@
   @media print{.priv,.topbar{display:none}}
   @media(max-width:720px){
     .kcards{grid-template-columns:1fr}
+    .equipo{grid-template-columns:repeat(2,1fr)}
+    .salsas{grid-template-columns:1fr}
     .bites-wrap,.beb-wrap{grid-template-columns:1fr}
     .tam-row{grid-template-columns:1fr}
     .alpha-box{grid-template-columns:1fr;gap:0}
@@ -300,6 +311,12 @@
           <span>Ajo Parmesano</span><span>Fuego</span><span>Chipotle BBQ</span><span>Buffalo</span>
           <span>Lemon Pepper</span><span>Trufa Negra</span><span>Za'atar</span><span>Mantequilla Romero</span>
         </div>
+        <div class="salsas">
+          <div class="salsa"><div class="sn">Brasa</div><div class="sl">SUAVE</div><div class="sd">para empezar</div></div>
+          <div class="salsa"><div class="sn">Garra</div><div class="sl">BRAVO</div><div class="sd">para presumir</div></div>
+          <div class="salsa diablo"><div class="sn">Modo Diablo</div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">la mesa reta, tú decides</div></div>
+        </div>
+        <div class="salsas-nota">LAS 3 SALSAS VAN INCLUIDAS CON TODO PEDIDO — SIN COSTO</div>
       </div>
       <img src="fotos/monster-bites.jpg" alt="Monster Bites" loading="lazy">
     </div>
@@ -320,20 +337,9 @@
     </div>
   </div>
 
-  <!-- SALSAS -->
-  <div class="m-sec">
-    <div class="m-lbl">03 — LAS SALSAS · INCLUIDAS CON TODO PEDIDO</div>
-    <div class="m-sub">Hechas en casa. Sin costo. <b>El maridaje real de la cerveza.</b></div>
-    <div class="salsas">
-      <div class="salsa"><div class="sn">Brasa</div><div class="sl">SUAVE</div><div class="sd">para empezar</div></div>
-      <div class="salsa"><div class="sn">Garra</div><div class="sl">BRAVO</div><div class="sd">para presumir</div></div>
-      <div class="salsa diablo"><div class="sn">Modo Diablo</div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">la mesa reta, tú decides</div></div>
-    </div>
-  </div>
-
   <!-- BEBIDAS -->
   <div class="m-sec">
-    <div class="m-lbl">04 — BEBIDAS DE LA CASA</div>
+    <div class="m-lbl">03 — BEBIDAS DE LA CASA</div>
     <div class="m-sub">(La cerveza pídesela al mesero — de eso sabe la casa.)</div>
     <div class="beb-wrap">
       <div>
@@ -342,6 +348,34 @@
         <div class="item"><div><div class="iname">Sangre</div><div class="idesc">Jamaica concentrada + jengibre + limón.</div></div><div class="iprice">45</div></div>
       </div>
       <img src="fotos/limonada-negra.jpg" alt="Limonada Negra" loading="lazy">
+    </div>
+  </div>
+
+  <!-- EL EQUIPO -->
+  <div class="m-sec">
+    <div class="m-lbl">04 — EL EQUIPO DE LA COCINA</div>
+    <div class="m-sub">La cocina no se maneja sola. <b>Colecciona sus stickers</b> — uno en cada pedido.</div>
+    <div class="equipo">
+      <div class="emember">
+        <img src="fotos/archivo-03-retrato.jpg" alt="KEBO" loading="lazy">
+        <div class="einfo"><div class="en">Kebo</div><div class="er">LA CARA · EL PRIMERO</div>
+        <div class="eb">El del cuerno roto. Todo esto empezó con él — y con su hambre.</div></div>
+      </div>
+      <div class="emember">
+        <img src="fotos/equipo-brasa.jpg" alt="BRASA" loading="lazy">
+        <div class="einfo"><div class="en">Brasa</div><div class="er">LA COCINERA · EL FUEGO</div>
+        <div class="eb">Cresta ember, autoridad tranquila. El trompo y la Salsa Kebo son suyos.</div></div>
+      </div>
+      <div class="emember">
+        <img src="fotos/equipo-coco.jpg" alt="COCO" loading="lazy">
+        <div class="einfo"><div class="en">Coco</div><div class="er">APRENDIZ · EL CORAZÓN</div>
+        <div class="eb">Esfera con orejas y un colmillo de leche. Los Monster Bites son su departamento.</div></div>
+      </div>
+      <div class="emember">
+        <img src="fotos/equipo-raul.jpg" alt="RAÚL" loading="lazy">
+        <div class="einfo"><div class="en">Raúl</div><div class="er">HUMANO · EL SABIO</div>
+        <div class="eb">El único humano del equipo. Voz calmada, tipo acertijo. El Herbívoro lleva su firma.</div></div>
+      </div>
     </div>
   </div>
 
