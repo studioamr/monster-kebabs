@@ -27,6 +27,8 @@
   .m-hero .stick{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--humo);text-transform:uppercase;margin-top:8px}
   /* DIBUJO TAMAÑOS */
   .tam-hero{margin-top:26px}
+  .sizes-h{font-family:'Anton',sans-serif;font-size:clamp(26px,5vw,40px);text-transform:uppercase;line-height:1;margin-bottom:14px}
+  .sizes-h span{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;color:var(--humo);vertical-align:middle}
   .tam-dibujo{background:var(--hueso);border:1px solid var(--line);padding:26px 20px 14px}
   .tam-dibujo svg{display:block;width:min(680px,100%);margin:0 auto}
   .gC{opacity:.10;animation:glowpulse 3.6s ease-in-out infinite}
@@ -68,17 +70,18 @@
   .kp{padding:10px 8px;text-align:center;border-right:1px solid var(--line)}
   .kp:last-child{border-right:none}
   .kp .kpl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--humo);text-transform:uppercase}
-  .kp .kpn{font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--hueso);margin-top:3px}
+  .kp .kpn{font-family:'IBM Plex Mono',monospace;font-size:19px;color:var(--hueso);margin-top:3px}
   .kp.star .kpn{color:var(--ember)}
   /* ALPHA BOX */
   .alpha-box{border:1px solid var(--ember);background:rgba(255,78,27,.05);margin-top:16px;
-    display:grid;grid-template-columns:150px 1fr auto;gap:18px;align-items:center}
-  .alpha-box img{width:150px;height:100%;object-fit:cover;display:block}
+    display:grid;grid-template-columns:170px 1fr auto;gap:18px;align-items:stretch;overflow:hidden}
+  .alpha-box img{width:170px;height:100%;min-height:150px;object-fit:cover;display:block}
+  .alpha-box>div:first-of-type{display:flex;flex-direction:column;justify-content:center;padding:16px 0}
   .alpha-box .an{font-family:'Anton',sans-serif;font-size:24px;text-transform:uppercase}
   .alpha-box .an span{color:var(--ember)}
   .alpha-box .ad{font-size:12.5px;color:var(--humo);margin-top:5px;line-height:1.55;padding-right:6px}
   .alpha-box .apw{padding:18px 22px 18px 0}
-  .alpha-box .ap{font-family:'IBM Plex Mono',monospace;font-size:26px;color:var(--ember)}
+  .alpha-box .ap{font-family:'IBM Plex Mono',monospace;font-size:30px;color:var(--ember);font-weight:500}
   .alpha-box .au{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--humo);letter-spacing:.12em;text-align:center;margin-top:4px;text-transform:uppercase}
   /* BITES */
   .bites-wrap{display:grid;grid-template-columns:1fr 230px;gap:22px;align-items:center}
@@ -134,7 +137,7 @@
   .item{display:grid;grid-template-columns:1fr auto;gap:14px;padding:10px 0;align-items:baseline}
   .item .iname{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
   .item .idesc{font-size:12px;color:var(--humo);line-height:1.5;margin-top:2px;max-width:420px}
-  .item .iprice{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--hueso);white-space:nowrap}
+  .item .iprice{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--hueso);white-space:nowrap}
   /* EQUIPO */
   .equipo{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .emember{background:var(--tinta2);border:1px solid var(--line)}
@@ -189,7 +192,9 @@
   .unete-nota{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:var(--humo);text-transform:uppercase;margin-top:16px}
   .donde{margin:22px 0 4px}
   .donde-l{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--ember);text-transform:uppercase}
-  .donde-apps{font-family:'Anton',sans-serif;font-size:clamp(20px,4.5vw,32px);text-transform:uppercase;margin-top:8px}
+  .donde-apps{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:12px}
+  .donde-apps span{font-family:'Anton',sans-serif;font-size:clamp(16px,3.5vw,22px);text-transform:uppercase;
+    border:1px solid var(--ember);color:var(--hueso);padding:11px 20px;min-height:44px;display:flex;align-items:center;border-radius:2px}
   @media(max-width:720px){.unete-grid{grid-template-columns:1fr}.qr-card{max-width:240px;margin:0 auto}.perks{grid-template-columns:1fr}}
   /* ══ 4 PANELES (carrusel web) ══ */
   html{scroll-snap-type:y proximity;scroll-padding-top:52px}
@@ -251,6 +256,7 @@
   <section class="panel p2">
   <!-- LOS 3 TAMAÑOS (DIBUJO) -->
   <div class="tam-hero">
+    <div class="sizes-h">SIZES <span>· ELIGE TU TAMAÑO</span></div>
     <div class="tam-dibujo">
       <svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -596,7 +602,7 @@
     <div class="grande">¿No puedes venir?<br><span>Te lo llevamos a tu casa.</span></div>
     <div class="donde">
       <div class="donde-l">DÓNDE NOS ENCUENTRAS</div>
-      <div class="donde-apps">Uber Eats · Rappi · DiDi Food</div>
+      <div class="donde-apps"><span>Uber Eats</span><span>Rappi</span><span>DiDi Food</span></div>
     </div>
   </div>
   </section>
@@ -607,6 +613,11 @@
     es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
   }, { threshold: 0.06 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  // chrome de dev solo con ?dev
+  if (!location.search.includes('dev')) {
+    document.querySelectorAll('.priv, .topbar').forEach(el => el.remove());
+    document.body.style.paddingTop = '0';
+  }
 </script>
 </body>
 </html>
