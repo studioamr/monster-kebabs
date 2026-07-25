@@ -65,7 +65,14 @@
   .cta .big{font-family:'Anton',sans-serif;font-size:22px;text-transform:uppercase}
   .cta p{color:var(--humo);font-size:13px;margin-top:8px;line-height:1.6}
   .cta b{color:var(--ember)}
-  @media(max-width:820px){.actual{grid-template-columns:repeat(2,1fr)}.spec,.cast{grid-template-columns:1fr}.kebo{grid-template-columns:1fr}}
+  .ba{display:grid;grid-template-columns:1fr 40px 1fr;gap:16px;align-items:center;margin-top:24px}
+  .bacol .batag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;color:var(--humo);text-transform:uppercase;margin-bottom:8px}
+  .bacol .batag.after{color:var(--ember)}
+  .bacol img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border:1px solid var(--line)}
+  .bacol:last-child img{border-color:var(--ember)}
+  .arrow{font-family:'Anton',sans-serif;font-size:32px;color:var(--ember);text-align:center}
+  @media(max-width:820px){.actual{grid-template-columns:repeat(2,1fr)}.spec,.cast{grid-template-columns:1fr}.kebo{grid-template-columns:1fr}
+    .ba{grid-template-columns:1fr;gap:10px}.arrow{transform:rotate(90deg)}}
 </style>
 </head>
 <body>
@@ -112,6 +119,27 @@
       <div class="sp"><div class="k">ENCUADRE</div><div class="v">Retrato de <b>busto, 1:1</b> (cuadrado) — todos al mismo tamaño y altura, como fichas de colección.</div></div>
       <div class="sp"><div class="k">ACABADO</div><div class="v">Textura de utilería mate y consistente. Acento ember opcional como luz de recorte (rim) sutil.</div></div>
     </div>
+  </section>
+
+  <!-- LA PRUEBA -->
+  <section class="sec" style="background:rgba(255,78,27,.04)">
+    <div class="lbl">✱ LA PRUEBA — YA GENERADA</div>
+    <h2>Kebo, <span>antes y después</span></h2>
+    <p class="intro">No es maqueta: generé a Kebo con el tratamiento nuevo para que veas el salto real.
+    Mismo personaje (cuerno, ojos, sonrisa, camiseta) — solo cambió el mundo: fondo negro seamless y la luz de tu comida.</p>
+    <div class="ba">
+      <div class="bacol">
+        <div class="batag">ANTES · sillón, fondo escolar</div>
+        <img src="fotos/archivo-03-retrato.jpg" alt="Kebo antes">
+      </div>
+      <div class="arrow">→</div>
+      <div class="bacol">
+        <div class="batag after">DESPUÉS · estudio negro, busto 1:1</div>
+        <img src="fotos/estudio-kebo.jpg" alt="Kebo después">
+      </div>
+    </div>
+    <p class="intro" style="margin-top:18px"><b style="color:var(--hueso)">¿Se ve? Ahora pertenece al mismo universo que los kebabs.</b>
+    Si te late, replico este mismo estudio para Brasa, Coco, Raúl, Turbo y El Alpha.</p>
   </section>
 
   <!-- EL ELENCO -->
