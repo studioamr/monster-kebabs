@@ -26,6 +26,12 @@
   .tam-hero{margin-top:26px}
   .tam-dibujo{background:var(--hueso);border:1px solid var(--line);padding:26px 20px 14px}
   .tam-dibujo svg{display:block;width:min(680px,100%);margin:0 auto}
+  .gC{opacity:.10;animation:glowpulse 3.6s ease-in-out infinite}
+  .gM{opacity:.16;animation:glowpulse 3s ease-in-out infinite .4s}
+  .gX{opacity:.24;animation:glowpulse 2.2s ease-in-out infinite .8s}
+  @keyframes glowpulse{0%,100%{opacity:.08;transform:scale(1)}50%{opacity:.30;transform:scale(1.08)}}
+  .gC{transform-box:fill-box;transform-origin:center}.gM{transform-box:fill-box;transform-origin:center}.gX{transform-box:fill-box;transform-origin:center}
+  @media(prefers-reduced-motion:reduce){.glow{animation:none}}
   .monster-pulse{transform-box:fill-box;transform-origin:center bottom;animation:mkgrow 1.9s ease-in-out infinite}
   @keyframes mkgrow{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
   @media(prefers-reduced-motion:reduce){.monster-pulse{animation:none}}
@@ -163,6 +169,30 @@
     .alpha-box .ad,.alpha-box .an{padding:0 18px}
     .alpha-box .apw{padding:12px 18px 18px}
   }
+  /* ══ 4 PANELES (carrusel web) ══ */
+  html{scroll-snap-type:y proximity;scroll-padding-top:52px}
+  .panel{scroll-snap-align:start;padding:8px 0 34px;border-top:1px solid var(--line)}
+  .panel.p1{border-top:none;padding-top:0}
+  .panel-intro{padding:30px 0 6px}
+  .pi-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--ember);text-transform:uppercase}
+  .pi-h{font-family:'Anton',sans-serif;font-size:clamp(28px,6vw,46px);text-transform:uppercase;line-height:1;margin-top:8px}
+  .pi-h span{color:var(--ember)}
+  .pi-sub{font-size:13px;color:var(--humo);margin-top:10px;line-height:1.6;max-width:520px}
+  /* ══ PDF: cada sección arranca en página nueva ══ */
+  @media print{
+    @page{size:8.5in 11in;margin:.42in}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    html{scroll-snap-type:none}
+    body{background:#0B0A09}
+    .topbar,.page-head{display:none!important}
+    .carta{max-width:100%;padding:0}
+    .panel{break-before:page;page-break-before:always;border-top:none;padding:0}
+    .panel.p1{break-before:auto;page-break-before:auto}
+    .m-sec{break-inside:avoid}
+    .kcard,.sabor,.salsa,.paq,.em,.dv{break-inside:avoid}
+    img{max-height:2.7in}
+    .glow,.monster-pulse{animation:none!important}
+  }
 </style>
 </head>
 <body>
@@ -176,6 +206,8 @@
 <section class="page-head" style="padding-bottom:0"></section>
 
 <div class="carta">
+  <!-- ══════ PANEL 1 · PORTADA ══════ -->
+  <section class="panel p1">
   <!-- HERO -->
   <div class="m-hero">
     <svg class="garra" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -195,6 +227,15 @@
   <div class="tam-hero">
     <div class="tam-dibujo">
       <svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glowC" cx="50%" cy="70%" r="60%">
+            <stop offset="0%" stop-color="#FF4E1B" stop-opacity=".55"/><stop offset="100%" stop-color="#FF4E1B" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- fondo animado detrás de cada tamaño (crece la intensidad) -->
+        <ellipse class="glow gC" cx="141" cy="200" rx="66" ry="90" fill="url(#glowC)"/>
+        <ellipse class="glow gM" cx="377" cy="180" rx="82" ry="120" fill="url(#glowC)"/>
+        <ellipse class="glow gX" cx="619" cy="150" rx="104" ry="150" fill="url(#glowC)"/>
         <!-- línea base -->
         <line x1="30" y1="252" x2="730" y2="252" stroke="#0B0A09" stroke-width="3"/>
         <!-- ══ CHICO ══ -->
@@ -264,6 +305,10 @@
     </div>
   </div>
 
+  </section>
+
+  <!-- ══════ PANEL 2 · LOS KEBABS ══════ -->
+  <section class="panel p2">
   <!-- KEBABS -->
   <div class="m-sec">
     <div class="m-lbl">01 — LOS KEBABS · PAN PITA AL FUEGO</div>
@@ -336,6 +381,15 @@
     </div>
   </div>
 
+  </section>
+
+  <!-- ══════ PANEL 3 · LA RECOMENDACIÓN ══════ -->
+  <section class="panel p3">
+  <div class="panel-intro">
+    <div class="pi-tag">LA RECOMENDACIÓN DE LA CASA</div>
+    <div class="pi-h">Lo que pedimos <span>nosotros</span></div>
+    <p class="pi-sub">La botana que marida con cerveza, los paquetes que rinden y la charola que se ve desde tres mesas.</p>
+  </div>
   <!-- MONSTER BITES -->
   <div class="m-sec">
     <div class="m-lbl">02 — MONSTER BITES · PAPA CAMBRAY</div>
@@ -434,6 +488,10 @@
     </div>
   </div>
 
+  </section>
+
+  <!-- ══════ PANEL 4 · CIERRE ══════ -->
+  <section class="panel p4">
   <!-- EL EQUIPO -->
   <div class="m-sec">
     <div class="m-lbl">05 — EL EQUIPO DE LA COCINA</div>
@@ -486,6 +544,7 @@
     <b style="color:var(--hueso)">Va en tu misma cuenta.</b> Precios en pesos mexicanos.</p>
     <p class="sub" style="font-size:10.5px;margin-top:6px">SALSA KEBO Y SALSA BLANCA CONTIENEN LÁCTEOS · EL HERBÍVORO PUEDE PEDIRSE VEGANO (SIN SALSA BLANCA)</p>
   </div>
+  </section>
 </div>
 
 <script>
