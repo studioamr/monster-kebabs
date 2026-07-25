@@ -13,13 +13,16 @@
     letter-spacing:.16em;text-align:center;padding:6px;text-transform:uppercase;position:fixed;top:0;left:0;right:0;z-index:200}
   .topbar{top:24px}
   .carta{max-width:860px;margin:0 auto;padding:0 24px}
-  /* HERO */
-  .m-hero{text-align:center;padding:34px 0 24px;border-bottom:2px solid var(--ember)}
-  .m-hero .garra{width:60px;margin:0 auto 14px}
-  .m-hero h1{font-family:'Anton',sans-serif;font-size:clamp(40px,9vw,68px);text-transform:uppercase;line-height:.9}
-  .m-hero h1 span{color:transparent;-webkit-text-stroke:1.4px var(--hueso);display:block}
-  .m-hero .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--ember);text-transform:uppercase;margin-top:14px}
-  .m-hero .desde{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase;margin-top:12px}
+  /* HERO (cover grande) */
+  .m-hero{text-align:center;padding:64px 0 52px;border-bottom:2px solid var(--ember);
+    min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .m-hero .garra{width:104px;margin:0 auto 26px}
+  .m-hero h1{font-family:'Anton',sans-serif;font-size:clamp(58px,13vw,116px);text-transform:uppercase;line-height:.86}
+  .m-hero h1 span{color:transparent;-webkit-text-stroke:1.8px var(--hueso);display:block}
+  .m-hero .tag{font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.34em;color:var(--ember);text-transform:uppercase;margin-top:22px}
+  .m-hero .sub2{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--humo);text-transform:uppercase;margin-top:12px}
+  .m-hero .desde{font-family:'Anton',sans-serif;font-size:26px;text-transform:uppercase;margin-top:30px;
+    border:1px solid var(--ember);padding:10px 22px;border-radius:2px}
   .m-hero .desde b{color:var(--ember)}
   .m-hero .stick{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--humo);text-transform:uppercase;margin-top:8px}
   /* DIBUJO TAMAÑOS */
@@ -169,6 +172,20 @@
     .alpha-box .ad,.alpha-box .an{padding:0 18px}
     .alpha-box .apw{padding:12px 18px 18px}
   }
+  /* ══ ÚNETE A LA MANADA ══ */
+  .unete-grid{display:grid;grid-template-columns:230px 1fr;gap:24px;align-items:start;margin-top:6px}
+  .qr-card{background:var(--hueso);border:1px solid var(--line);padding:18px;text-align:center}
+  .qr-card img{width:100%;display:block}
+  .qr-t{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase;color:var(--tinta);margin-top:12px}
+  .qr-d{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:rgba(11,10,9,.6);text-transform:uppercase;margin-top:4px}
+  .perks{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .perk{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;background:var(--tinta2);border:1px solid var(--line);padding:15px 16px}
+  .perk .pn{font-family:'Anton',sans-serif;font-size:22px;color:var(--ember);line-height:1}
+  .perk .pt{font-family:'Anton',sans-serif;font-size:16px;text-transform:uppercase;line-height:1.05}
+  .perk .pd{font-size:11.5px;color:var(--humo);line-height:1.5;margin-top:5px}
+  .perk .pd b{color:var(--hueso)}
+  .unete-nota{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:var(--humo);text-transform:uppercase;margin-top:16px}
+  @media(max-width:720px){.unete-grid{grid-template-columns:1fr}.qr-card{max-width:240px;margin:0 auto}.perks{grid-template-columns:1fr}}
   /* ══ 4 PANELES (carrusel web) ══ */
   html{scroll-snap-type:y proximity;scroll-padding-top:52px}
   .panel{scroll-snap-align:start;padding:8px 0 34px;border-top:1px solid var(--line)}
@@ -220,6 +237,7 @@
     </svg>
     <h1>MONSTER<span>KEBABS</span></h1>
     <div class="tag">FEED THE MONSTER.</div>
+    <div class="sub2">DÖNER DE MONSTRUO · AL FUEGO · MORELIA, MICH.</div>
     <div class="desde">KEBABS DESDE <b>89</b></div>
   </div>
 
@@ -543,6 +561,38 @@
     <p class="sub">Todo lo que ves aquí nació para una cerveza fría. No lo dejes comer solo.<br>
     <b style="color:var(--hueso)">Va en tu misma cuenta.</b> Precios en pesos mexicanos.</p>
     <p class="sub" style="font-size:10.5px;margin-top:6px">SALSA KEBO Y SALSA BLANCA CONTIENEN LÁCTEOS · EL HERBÍVORO PUEDE PEDIRSE VEGANO (SIN SALSA BLANCA)</p>
+  </div>
+
+  <!-- ÚNETE A LA MANADA (QR + incentivos) -->
+  <div class="m-sec unete">
+    <div class="m-lbl">ÚNETE A LA MANADA</div>
+    <div class="m-sub">Ayúdanos a crecer y te lo pagamos en comida. <b>Escanea, pide y reclama tus premios:</b></div>
+    <div class="unete-grid">
+      <div class="qr-card">
+        <img src="fotos/qr-menu.png" alt="Escanea el menú MONSTER KEBABS">
+        <div class="qr-t">ESCÁNEAME</div>
+        <div class="qr-d">Guarda el menú y pide en un toque</div>
+      </div>
+      <div class="perks">
+        <div class="perk"><span class="pn">01</span>
+          <div><div class="pt">Reséñanos = bebida al 50%</div>
+          <div class="pd">Califícanos con foto en Uber/Rappi/DiDi y muéstrala en tu próximo pedido — <b>50% en cualquier bebida de la casa</b>.</div></div>
+        </div>
+        <div class="perk"><span class="pn">02</span>
+          <div><div class="pt">Story = papas gratis</div>
+          <div class="pd">Sube una story con tu kebab y etiqueta <b>@monsterkebabs</b> → una <b>Cría de Monster Bites gratis</b> en tu siguiente orden.</div></div>
+        </div>
+        <div class="perk"><span class="pn">03</span>
+          <div><div class="pt">Junta a la cuadrilla</div>
+          <div class="pd">Cada pedido trae un sticker. Colecciona a los <b>4 monstruos</b> y desbloquea kebab gratis.</div></div>
+        </div>
+        <div class="perk"><span class="pn">04</span>
+          <div><div class="pt">Trae a tu manada</div>
+          <div class="pd">Comparte este menú. Si tu amigo pide por primera vez, <b>los dos ganan Monster Bites</b>.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="unete-nota">PROMOCIONES DE LANZAMIENTO · UNA POR CLIENTE POR VISITA · NO ACUMULABLES · SUJETAS A CAMBIO</div>
   </div>
   </section>
 </div>
