@@ -128,6 +128,13 @@
   .einfo .en{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;line-height:1}
   .einfo .er{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:var(--ember);text-transform:uppercase;margin:5px 0 7px}
   .einfo .eb{font-size:11px;color:var(--humo);line-height:1.5}
+  /* DELIVERY */
+  .delivery-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .dv{background:var(--tinta2);border:1px solid var(--line)}
+  .dv img{width:100%;aspect-ratio:4/3.1;object-fit:cover;display:block}
+  .dvc{padding:12px 14px 15px}
+  .dvn{font-family:'Anton',sans-serif;font-size:17px;text-transform:uppercase}
+  .dvd{font-size:11px;color:var(--humo);line-height:1.5;margin-top:4px}
   /* PEDIR */
   .pedir{text-align:center;padding:34px 0 42px}
   .pedir .grande{font-family:'Anton',sans-serif;font-size:clamp(24px,5vw,38px);text-transform:uppercase;line-height:1.1}
@@ -143,6 +150,7 @@
     .bites-wrap,.beb-wrap{grid-template-columns:1fr}
     .sabores{grid-template-columns:1fr}
     .paqs{grid-template-columns:1fr}
+    .delivery-grid{grid-template-columns:1fr}
     .tam-row{grid-template-columns:1fr}
     .alpha-box{grid-template-columns:1fr;gap:0}
     .alpha-box img{width:100%;aspect-ratio:16/9}
@@ -175,7 +183,6 @@
     <h1>MONSTER<span>KEBABS</span></h1>
     <div class="tag">FEED THE MONSTER.</div>
     <div class="desde">KEBABS DESDE <b>89</b></div>
-    <div class="stick">★ UN STICKER COLECCIONABLE POR CUENTA ★</div>
   </div>
 
   <!-- LOS 3 TAMAÑOS (DIBUJO) -->
@@ -231,9 +238,9 @@
           <text x="619" y="284" font-size="24" fill="#FF4E1B">MONSTER</text>
         </g>
         <g font-family="IBM Plex Mono,monospace" text-anchor="middle" font-size="11" letter-spacing="1">
-          <text x="141" y="302" fill="#0B0A09" opacity=".6">~90 G PROTEINA</text>
-          <text x="377" y="302" fill="#0B0A09" opacity=".6">~130 G PROTEINA</text>
-          <text x="619" y="302" fill="#FF4E1B">~200 G PROTEINA</text>
+          <text x="141" y="302" fill="#0B0A09" opacity=".6">15 CM · ~90 G</text>
+          <text x="377" y="302" fill="#0B0A09" opacity=".6">20 CM · ~130 G</text>
+          <text x="619" y="302" fill="#FF4E1B">28 CM · ~200 G</text>
         </g>
       </svg>
     </div>
@@ -417,7 +424,7 @@
   <!-- EL EQUIPO -->
   <div class="m-sec">
     <div class="m-lbl">05 — EL EQUIPO DE LA COCINA</div>
-    <div class="m-sub">La cocina no se maneja sola. <b>Colecciona sus stickers</b> — uno en cada pedido.</div>
+    <div class="m-sub">La cocina no se maneja sola.</div>
     <div class="equipo">
       <div class="emember">
         <img src="fotos/archivo-03-retrato.jpg" alt="KEBO" loading="lazy">
@@ -442,14 +449,29 @@
     </div>
   </div>
 
+  <!-- DELIVERY -->
+  <div class="m-sec">
+    <div class="m-lbl">06 — TE LO LLEVAMOS A TU CASA</div>
+    <div class="m-sub">Uber Eats · Rappi · DiDi Food. <b>Va blindado</b>: caja con ventilas, bolsa sellada con la hora
+    y salsas en tarrinas. Llega caliente, entero y con hambre de que lo abras.</div>
+    <div class="delivery-grid">
+      <div class="dv">
+        <img src="fotos/empaque-familia.jpg" alt="El sistema de empaques" loading="lazy">
+        <div class="dvc"><div class="dvn">El empaque</div><div class="dvd">caja, bolsa con sello de hora, vaso y tarrinas — el local es la bolsa</div></div>
+      </div>
+      <div class="dv">
+        <img src="fotos/equipo-turbo.jpg" alt="TURBO — el repartidor" loading="lazy">
+        <div class="dvc"><div class="dvn">Turbo · el repartidor</div><div class="dvd">el más rápido de la familia. No conoce el "en un momento llega".</div></div>
+      </div>
+    </div>
+  </div>
+
   <!-- PEDIR -->
   <div class="pedir">
-    <div class="grande">Pídelo a tu mesero.<br><span>Aliméntalo aquí mismo.</span></div>
-    <div class="frase">"Esa cerveza pide kebab. ¿Le traigo uno?"</div>
+    <div class="grande">¿No puedes venir?<br><span>Te lo llevamos a tu casa.</span></div>
     <p class="sub">Todo lo que ves aquí nació para una cerveza fría. No lo dejes comer solo.<br>
     <b style="color:var(--hueso)">Va en tu misma cuenta.</b> Precios en pesos mexicanos.</p>
     <p class="sub" style="font-size:10.5px;margin-top:6px">SALSA KEBO Y SALSA BLANCA CONTIENEN LÁCTEOS · EL HERBÍVORO PUEDE PEDIRSE VEGANO (SIN SALSA BLANCA)</p>
-    <div class="sticker">★ UN STICKER COLECCIONABLE POR CUENTA ★</div>
   </div>
 </div>
 
