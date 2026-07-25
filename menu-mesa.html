@@ -22,9 +22,10 @@
   .m-hero .desde{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase;margin-top:12px}
   .m-hero .desde b{color:var(--ember)}
   .m-hero .stick{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--humo);text-transform:uppercase;margin-top:8px}
-  /* FOTO TAMAÑOS */
+  /* DIBUJO TAMAÑOS */
   .tam-hero{margin-top:26px}
-  .tam-hero img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+  .tam-dibujo{background:var(--hueso);border:1px solid var(--line);padding:26px 20px 14px}
+  .tam-dibujo svg{display:block;width:min(680px,100%);margin:0 auto}
   .tam-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:none}
   .tam{background:var(--tinta);padding:14px 16px;text-align:center}
   .tam .tn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
@@ -37,29 +38,31 @@
   .m-lbl::before{content:"";display:inline-block;width:22px;height:1px;background:var(--ember);vertical-align:middle;margin-right:10px}
   .m-sub{font-size:12.5px;color:var(--humo);margin-top:6px;line-height:1.5;margin-bottom:18px}
   .m-sub b{color:var(--hueso)}
-  /* MATRIZ KEBABS */
-  .tabla{width:100%;border-collapse:collapse}
-  .tabla th{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;
-    padding:10px 8px;border-bottom:1px solid var(--line);font-weight:400;text-align:center}
-  .tabla th:first-child{text-align:left;padding-left:0}
-  .tabla td{padding:13px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
-  .tabla tr:last-child td{border-bottom:none}
-  .tabla .num{font-family:'Anton',sans-serif;font-size:20px;color:var(--ember);width:34px}
-  .tabla .kname{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;line-height:1}
-  .tabla .kdesc{font-size:11.5px;color:var(--humo);margin-top:3px;line-height:1.45}
-  .tabla .kdesc b{color:var(--ember);font-weight:500}
-  .tabla .p{font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--hueso);text-align:center;white-space:nowrap;width:74px}
-  .tabla .p.star{color:var(--ember)}
-  .tabla .fav td{border-top:1px solid var(--ember);border-bottom:1px solid var(--ember)}
+  /* CARDS KEBABS */
+  .kcards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .kcard{background:var(--tinta2);border:1px solid var(--line)}
+  .kcard img{width:100%;aspect-ratio:4/4.2;object-fit:cover;display:block}
+  .kbody{padding:14px 16px 6px;display:flex;gap:10px;align-items:baseline}
+  .kbody .num{font-family:'Anton',sans-serif;font-size:22px;color:var(--ember)}
+  .kbody .kname{font-family:'Anton',sans-serif;font-size:21px;text-transform:uppercase;line-height:1}
+  .kbody .kdesc{font-size:11.5px;color:var(--humo);margin-top:4px;line-height:1.45}
+  .kbody .kdesc b{color:var(--ember);font-weight:500}
   .sello{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;
     background:var(--ember);color:var(--tinta);padding:2px 7px;text-transform:uppercase;margin-left:8px;vertical-align:2px}
-  .gramos{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--humo);letter-spacing:.1em;text-align:right;margin-top:8px;text-transform:uppercase}
+  .kprecios{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:10px}
+  .kp{padding:10px 8px;text-align:center;border-right:1px solid var(--line)}
+  .kp:last-child{border-right:none}
+  .kp .kpl{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.14em;color:var(--humo);text-transform:uppercase}
+  .kp .kpn{font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--hueso);margin-top:3px}
+  .kp.star .kpn{color:var(--ember)}
   /* ALPHA BOX */
-  .alpha-box{border:1px solid var(--ember);background:rgba(255,78,27,.05);padding:20px 22px;margin-top:20px;
-    display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+  .alpha-box{border:1px solid var(--ember);background:rgba(255,78,27,.05);margin-top:16px;
+    display:grid;grid-template-columns:150px 1fr auto;gap:18px;align-items:center}
+  .alpha-box img{width:150px;height:100%;object-fit:cover;display:block}
   .alpha-box .an{font-family:'Anton',sans-serif;font-size:24px;text-transform:uppercase}
   .alpha-box .an span{color:var(--ember)}
-  .alpha-box .ad{font-size:12.5px;color:var(--humo);margin-top:5px;line-height:1.55}
+  .alpha-box .ad{font-size:12.5px;color:var(--humo);margin-top:5px;line-height:1.55;padding-right:6px}
+  .alpha-box .apw{padding:18px 22px 18px 0}
   .alpha-box .ap{font-family:'IBM Plex Mono',monospace;font-size:26px;color:var(--ember)}
   .alpha-box .au{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--humo);letter-spacing:.12em;text-align:center;margin-top:4px;text-transform:uppercase}
   /* BITES */
@@ -91,15 +94,6 @@
   .salsa .sl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:4px}
   .salsa .sd{font-size:11.5px;color:var(--humo);margin-top:6px}
   .salsa.diablo .sn{color:var(--ember)}
-  /* HUERTO */
-  .huerto{display:grid;grid-template-columns:250px 1fr;gap:22px;align-items:center}
-  .huerto img{width:100%;aspect-ratio:4/4.4;object-fit:cover;display:block;border:1px solid var(--line)}
-  .huerto .hq{font-family:'Anton',sans-serif;font-size:clamp(19px,3vw,26px);text-transform:uppercase;line-height:1.2}
-  .huerto .hq span{color:var(--ember)}
-  .huerto .hd{font-size:13px;color:var(--humo);margin-top:10px;line-height:1.65}
-  .huerto .hd b{color:var(--hueso)}
-  .huerto .hp{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--hueso);margin-top:12px}
-  .huerto .hp b{color:var(--ember)}
   /* BEBIDAS */
   .beb-wrap{display:grid;grid-template-columns:1fr 190px;gap:22px;align-items:center}
   .beb-wrap img{width:100%;aspect-ratio:4/4.6;object-fit:cover;display:block;border:1px solid var(--line)}
@@ -116,11 +110,13 @@
   .pedir .sticker{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:16px}
   @media print{.priv,.topbar{display:none}}
   @media(max-width:720px){
-    .bites-wrap,.beb-wrap,.huerto{grid-template-columns:1fr}
-    .huerto img{aspect-ratio:16/9}
+    .kcards{grid-template-columns:1fr}
+    .bites-wrap,.beb-wrap{grid-template-columns:1fr}
     .tam-row{grid-template-columns:1fr}
-    .tabla .p{font-size:14px;width:52px}
-    .tabla .kname{font-size:16px}
+    .alpha-box{grid-template-columns:1fr;gap:0}
+    .alpha-box img{width:100%;aspect-ratio:16/9}
+    .alpha-box .ad,.alpha-box .an{padding:0 18px}
+    .alpha-box .apw{padding:12px 18px 18px}
   }
 </style>
 </head>
@@ -151,56 +147,140 @@
     <div class="stick">★ UN STICKER COLECCIONABLE EN CADA PEDIDO ★</div>
   </div>
 
-  <!-- LOS 3 TAMAÑOS -->
+  <!-- LOS 3 TAMAÑOS (DIBUJO) -->
   <div class="tam-hero">
-    <img src="fotos/tamanos-trio.jpg" alt="Los tres tamaños: chico, mediano y MONSTER">
+    <div class="tam-dibujo">
+      <svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg">
+        <!-- línea base -->
+        <line x1="30" y1="252" x2="730" y2="252" stroke="#0B0A09" stroke-width="3"/>
+        <!-- ══ CHICO ══ -->
+        <g>
+          <!-- pita + relleno -->
+          <path d="M104,148 L104,120 Q118,104 126,116 Q134,100 144,112 Q152,98 162,112 Q172,102 178,118 L178,148 Z" fill="#0B0A09"/>
+          <rect x="104" y="146" width="74" height="40" fill="#0B0A09"/>
+          <!-- papel -->
+          <rect x="99" y="184" width="84" height="68" fill="#EFE9DF" stroke="#0B0A09" stroke-width="4"/>
+          <path d="M141,196 L147,203 L141,210 L135,203 Z" fill="#0B0A09"/>
+          <path d="M121,222 L127,229 L121,236 L115,229 Z" fill="#0B0A09"/>
+          <path d="M161,222 L167,229 L161,236 L155,229 Z" fill="#0B0A09"/>
+          <!-- vapor -->
+          <path d="M141,96 Q135,84 141,72 Q147,62 141,50" stroke="#0B0A09" stroke-width="3" fill="none" stroke-linecap="round" opacity=".45"/>
+          <!-- cota -->
+          <line x1="212" y1="120" x2="212" y2="252" stroke="#0B0A09" stroke-width="2" stroke-dasharray="6 6" opacity=".5"/>
+          <line x1="202" y1="120" x2="222" y2="120" stroke="#0B0A09" stroke-width="2" opacity=".5"/>
+        </g>
+        <!-- ══ MEDIANO ══ -->
+        <g>
+          <path d="M334,108 L334,78 Q350,60 360,74 Q368,56 380,70 Q390,54 400,70 Q412,58 420,76 L420,108 Z" fill="#0B0A09"/>
+          <rect x="334" y="106" width="86" height="60" fill="#0B0A09"/>
+          <rect x="328" y="164" width="98" height="88" fill="#EFE9DF" stroke="#0B0A09" stroke-width="4"/>
+          <path d="M377,178 L384,186 L377,194 L370,186 Z" fill="#0B0A09"/>
+          <path d="M353,208 L360,216 L353,224 L346,216 Z" fill="#0B0A09"/>
+          <path d="M401,208 L408,216 L401,224 L394,216 Z" fill="#0B0A09"/>
+          <path d="M377,54 Q370,42 377,30 Q384,20 377,8" stroke="#0B0A09" stroke-width="3" fill="none" stroke-linecap="round" opacity=".45"/>
+          <line x1="456" y1="78" x2="456" y2="252" stroke="#0B0A09" stroke-width="2" stroke-dasharray="6 6" opacity=".5"/>
+          <line x1="446" y1="78" x2="466" y2="78" stroke="#0B0A09" stroke-width="2" opacity=".5"/>
+        </g>
+        <!-- ══ MONSTER ══ -->
+        <g>
+          <path d="M570,74 L570,40 Q588,20 600,36 Q610,14 624,32 Q636,14 646,34 Q660,20 668,40 L668,74 Z" fill="#0B0A09"/>
+          <rect x="570" y="72" width="98" height="94" fill="#0B0A09"/>
+          <rect x="563" y="164" width="112" height="88" fill="#EFE9DF" stroke="#0B0A09" stroke-width="4"/>
+          <path d="M619,178 L627,187 L619,196 L611,187 Z" fill="#0B0A09"/>
+          <path d="M591,208 L599,217 L591,226 L583,217 Z" fill="#0B0A09"/>
+          <path d="M647,208 L655,217 L647,226 L639,217 Z" fill="#0B0A09"/>
+          <path d="M619,16 Q611,10 617,2" stroke="#0B0A09" stroke-width="3" fill="none" stroke-linecap="round" opacity=".45"/>
+          <line x1="704" y1="40" x2="704" y2="252" stroke="#FF4E1B" stroke-width="2.5" stroke-dasharray="6 6"/>
+          <line x1="694" y1="40" x2="714" y2="40" stroke="#FF4E1B" stroke-width="2.5"/>
+        </g>
+        <!-- etiquetas -->
+        <g font-family="Anton,sans-serif" text-anchor="middle">
+          <text x="141" y="284" font-size="24" fill="#0B0A09">CHICO</text>
+          <text x="377" y="284" font-size="24" fill="#0B0A09">MEDIANO</text>
+          <text x="619" y="284" font-size="24" fill="#FF4E1B">MONSTER</text>
+        </g>
+        <g font-family="IBM Plex Mono,monospace" text-anchor="middle" font-size="11" letter-spacing="1">
+          <text x="141" y="302" fill="#0B0A09" opacity=".6">~90 G PROTEINA</text>
+          <text x="377" y="302" fill="#0B0A09" opacity=".6">~130 G PROTEINA</text>
+          <text x="619" y="302" fill="#FF4E1B">~200 G PROTEINA</text>
+        </g>
+      </svg>
+    </div>
     <div class="tam-row">
-      <div class="tam"><div class="tn">Chico</div><div class="tg">≈ 90 G DE PROTEÍNA</div><div class="td">Pa' abrir boca. Advertencia: sabe a que quieres más.</div></div>
-      <div class="tam"><div class="tn">Mediano</div><div class="tg">≈ 130 G DE PROTEÍNA</div><div class="td">La medida sensata. Nadie te juzga… pero el MONSTER te está mirando.</div></div>
-      <div class="tam"><div class="tn monster">Monster</div><div class="tg">≈ 200 G DE PROTEÍNA</div><div class="td">El tamaño con nombre propio. Se pide con hambre y se carga con las dos manos.</div></div>
+      <div class="tam"><div class="tn">Chico</div><div class="td">Pa' abrir boca. Advertencia: sabe a que quieres más.</div></div>
+      <div class="tam"><div class="tn">Mediano</div><div class="td">La medida sensata. Nadie te juzga… pero el MONSTER te está mirando.</div></div>
+      <div class="tam"><div class="tn monster">Monster</div><div class="td">El tamaño con nombre propio. Se pide con hambre y se carga con las dos manos.</div></div>
     </div>
   </div>
 
   <!-- KEBABS -->
   <div class="m-sec">
     <div class="m-lbl">01 — LOS KEBABS · PAN PITA AL FUEGO</div>
-    <div class="m-sub">Carne marinada 24 horas, asada al fuego. Pídelos por número: <b>"un 2 mediano"</b>.</div>
-    <table class="tabla">
-      <tr><th></th><th></th><th>CHICO</th><th>MEDIANO</th><th>MONSTER</th></tr>
-      <tr class="fav">
-        <td class="num">1</td>
-        <td><div class="kname">Kebo Clásico<span class="sello">★ EL FAVORITO DE LA CASA</span></div>
-        <div class="kdesc"><b>pollo</b> · marinado 24 h, verdura fresca y SALSA KEBO</div></td>
-        <td class="p">99</td><td class="p star">139</td><td class="p">179</td>
-      </tr>
-      <tr>
-        <td class="num">2</td>
-        <td><div class="kname">Doble Filo</div>
-        <div class="kdesc"><b>mixto</b> · pollo + res en el mismo pan, lo mejor de los dos</div></td>
-        <td class="p">129</td><td class="p">169</td><td class="p">209</td>
-      </tr>
-      <tr>
-        <td class="num">3</td>
-        <td><div class="kname">La Bestia</div>
-        <div class="kdesc"><b>res</b> · al fuego estilo Adana, pimentón y sumac</div></td>
-        <td class="p">119</td><td class="p">159</td><td class="p">199</td>
-      </tr>
-      <tr>
-        <td class="num">4</td>
-        <td><div class="kname">El Herbívoro<span class="sello">EL HUERTO DE RAÚL</span></div>
-        <div class="kdesc"><b>falafel</b> · crujiente, champiñón al fuego y salsa blanca</div></td>
-        <td class="p">89</td><td class="p">129</td><td class="p">169</td>
-      </tr>
-    </table>
-    <div class="gramos">PRECIOS EN PESOS · PROTEÍNA APROX. 90 G · 130 G · 200 G POR TAMAÑO</div>
+    <div class="m-sub">Carne marinada 24 horas, asada al fuego. Todos en 3 tamaños. Pídelos por número: <b>"un 2 mediano"</b>.</div>
+    <div class="kcards">
+
+      <div class="kcard">
+        <img src="fotos/kebo-clasico.jpg" alt="Kebo Clásico" loading="lazy">
+        <div class="kbody"><span class="num">1</span>
+          <div><div class="kname">Kebo Clásico<span class="sello">★ EL FAVORITO</span></div>
+          <div class="kdesc"><b>pollo</b> · marinado 24 h, verdura fresca y SALSA KEBO</div></div>
+        </div>
+        <div class="kprecios">
+          <div class="kp"><div class="kpl">CHICO</div><div class="kpn">99</div></div>
+          <div class="kp star"><div class="kpl">MEDIANO</div><div class="kpn">139</div></div>
+          <div class="kp"><div class="kpl">MONSTER</div><div class="kpn">179</div></div>
+        </div>
+      </div>
+
+      <div class="kcard">
+        <img src="fotos/doble-filo.jpg" alt="Doble Filo" loading="lazy">
+        <div class="kbody"><span class="num">2</span>
+          <div><div class="kname">Doble Filo</div>
+          <div class="kdesc"><b>mixto</b> · pollo + res en el mismo pan, lo mejor de los dos</div></div>
+        </div>
+        <div class="kprecios">
+          <div class="kp"><div class="kpl">CHICO</div><div class="kpn">129</div></div>
+          <div class="kp star"><div class="kpl">MEDIANO</div><div class="kpn">169</div></div>
+          <div class="kp"><div class="kpl">MONSTER</div><div class="kpn">209</div></div>
+        </div>
+      </div>
+
+      <div class="kcard">
+        <img src="fotos/la-bestia.jpg" alt="La Bestia" loading="lazy">
+        <div class="kbody"><span class="num">3</span>
+          <div><div class="kname">La Bestia</div>
+          <div class="kdesc"><b>res</b> · al fuego estilo Adana, pimentón y sumac</div></div>
+        </div>
+        <div class="kprecios">
+          <div class="kp"><div class="kpl">CHICO</div><div class="kpn">119</div></div>
+          <div class="kp star"><div class="kpl">MEDIANO</div><div class="kpn">159</div></div>
+          <div class="kp"><div class="kpl">MONSTER</div><div class="kpn">199</div></div>
+        </div>
+      </div>
+
+      <div class="kcard">
+        <img src="fotos/el-herbivoro.jpg" alt="El Herbívoro" loading="lazy">
+        <div class="kbody"><span class="num">4</span>
+          <div><div class="kname">El Herbívoro<span class="sello">EL HUERTO DE RAÚL</span></div>
+          <div class="kdesc"><b>falafel</b> · crujiente, champiñón al fuego y salsa blanca</div></div>
+        </div>
+        <div class="kprecios">
+          <div class="kp"><div class="kpl">CHICO</div><div class="kpn">89</div></div>
+          <div class="kp star"><div class="kpl">MEDIANO</div><div class="kpn">129</div></div>
+          <div class="kp"><div class="kpl">MONSTER</div><div class="kpn">169</div></div>
+        </div>
+      </div>
+
+    </div>
 
     <div class="alpha-box">
+      <img src="fotos/el-alpha.jpg" alt="El Alpha">
       <div>
         <div class="an">El Alpha <span>· EL JEFE FINAL</span></div>
         <div class="ad">Res premium, queso fundido y Monster Bites adentro. Un jefe final no viene en chico:
         solo se enfrenta en tamaño MONSTER. Nadie ha terminado uno solo.</div>
       </div>
-      <div><div class="ap">219</div><div class="au">TAMAÑO ÚNICO</div></div>
+      <div class="apw"><div class="ap">219</div><div class="au">TAMAÑO ÚNICO</div></div>
     </div>
   </div>
 
@@ -248,19 +328,6 @@
       <div class="salsa"><div class="sn">Brasa</div><div class="sl">SUAVE</div><div class="sd">para empezar</div></div>
       <div class="salsa"><div class="sn">Garra</div><div class="sl">BRAVO</div><div class="sd">para presumir</div></div>
       <div class="salsa diablo"><div class="sn">Modo Diablo</div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">la mesa reta, tú decides</div></div>
-    </div>
-  </div>
-
-  <!-- EL HUERTO DE RAÚL -->
-  <div class="m-sec">
-    <div class="huerto">
-      <img src="fotos/el-herbivoro.jpg" alt="El Herbívoro — falafel" loading="lazy">
-      <div>
-        <div class="hq">El huerto de <span>Raúl</span></div>
-        <div class="hd">La esquina vegetariana de la casa: falafel dorado, champiñón al fuego y salsa blanca.
-        <b>Aquí no se asusta a nadie. Se alimenta bien.</b></div>
-        <div class="hp">EL HERBÍVORO (#4) · CHICO <b>89</b> · MEDIANO <b>129</b> · MONSTER <b>169</b></div>
-      </div>
     </div>
   </div>
 
