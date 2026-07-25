@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAMPAÑA · ALIMENTA AL MONSTRUO — MONSTER KEBABS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+<style>
+  :root{--tinta:#0B0A09;--hueso:#EFE9DF;--ember:#FF4E1B;--humo:#B5AEA4;--line:#232019;--card:#100E0C}
+  *{box-sizing:border-box}
+  body{background:var(--tinta);color:var(--hueso);font-family:'Inter',sans-serif;line-height:1.6}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
+  a{color:var(--ember)}
+
+  header{padding:70px 22px 30px;text-align:center;border-bottom:1px solid var(--line)}
+  header .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.28em;color:var(--ember);text-transform:uppercase}
+  header h1{font-family:'Anton',sans-serif;font-size:clamp(40px,9vw,88px);text-transform:uppercase;line-height:.92;margin:16px 0 0}
+  header h1 .o{color:var(--ember)}
+  header .sub{color:var(--humo);font-size:15px;max-width:640px;margin:18px auto 0}
+  header .meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--humo);letter-spacing:.1em;margin-top:20px}
+
+  section{padding:46px 0;border-bottom:1px solid var(--line)}
+  .kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--ember);text-transform:uppercase}
+  h2{font-family:'Anton',sans-serif;font-size:clamp(26px,5vw,42px);text-transform:uppercase;line-height:1;margin:10px 0 6px}
+  h3{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:.02em;margin:26px 0 8px}
+  p{margin:10px 0}
+  .lead{color:var(--humo);font-size:15px;max-width:720px}
+  b,strong{color:var(--hueso)}
+  .em{color:var(--ember)}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:720px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .card .n{font-family:'Anton',sans-serif;font-size:30px;color:var(--ember);line-height:1}
+  .card h4{font-family:'Inter',sans-serif;font-weight:700;font-size:15px;margin:8px 0 6px}
+  .card p{color:var(--humo);font-size:13px;margin:6px 0}
+
+  ul.clean{list-style:none;padding:0;margin:12px 0}
+  ul.clean li{position:relative;padding-left:22px;color:var(--humo);font-size:14px;margin:7px 0}
+  ul.clean li::before{content:'▸';position:absolute;left:0;color:var(--ember)}
+  ul.clean li b{color:var(--hueso)}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--humo)}
+  td b{color:var(--hueso)}
+  .tw{overflow-x:auto}
+
+  .phase{border-left:3px solid var(--ember);padding:6px 0 6px 20px;margin:22px 0}
+  .phase .pt{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ember);letter-spacing:.14em;text-transform:uppercase}
+  .phase h3{margin:4px 0 6px}
+
+  .copy{background:var(--tinta);border:1px solid var(--line);border-left:3px solid var(--ember);border-radius:8px;padding:14px 16px;margin:12px 0;font-size:13.5px}
+  .copy .lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;display:block;margin-bottom:8px}
+  .copy .txt{color:var(--hueso);white-space:pre-line}
+  .copy .hash{color:var(--humo);font-size:12px;margin-top:8px}
+
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+  @media(max-width:720px){.kpi{grid-template-columns:1fr 1fr}}
+  .kpi .k{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center}
+  .kpi .k .v{font-family:'Anton',sans-serif;font-size:34px;color:var(--ember);line-height:1}
+  .kpi .k .l{font-size:11px;color:var(--humo);margin-top:6px}
+
+  .note{background:rgba(255,78,27,.06);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--humo);font-size:13px;margin:16px 0}
+  .note b{color:var(--ember)}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;justify-content:center}
+  .toc a{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--humo);border:1px solid var(--line);padding:6px 11px;border-radius:20px;text-decoration:none}
+  .toc a:hover{border-color:var(--ember);color:var(--ember)}
+  footer{text-align:center;color:#6a655c;font-size:11px;padding:44px 20px 64px;font-family:'IBM Plex Mono',monospace;letter-spacing:.1em}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">PLAN DE MARKETING · GO-TO-MARKET</div>
+  <h1>Alimenta al<br><span class="o">monstruo</span></h1>
+  <div class="sub">La campaña de lanzamiento de MONSTER KEBABS — de una cocina fantasma desconocida
+  a la marca de kebabs más comentada de Morelia. Estrategia, calendario y kit de ejecución en un solo lugar.</div>
+  <div class="meta">DARK KITCHEN · MORELIA · REV. 25 JUL 2026</div>
+  <div class="toc">
+    <a href="#resumen">Resumen</a><a href="#audit">Qué tenemos</a><a href="#quien">A quién</a>
+    <a href="#idea">La gran idea</a><a href="#fases">Las 3 fases</a><a href="#canales">Canales</a>
+    <a href="#calendario">Calendario</a><a href="#motor">Motor</a><a href="#presupuesto">Presupuesto</a>
+    <a href="#kpi">KPIs</a><a href="#kit">Kit de copys</a><a href="#activar">Activar</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- RESUMEN -->
+  <section id="resumen">
+    <div class="kick">01 · Resumen ejecutivo</div>
+    <h2>La apuesta</h2>
+    <p class="lead">MONSTER KEBABS es una <b>dark kitchen</b> (sin local para comer, solo Uber Eats/Rappi/DiDi
+    y WhatsApp) que vende döner premium con un universo de marca de monstruos. Ya está construido el 90% de
+    lo difícil: identidad, menú, fotografía, video y sistema de operación. <b>Lo que falta es encender la demanda.</b></p>
+    <div class="grid3" style="margin-top:18px">
+      <div class="card"><div class="n">🎯</div><h4>Objetivo de la campaña</h4><p>Pasar de 0 a <b>25–35 órdenes/día</b> en 90 días. El punto de equilibrio está en ~8–10 órdenes/día, así que cada orden arriba de eso es utilidad.</p></div>
+      <div class="card"><div class="n">💡</div><h4>La gran idea</h4><p>“Algo tiene hambre en Morelia.” Un <b>teaser de intriga</b> con los monstruos → la revelación de que es una cocina de kebabs → una manada que crece.</p></div>
+      <div class="card"><div class="n">⚙️</div><h4>El motor</h4><p>Reseñas 5★ y referidos convertidos en descuentos. Cada cliente feliz <b>trae al siguiente</b> — crecimiento compuesto, no solo pauta.</p></div>
+    </div>
+    <div class="note"><b>Honestidad de números:</b> las metas son objetivos para validar en campo, no promesas.
+    El horizonte realista es equilibrio en 3–6 meses y utilidad sana; los $100k USD/mes son un techo lejano (año 3–5).
+    Esta campaña ataca lo primero: <b>tracción real y repetición</b>.</div>
+  </section>
+
+  <!-- AUDIT -->
+  <section id="audit">
+    <div class="kick">02 · Auditoría de contenido</div>
+    <h2>Con qué munición contamos</h2>
+    <p class="lead">Antes de gastar un peso: esto ya existe y es la materia prima de toda la campaña. La regla es
+    <b>reusar y recombinar</b>, no producir de cero.</p>
+    <div class="grid2" style="margin-top:16px">
+      <div class="card">
+        <h4 class="em">Creativo listo para publicar</h4>
+        <ul class="clean">
+          <li><b>2 Reels terminados</b> (monstruos + menú, con audio, sin marca de agua) → <a href="reels.html">reels.html</a></li>
+          <li><b>15 tiles de feed</b> 1:1 en orden de parrilla → <a href="feed-principal.html">feed-principal.html</a></li>
+          <li><b>~20 fotos de producto</b> estilo estudio negro (kebabs, bites, salsas, bebidas)</li>
+          <li><b>4 escenas “archivo”</b> retro-monstruo (sala, antojo, retrato, 3 AM) — <span class="em">oro para el teaser</span></li>
+          <li><b>5 personajes</b>: Kebo, Brasa, Coco, Raúl, Turbo</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 class="em">Base de negocio y conversión</h4>
+        <ul class="clean">
+          <li><b>Menú</b> web + PDF + <b>QR</b> con incentivos → <a href="menu-mesa.html">menu-mesa.html</a></li>
+          <li><b>Kit de lanzamiento IG</b> (perfil, calendario 2 sem, 14 captions) → <a href="kit-lanzamiento.html">kit-lanzamiento.html</a></li>
+          <li><b>Kit de Reels Higgsfield</b> para producir más video → <a href="kit-higgsfield.html">kit-higgsfield.html</a></li>
+          <li><b>Sistema de operación</b> para sostener el volumen → <a href="sistema.html">sistema.html</a></li>
+          <li><b>Empaque brandeado</b> (el unboxing es contenido)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>El hueco real:</b> nada de esto está <em>coordinado en el tiempo</em> ni tiene una capa de
+    <b>pauta pagada</b> ni un <b>motor de reseñas</b> activo. Eso es exactamente lo que resuelve este plan.</div>
+  </section>
+
+  <!-- QUIEN -->
+  <section id="quien">
+    <div class="kick">03 · Audiencia</div>
+    <h2>A quién le hablamos</h2>
+    <p class="lead">Dark kitchen = todo es delivery. El cliente está en su casa, con hambre, con el celular en la mano.
+    Tres segmentos, en orden de prioridad:</p>
+    <div class="grid3" style="margin-top:16px">
+      <div class="card"><h4>① El antojo nocturno</h4><p><b>18–30, Morelia.</b> Estudiantes y jóvenes que piden de noche/madrugada. Viven en apps, siguen tendencias, comparten stories. <span class="em">Nuestro núcleo.</span></p></div>
+      <div class="card"><h4>② El foodie curioso</h4><p><b>22–38.</b> Le gusta probar lo nuevo, fotografía su comida, confía en reseñas. Convierte con fotos y con el factor “raro pero rico”.</p></div>
+      <div class="card"><h4>③ La casa con hambre</h4><p><b>Familias/roomies.</b> Piden para varios el fin de semana. Los mueven los <b>paquetes</b> (La Monstruosa, Pa’ la mesa).</p></div>
+    </div>
+    <h3>Segmentación para pauta</h3>
+    <ul class="clean">
+      <li><b>Geo:</b> radio de reparto real desde la cocina (Morelia; empieza 5–7 km, ajusta a lo que cubren las apps).</li>
+      <li><b>Edad:</b> 18–35. <b>Intereses:</b> comida a domicilio, Uber Eats/Rappi/DiDi, anime/streetwear, comida callejera, food bloggers de Morelia.</li>
+      <li><b>Retargeting:</b> quien vio ≥50% de un Reel, visitó el perfil o escribió por WhatsApp → audiencia caliente para el anuncio de conversión.</li>
+    </ul>
+  </section>
+
+  <!-- IDEA -->
+  <section id="idea">
+    <div class="kick">04 · La gran idea</div>
+    <h2>“Algo tiene hambre en Morelia”</h2>
+    <p class="lead">No lanzamos “otro lugar de kebabs”. Lanzamos un <b>misterio con personaje</b>. La estética
+    retro-monstruo (foto análoga, criatura de utilería, 3 de la mañana) es rara, memorable y no se parece a nada
+    en la ciudad. La campaña convierte esa rareza en <b>curiosidad → antojo → hábito</b>.</p>
+    <div class="grid3" style="margin-top:16px">
+      <div class="card"><div class="n">1</div><h4>Curiosidad</h4><p>“¿Qué es esto?” Sin logo, sin precios. Solo el monstruo y la hora: 3:00 AM. La gente pregunta en comentarios.</p></div>
+      <div class="card"><div class="n">2</div><h4>Antojo</h4><p>La revelación: el monstruo tiene hambre porque <b>hace kebabs</b>. Cae el menú, las fotos, el cheese pull.</p></div>
+      <div class="card"><div class="n">3</div><h4>Hábito</h4><p>Reseña → descuento, referido → premio, junta stickers → kebab gratis. El cliente vuelve y trae gente.</p></div>
+    </div>
+    <p style="margin-top:16px">Frase paraguas: <b class="em">FEED THE MONSTER.</b> El monstruo eres tú cuando tienes hambre — y nosotros lo alimentamos.</p>
+  </section>
+
+  <!-- FASES -->
+  <section id="fases">
+    <div class="kick">05 · El plan en 3 fases</div>
+    <h2>Las 3 fases</h2>
+    <p class="lead">Ancladas a la fecha de apertura (objetivo octubre 2026). Semanas relativas para que funcione
+    aunque la fecha se mueva.</p>
+
+    <div class="phase">
+      <div class="pt">FASE 0 · Semanas −4 a −1 · INTRIGA</div>
+      <h3>La manada despierta</h3>
+      <p>Construir el perfil y la lista de espera <b>antes</b> de abrir. Todavía nadie puede pedir — el objetivo es
+      curiosidad y seguidores.</p>
+      <ul class="clean">
+        <li><b>Contenido:</b> las 4 escenas archivo + Reel de monstruos, sin revelar que es comida. “Algo se mueve en la cocina.”</li>
+        <li><b>CTA:</b> “Únete a la manada” → WhatsApp para <b>lista de espera</b> (los primeros reciben promo de apertura).</li>
+        <li><b>Pauta:</b> presupuesto bajo a Reels de monstruos, objetivo <em>interacción/seguidores</em>, geo Morelia.</li>
+        <li><b>Meta:</b> 500–1,000 seguidores y 100+ en lista de espera de WhatsApp antes de abrir.</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="pt">FASE 1 · Semana 0 · REVELACIÓN</div>
+      <h3>Ya abrimos · Feed the Monster</h3>
+      <p>Se revela que es una cocina de kebabs y se abre en las apps. <b>Semana de máxima intensidad.</b></p>
+      <ul class="clean">
+        <li><b>Contenido:</b> Reel de menú (money-shot), fotos de producto, “ya estamos en Uber/Rappi/DiDi”.</li>
+        <li><b>Promo de apertura:</b> descuento fuerte los primeros 7 días (ej. 2×1 en Kebo Clásico o envío gratis) — <b>comprar reseñas con producto</b>, no con dinero.</li>
+        <li><b>Pauta:</b> anuncio de <em>tráfico/conversión</em> a las apps + retargeting a quien interactuó en Fase 0.</li>
+        <li><b>Influencers:</b> 3–5 foodies de Morelia reciben kebab gratis a cambio de reseña honesta el día de apertura.</li>
+        <li><b>Meta:</b> arrancar en 8–12 órdenes/día y juntar las primeras <b>20–30 reseñas 5★</b>.</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="pt">FASE 2 · Semanas +1 a +8 · TRACCIÓN</div>
+      <h3>Que la manada crezca</h3>
+      <p>Sostener con ritmo de contenido, encender el motor de reseñas/referidos y escalar la pauta que funcione.</p>
+      <ul class="clean">
+        <li><b>Contenido:</b> 4 posts + 3–4 Reels/semana (calendario abajo). UGC de clientes, sabores de bites, La Monstruosa, detrás-de-cámara de la cocina.</li>
+        <li><b>Motor:</b> reseña 5★ = 50% bebida · story = papas gratis · 4 stickers = kebab gratis · refiere = ambos ganan bites.</li>
+        <li><b>Pauta:</b> escalar solo los anuncios con mejor costo por pedido; retargeting constante; anuncios de paquetes al segmento familia el finde.</li>
+        <li><b>Apps:</b> responder TODAS las reseñas, mantener foto/menú impecables, usar las promos internas de cada app para subir en el ranking.</li>
+        <li><b>Meta:</b> 25–35 órdenes/día, calificación ≥4.7 en las 3 apps, 30% de clientes que repiten.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CANALES -->
+  <section id="canales">
+    <div class="kick">06 · Canales</div>
+    <h2>Dónde jugamos y cómo</h2>
+    <div class="grid2" style="margin-top:16px">
+      <div class="card"><h4 class="em">Orgánico · IG + TikTok</h4>
+        <p>El motor de marca. Reels &gt; fotos para alcance. Audio en tendencia. Geolocalizar Morelia. Responder en &lt;1h.</p>
+        <p><b>Ya listo:</b> 2 Reels, 15 tiles, calendario del kit de lanzamiento.</p></div>
+      <div class="card"><h4 class="em">Pagado · Meta Ads (IG/FB)</h4>
+        <p>Nuestros Reels <b>ya son los creativos</b>. Empezar con presupuesto chico, escalar por resultados. 3 tipos de anuncio: intriga, apertura, retargeting.</p>
+        <p><b>Regla:</b> nunca escales un anuncio que no baje el costo por pedido.</p></div>
+      <div class="card"><h4 class="em">WhatsApp · directo</h4>
+        <p>El canal de <b>mayor margen</b> (sin comisión de app). Lista “La Manada” para promos, pedidos directos, lista de espera de Fase 0.</p>
+        <p>Broadcast semanal con el antojo + promo.</p></div>
+      <div class="card"><h4 class="em">Las apps · Uber/Rappi/DiDi</h4>
+        <p>Es un buscador: gana el que tiene <b>mejor foto, más reseñas y promos activas</b>. Optimizar listado, usar promos internas, responder reseñas.</p>
+        <p>Las apps <b>empujan</b> a los que venden y califican bien.</p></div>
+    </div>
+    <div class="card" style="margin-top:16px"><h4 class="em">Influencers locales · el atajo de confianza</h4>
+      <p>Micro-foodies de Morelia (5k–50k) mueven más que una celebridad. Modelo: <b>producto gratis a cambio de una reseña honesta</b> (Reel o story). 3–5 en apertura, 2 nuevos cada mes. Plantilla de mensaje en el kit de abajo.</p>
+    </div>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section id="calendario">
+    <div class="kick">07 · Calendario de contenido</div>
+    <h2>4 semanas, mapeadas a lo que ya tenemos</h2>
+    <p class="lead">Ritmo sostenible: <b>1 post/día</b> (mezcla foto/tarjeta) + <b>3–4 Reels/semana</b>. Cada celda apunta a un asset real.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Semana</th><th>Lun</th><th>Mié</th><th>Vie</th><th>Dom · Reel</th></tr></thead>
+      <tbody>
+        <tr><td><b>−2 (intriga)</b></td><td>Archivo 3 AM</td><td>Retrato monstruo</td><td>“Algo tiene hambre”</td><td><b>Reel monstruos</b></td></tr>
+        <tr><td><b>0 (apertura)</b></td><td>YA ABRIMOS + apps</td><td>Kebo Clásico foto</td><td>Cheese pull</td><td><b>Reel de menú</b></td></tr>
+        <tr><td><b>+1</b></td><td>Reseña 5★=50%</td><td>Monster Bites 3 sabores</td><td>Doble Filo</td><td>Reel Brasa cocina</td></tr>
+        <tr><td><b>+2</b></td><td>La Monstruosa (mesa)</td><td>UGC / reseña real</td><td>Salsas (Brasa/Garra/Diablo)</td><td>Reel producto girando</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Regla de oro del feed:</b> cada 3 fotos, una tarjeta negra/ember de marca rompe el ritmo
+    (ver <a href="feed-principal.html">feed-principal.html</a>). Y siempre cierra igual: logo + apps + promo.</div>
+  </section>
+
+  <!-- MOTOR -->
+  <section id="motor">
+    <div class="kick">08 · El motor de crecimiento</div>
+    <h2>El volante de reseñas y referidos</h2>
+    <p class="lead">La pauta trae al primer cliente; <b>esto trae al segundo, tercero y cuarto</b> sin pagar de más.
+    Va impreso en cada empaque (sticker en la bolsa).</p>
+    <div class="grid2" style="margin-top:16px">
+      <div class="card"><h4>⭐ Reseña 5★ = 50% en tu bebida</h4><p>Califícanos en Google/la app y muestra la captura en tu próximo pedido. Sube el rating → las apps te empujan → más pedidos.</p></div>
+      <div class="card"><h4>📲 Story etiquetándonos = papas gratis</h4><p>Cada cliente que sube una story es un anuncio gratis a sus contactos locales.</p></div>
+      <div class="card"><h4>🧩 Junta los 4 stickers = kebab gratis</h4><p>Cada pedido trae un sticker de la cuadrilla. Coleccionarlos = razón para volver 4 veces.</p></div>
+      <div class="card"><h4>🤝 Refiere y ambos ganan bites</h4><p>Trae un amigo nuevo → los dos reciben bites. Crecimiento de boca en boca con incentivo.</p></div>
+    </div>
+  </section>
+
+  <!-- PRESUPUESTO -->
+  <section id="presupuesto">
+    <div class="kick">09 · Presupuesto</div>
+    <h2>Dónde va cada peso</h2>
+    <p class="lead">Modelo arranque-lean para una dark kitchen. Cifras mensuales en MXN, para ajustar a lo que haya.
+    La pauta empieza chica y solo escala con lo que funcione.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Rubro</th><th>Arranque /mes</th><th>Qué compra</th></tr></thead>
+      <tbody>
+        <tr><td><b>Pauta Meta (IG/FB)</b></td><td>$3,000–5,000</td><td>Intriga + apertura + retargeting. ~$100–170/día en semana de apertura, menos después.</td></tr>
+        <tr><td><b>Influencers (producto)</b></td><td>$1,500–3,000</td><td>Costo de producto de 8–12 kebabs de cortesía/mes. Casi todo es costo de comida, no efectivo.</td></tr>
+        <tr><td><b>Producción de contenido</b></td><td>$0–1,000</td><td>Ya está hecho. Extra opcional: créditos de Higgsfield para más Reels.</td></tr>
+        <tr><td><b>Promos de apertura</b></td><td>Variable</td><td>El “descuento” es margen cedido, no gasto en efectivo. Presupuestar ~15% de ventas de la semana 0.</td></tr>
+        <tr><td><b>Herramientas</b></td><td>$0–300</td><td>CapCut gratis, programador de posts gratis (Meta Business Suite). </td></tr>
+        <tr><td style="border-top:2px solid var(--ember)"><b>TOTAL arranque</b></td><td style="border-top:2px solid var(--ember)"><b class="em">~$5,000–9,000/mes</b></td><td style="border-top:2px solid var(--ember)">Escalar solo si el costo por pedido lo permite.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Métrica que manda:</b> costo por pedido (CPP). Si un anuncio te trae pedidos por
+    debajo de tu utilidad por orden, escálalo. Si no, apágalo. Sin sentimentalismos.</div>
+  </section>
+
+  <!-- KPI -->
+  <section id="kpi">
+    <div class="kick">10 · Medición</div>
+    <h2>Cómo sabemos si funciona</h2>
+    <div class="kpi">
+      <div class="k"><div class="v">8–10</div><div class="l">órdenes/día = equilibrio</div></div>
+      <div class="k"><div class="v">25–35</div><div class="l">órdenes/día meta 90 días</div></div>
+      <div class="k"><div class="v">≥4.7★</div><div class="l">calificación en apps</div></div>
+      <div class="k"><div class="v">≥30%</div><div class="l">clientes que repiten</div></div>
+    </div>
+    <h3>Tablero semanal (revisar cada lunes)</h3>
+    <div class="tw"><table>
+      <thead><tr><th>Métrica</th><th>De dónde</th><th>Señal buena</th></tr></thead>
+      <tbody>
+        <tr><td>Órdenes/día</td><td>Apps + WhatsApp</td><td>Subiendo semana a semana</td></tr>
+        <tr><td>Costo por pedido (pauta)</td><td>Meta Ads</td><td>&lt; utilidad por orden</td></tr>
+        <tr><td>Calificación y # reseñas</td><td>Uber/Rappi/DiDi/Google</td><td>≥4.7 y creciendo</td></tr>
+        <tr><td>% que repite</td><td>Apps</td><td>≥30%</td></tr>
+        <tr><td>Alcance/guardados en Reels</td><td>IG/TikTok insights</td><td>Reels que se guardan = antojo real</td></tr>
+        <tr><td>Nuevos en “La Manada” (WhatsApp)</td><td>WhatsApp</td><td>Creciendo = canal propio sano</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- KIT DE COPYS -->
+  <section id="kit">
+    <div class="kick">11 · Kit de ejecución</div>
+    <h2>Copys listos para copiar y pegar</h2>
+
+    <h3>Anuncios de Meta (texto + titular)</h3>
+    <div class="copy"><span class="lbl">Anuncio A · Intriga (Fase 0) · creativo: Reel monstruos</span>
+      <div class="txt">Algo tiene hambre en Morelia. 👹
+No sabemos qué es… pero despierta de noche.
+Únete a la manada antes de que abra la cocina 👇</div>
+      <div class="hash">Titular: LA MANADA DESPIERTA · CTA: Enviar mensaje (WhatsApp)</div>
+    </div>
+    <div class="copy"><span class="lbl">Anuncio B · Apertura (Fase 1) · creativo: Reel de menú</span>
+      <div class="txt">Ya despertó. Y hace los mejores kebabs de Morelia. 🔥
+Döner premium, al fuego, directo a tu casa.
+Semana de apertura: [promo]. Pídelo en Uber Eats · Rappi · DiDi.</div>
+      <div class="hash">Titular: FEED THE MONSTER · CTA: Pedir ahora</div>
+    </div>
+    <div class="copy"><span class="lbl">Anuncio C · Retargeting (vio el Reel / visitó perfil)</span>
+      <div class="txt">Sabemos que se te antojó. 😏
+Ese kebab sigue esperándote — con queso derretido y todo.
+Reséñanos 5★ en tu primer pedido y tu bebida va al 50%.</div>
+      <div class="hash">Titular: NO PELEES CON EL HAMBRE · CTA: Pedir ahora</div>
+    </div>
+
+    <h3>WhatsApp (broadcast)</h3>
+    <div class="copy"><span class="lbl">Mensaje 1 · Lista de espera (Fase 0)</span>
+      <div class="txt">👹 Estás en la manada.
+Cuando abramos, tú comes primero: promo secreta de apertura solo para esta lista.
+Te avisamos el día 1. No se lo digas al monstruo. 🤫</div>
+    </div>
+    <div class="copy"><span class="lbl">Mensaje 2 · Día de apertura</span>
+      <div class="txt">🚨 YA ABRIMOS. La cocina despertó con hambre.
+Tu promo de la manada: [promo]. Válida hoy.
+Pídelo aquí 👉 [link app] — o responde este chat y te lo armamos directo.</div>
+    </div>
+    <div class="copy"><span class="lbl">Mensaje 3 · Reactivación (no pide en 3 semanas)</span>
+      <div class="txt">¿Te comió el trabajo? El monstruo pregunta por ti. 👀
+Vuelve esta semana y tus Monster Bites van por la casa. 🔥
+👉 [link]</div>
+    </div>
+
+    <h3>Influencers (DM de contacto)</h3>
+    <div class="copy"><span class="lbl">Mensaje para foodie de Morelia</span>
+      <div class="txt">¡Hola [nombre]! Somos MONSTER KEBABS, una nueva dark kitchen de döner premium en Morelia. 🔥
+Nos encanta cómo reseñas la comida local y queremos que seas de los primeros en probarnos.
+Te queremos mandar un pedido completo <b>sin costo</b> — sin compromiso, solo tu opinión honesta.
+Si te late, ¿a qué dirección te lo enviamos? 👹</div>
+    </div>
+
+    <h3>Checklist del día de apertura</h3>
+    <ul class="clean">
+      <li><b>Apps:</b> listado activo con fotos, menú y horarios correctos en Uber/Rappi/DiDi.</li>
+      <li><b>Promo:</b> cargada y visible en cada app + WhatsApp.</li>
+      <li><b>Post + Reel de apertura</b> publicados 9–10 AM; story con “estamos en vivo”.</li>
+      <li><b>Broadcast de WhatsApp</b> a la lista de espera.</li>
+      <li><b>Anuncio B</b> encendido; Anuncio A (intriga) apagado.</li>
+      <li><b>Influencers</b> con su pedido en camino; recordatorio amable de etiquetar.</li>
+      <li><b>Cocina lista</b> para el pico; sticker de reseña en cada empaque.</li>
+      <li>Responder <b>cada</b> comentario y reseña el mismo día.</li>
+    </ul>
+  </section>
+
+  <!-- ACTIVAR -->
+  <section id="activar">
+    <div class="kick">12 · Cómo la activas</div>
+    <h2>De plan a realidad</h2>
+    <p class="lead">Todo el creativo y los copys están listos. Estos son los pasos que <b>solo tú puedes dar</b>
+    (requieren tus cuentas, tu dinero y decisiones de negocio):</p>
+    <ul class="clean">
+      <li><b>1. Abrir las cuentas:</b> IG/TikTok @monsterkebabs, Meta Business Suite, y las 3 apps de delivery (esto también destraba el convenio con el tío y la prueba de cocina).</li>
+      <li><b>2. Definir la fecha</b> real de apertura → colgar de ahí las semanas −4 a +8.</li>
+      <li><b>3. Cargar el creativo</b> (Reels y tiles ya exportados) y programar con Meta Business Suite (gratis).</li>
+      <li><b>4. Poner el presupuesto</b> de pauta (empieza con $100–150/día en la semana de apertura).</li>
+      <li><b>5. Contactar 3–5 foodies</b> de Morelia con el DM de arriba.</li>
+      <li><b>6. Revisar el tablero</b> cada lunes y mover dinero a lo que funciona.</li>
+    </ul>
+    <div class="note"><b>Lo que yo puedo seguir haciendo:</b> producir más Reels (teaser 3 AM, sabores de bites,
+    La Monstruosa), variantes de anuncios, más tiles de feed, y afinar el calendario. Solo dime cuál sigue.</div>
+    <div class="note" style="border-color:var(--ember)"><b>Regla #1 del proyecto:</b> nada de nuevas ideas hasta
+    tener los primeros clientes cobrados. Esta campaña existe para conseguir <b>esos</b> primeros clientes — foco total.</div>
+  </section>
+
+</div>
+
+<footer>MONSTER KEBABS · CAMPAÑA “ALIMENTA AL MONSTRUO” · FEED THE MONSTER</footer>
+
+</body>
+</html>
