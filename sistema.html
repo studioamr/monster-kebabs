@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EL SISTEMA — MONSTER KEBABS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+<style>
+  .frase{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(28px,4.5vw,52px);line-height:1.15;color:var(--humo);max-width:900px}
+  .frase b{color:var(--hueso);font-weight:400}
+  .frase .fire{color:var(--ember)}
+  .frase cite{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;color:var(--ember);text-transform:uppercase;margin-top:22px;font-style:normal}
+  .maestros{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .maestro{background:var(--tinta);padding:28px 24px}
+  .maestro .mn{font-family:'Anton',sans-serif;font-size:22px;text-transform:uppercase}
+  .maestro .mw{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin:6px 0 14px}
+  .maestro p{color:var(--humo);font-size:13.5px;line-height:1.65}
+  .maestro .roba{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);font-size:13px;color:var(--hueso);line-height:1.6}
+  .maestro .roba b{color:var(--ember)}
+  .fase{border:1px solid var(--line);margin-bottom:18px}
+  .fase-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:18px 22px;background:var(--tinta2);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .fase-h h3{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase}
+  .fase-h .fw{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.13em;color:var(--humo);text-transform:uppercase}
+  .org{padding:26px 22px;overflow-x:auto}
+  .org svg{display:block;min-width:520px;margin:0 auto}
+  .fase p.fn{padding:0 22px 20px;color:var(--humo);font-size:13px;line-height:1.7}
+  .fase p.fn b{color:var(--hueso)}
+  .manuales{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .manual{background:var(--tinta);padding:26px 24px}
+  .manual .idx{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ember);letter-spacing:.12em}
+  .manual h3{font-family:'Anton',sans-serif;font-size:21px;text-transform:uppercase;margin:8px 0 10px}
+  .manual ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .manual li{font-size:13px;color:var(--humo);line-height:1.5;padding-left:18px;position:relative}
+  .manual li::before{content:"—";position:absolute;left:0;color:var(--ember)}
+  .manual .estado{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;margin-top:14px;color:var(--humo)}
+  .manual .estado.listo{color:var(--ember)}
+  .niveles{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .nivel{background:var(--tinta);padding:22px 16px;text-align:center}
+  .nivel .nn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase;color:var(--ember)}
+  .nivel .nd{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--humo);text-transform:uppercase;margin:6px 0 12px}
+  .nivel p{font-size:12px;color:var(--humo);line-height:1.55}
+  .estaciones{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .est{background:var(--tinta);padding:22px 24px}
+  .est h4{font-family:'Anton',sans-serif;font-size:17px;text-transform:uppercase}
+  .est .et{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--ember);margin:4px 0 10px}
+  .est p{font-size:13px;color:var(--humo);line-height:1.6}
+  .kpis{width:100%;border-collapse:collapse}
+  .kpis th{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;text-align:left;padding:12px 20px;border-bottom:1px solid var(--line);font-weight:400}
+  .kpis td{padding:12px 20px;font-size:13px;color:var(--humo);border-bottom:1px solid var(--line);vertical-align:top}
+  .kpis tr:last-child td{border-bottom:none}
+  .kpis td b{color:var(--hueso)}
+  .kpis .meta{font-family:'IBM Plex Mono',monospace;color:var(--ember);white-space:nowrap}
+  .secuencia{list-style:none;counter-reset:paso}
+  .secuencia li{display:grid;grid-template-columns:48px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .secuencia li:first-child{border-top:1px solid var(--line)}
+  .secuencia li::before{counter-increment:paso;content:counter(paso);font-family:'Anton',sans-serif;font-size:26px;color:var(--ember);line-height:1}
+  .secuencia p{color:var(--humo);font-size:14px;line-height:1.6}
+  .secuencia b{color:var(--hueso)}
+  .callout{border:1px dashed var(--ember);padding:20px 24px;margin-top:20px;font-size:14px;color:var(--humo);line-height:1.7}
+  .callout b{color:var(--ember)}
+  @media(max-width:820px){.maestros,.manuales,.estaciones{grid-template-columns:1fr}.niveles{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div><b>MONSTER KEBABS</b><span class="dot"> ●</span> EL SISTEMA</div>
+  <nav class="nav"><a href="index.html">MARCA</a><a href="plan.html">PLAN</a><a href="numeros.html">NÚMEROS</a><a href="socios.html">SOCIOS</a></nav>
+</div>
+
+<section class="page-head">
+  <div class="label">MANUAL DE OPERACIÓN — PARA EL ENCARGADO</div>
+  <h1 class="display">El sistema</h1>
+  <p class="sub">Cómo convertir dos chefs en una máquina que se replica sin ti adentro. No vendemos kebabs:
+  vendemos un sistema que produce el MISMO kebab, en cualquier cocina, con cualquier persona bien entrenada.
+  Esta es la biblia que se le entrega al gerente.</p>
+</section>
+
+<!-- FILOSOFÍA -->
+<section class="rv" style="padding-top:20px">
+  <div class="label">01 — LA REGLA DE ORO</div>
+  <p class="frase"><b>El sistema es la estrella,</b> no el chef. Un chico de 19 años bien entrenado
+  produce <span class="fire">el mismo kebab</span> que el jefe de cocina — porque el sistema piensa por él.
+  <cite>— La lección de Ray Kroc (McDonald's)</cite></p>
+</section>
+
+<!-- LOS 3 MAESTROS -->
+<section class="rv">
+  <div class="label">02 — A QUIÉN LE ROBAMOS (LOS CASOS DE ÉXITO)</div>
+  <div class="maestros">
+    <div class="maestro">
+      <div class="mn">McDonald's</div>
+      <div class="mw">CONSISTENCIA > GENIALIDAD</div>
+      <p>Ray Kroc no inventó la hamburguesa: inventó el SISTEMA. Todo cronometrado, todo con foto patrón, todo en checklist. La Hamburger University certifica a cada gerente. Su obsesión: Q.S.C. — Calidad, Servicio, Limpieza — idéntica en 40,000 locales.</p>
+      <div class="roba"><b>Robamos:</b> todo se documenta, se cronometra y se palomea. Cero decisiones "al gusto". El sistema decide.</div>
+    </div>
+    <div class="maestro">
+      <div class="mn">Shake Shack</div>
+      <div class="mw">HOSPITALIDAD ILUMINADA</div>
+      <p>Danny Meyer contrata por ACTITUD, no por currículum: 51% persona / 49% técnica. "Estamos en el negocio de cuidar personas, que dan la casualidad de vender comida." La cultura se cuida primero; la técnica se entrena.</p>
+      <div class="roba"><b>Robamos:</b> contratamos gente buena y entrenable, no "el mejor cocinero". La técnica se enseña; la actitud no.</div>
+    </div>
+    <div class="maestro">
+      <div class="mn">Domino's / Dark Kitchen</div>
+      <div class="mw">EL RELOJ ES EL JEFE</div>
+      <p>El delivery vive o muere por minutos. Domino's convirtió la pizza en una línea de ensamblaje con estaciones fijas y tiempos por paso. Nadie improvisa; cada persona domina su estación.</p>
+      <div class="roba"><b>Robamos:</b> el sistema de estaciones + tiempos objetivo. Una orden completa en ≤8 minutos, siempre.</div>
+    </div>
+  </div>
+  <p class="note">NOTA HONESTA: LOS PRINCIPIOS SON DE CASOS VERIFICADOS DE LA INDUSTRIA QSR. EL SECRETO NO ES COPIAR SU MENÚ —
+  <em>ES COPIAR SU DISCIPLINA DE SISTEMA.</em></p>
+</section>
+
+<!-- ORGANIGRAMA -->
+<section class="rv">
+  <div class="label">03 — EL ORGANIGRAMA QUE ESCALA</div>
+  <p class="sub" style="margin-bottom:24px">La misma persona que hoy es gerente, mañana es director de área. Se contrata y se entrena
+  pensando en el puesto de arriba desde el día uno.</p>
+
+  <div class="fase">
+    <div class="fase-h"><h3>Fase 1 — Un local</h3><span class="fw">MESES 0–12 · TÚ AÚN CERCA</span></div>
+    <div class="org">
+      <svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono,monospace">
+        <rect x="200" y="16" width="160" height="46" fill="none" stroke="#FF4E1B" stroke-width="1.5"/>
+        <text x="280" y="38" fill="#EFE9DF" font-size="13" text-anchor="middle">DUEÑOS</text>
+        <text x="280" y="54" fill="#8A837A" font-size="9" text-anchor="middle">André + Goyo · estrategia</text>
+        <line x1="280" y1="62" x2="280" y2="94" stroke="#8A837A" stroke-width="1"/>
+        <rect x="200" y="94" width="160" height="46" fill="none" stroke="#EFE9DF" stroke-width="1.2"/>
+        <text x="280" y="116" fill="#EFE9DF" font-size="13" text-anchor="middle">GERENTE DE LOCAL</text>
+        <text x="280" y="132" fill="#8A837A" font-size="9" text-anchor="middle">el que sabe TODOS los procesos</text>
+        <line x1="280" y1="140" x2="280" y2="164" stroke="#8A837A" stroke-width="1"/>
+        <line x1="120" y1="164" x2="440" y2="164" stroke="#8A837A" stroke-width="1"/>
+        <line x1="120" y1="164" x2="120" y2="188" stroke="#8A837A" stroke-width="1"/>
+        <line x1="280" y1="164" x2="280" y2="188" stroke="#8A837A" stroke-width="1"/>
+        <line x1="440" y1="164" x2="440" y2="188" stroke="#8A837A" stroke-width="1"/>
+        <rect x="50" y="188" width="140" height="44" fill="none" stroke="#8A837A" stroke-width="1"/>
+        <text x="120" y="208" fill="#EFE9DF" font-size="12" text-anchor="middle">CHEF LÍNEA 1</text>
+        <text x="120" y="223" fill="#8A837A" font-size="9" text-anchor="middle">trompo + plancha</text>
+        <rect x="210" y="188" width="140" height="44" fill="none" stroke="#8A837A" stroke-width="1"/>
+        <text x="280" y="208" fill="#EFE9DF" font-size="12" text-anchor="middle">CHEF LÍNEA 2</text>
+        <text x="280" y="223" fill="#8A837A" font-size="9" text-anchor="middle">papas + armado + despacho</text>
+        <rect x="370" y="188" width="140" height="44" fill="none" stroke="#8A837A" stroke-width="1"/>
+        <text x="440" y="208" fill="#EFE9DF" font-size="12" text-anchor="middle">REPARTIDORES</text>
+        <text x="440" y="223" fill="#8A837A" font-size="9" text-anchor="middle">app / plataformas</text>
+      </svg>
+    </div>
+    <p class="fn"><b>Los 2 chefs</b> los capacitan ustedes primero. <b>El gerente</b> aprende TODAS las estaciones + los números.
+    Tú entras solo a revisar KPIs, no a cocinar.</p>
+  </div>
+
+  <div class="fase">
+    <div class="fase-h"><h3>Fase 2 — 3–4 locales</h3><span class="fw">AÑO 2–3 · TÚ CASI FUERA</span></div>
+    <div class="org">
+      <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono,monospace">
+        <rect x="200" y="16" width="160" height="42" fill="none" stroke="#FF4E1B" stroke-width="1.5"/>
+        <text x="280" y="42" fill="#EFE9DF" font-size="13" text-anchor="middle">DUEÑOS</text>
+        <line x1="280" y1="58" x2="280" y2="82" stroke="#8A837A" stroke-width="1"/>
+        <rect x="190" y="82" width="180" height="46" fill="none" stroke="#FF4E1B" stroke-width="1.2"/>
+        <text x="280" y="104" fill="#FF4E1B" font-size="13" text-anchor="middle">DIRECTOR DE ÁREA</text>
+        <text x="280" y="120" fill="#8A837A" font-size="9" text-anchor="middle">el ex-gerente ascendido</text>
+        <line x1="280" y1="128" x2="280" y2="150" stroke="#8A837A" stroke-width="1"/>
+        <line x1="110" y1="150" x2="450" y2="150" stroke="#8A837A" stroke-width="1"/>
+        <line x1="110" y1="150" x2="110" y2="174" stroke="#8A837A" stroke-width="1"/>
+        <line x1="280" y1="150" x2="280" y2="174" stroke="#8A837A" stroke-width="1"/>
+        <line x1="450" y1="150" x2="450" y2="174" stroke="#8A837A" stroke-width="1"/>
+        <rect x="45" y="174" width="130" height="42" fill="none" stroke="#EFE9DF" stroke-width="1"/>
+        <text x="110" y="199" fill="#EFE9DF" font-size="11" text-anchor="middle">GERENTE LOCAL 1</text>
+        <rect x="215" y="174" width="130" height="42" fill="none" stroke="#EFE9DF" stroke-width="1"/>
+        <text x="280" y="199" fill="#EFE9DF" font-size="11" text-anchor="middle">GERENTE LOCAL 2</text>
+        <rect x="385" y="174" width="130" height="42" fill="none" stroke="#EFE9DF" stroke-width="1"/>
+        <text x="450" y="199" fill="#EFE9DF" font-size="11" text-anchor="middle">GERENTE LOCAL 3</text>
+        <text x="280" y="252" fill="#8A837A" font-size="10" text-anchor="middle">cada gerente con sus 2 chefs + repartidores (mismo molde de la Fase 1)</text>
+        <line x1="110" y1="216" x2="110" y2="234" stroke="#8A837A" stroke-width="1" opacity=".5"/>
+        <line x1="280" y1="216" x2="280" y2="234" stroke="#8A837A" stroke-width="1" opacity=".5"/>
+        <line x1="450" y1="216" x2="450" y2="234" stroke="#8A837A" stroke-width="1" opacity=".5"/>
+      </svg>
+    </div>
+    <p class="fn"><b>El gerente de la Fase 1 sube a Director de Área.</b> Ya probó que domina el sistema — ahora lo replica.
+    Cada local nuevo copia el molde: 1 gerente + 2 chefs. Tú revisas al Director, no a cada local.</p>
+  </div>
+
+  <div class="callout"><b>La clave del ascenso:</b> nadie sube de nivel sin haber <b>documentado y entrenado a su reemplazo</b>.
+  El gerente no se vuelve Director hasta que dejó un gerente entrenado en su lugar. Así el sistema nunca depende de una sola persona.</div>
+</section>
+
+<!-- LOS 4 MANUALES -->
+<section class="rv">
+  <div class="label">04 — LOS 4 MANUALES (LA BIBLIA QUE SE ENTREGA)</div>
+  <div class="manuales">
+    <div class="manual">
+      <div class="idx">M-01</div><h3>Manual de Marca</h3>
+      <ul>
+        <li>Logo, colores, KEBO, tono de voz</li>
+        <li>Qué jamás hacer con la marca</li>
+        <li>Plantillas de contenido</li>
+      </ul>
+      <div class="estado listo">✅ YA EXISTE — index / logos / bestiario</div>
+    </div>
+    <div class="manual">
+      <div class="idx">M-02</div><h3>Manual de Cocina</h3>
+      <ul>
+        <li>1 ficha por platillo: gramajes exactos, foto patrón</li>
+        <li>Tolerancias (qué SÍ y qué NO pasa a despacho)</li>
+        <li>Marinado 24h, salsas, sazonadores — recetas cerradas</li>
+        <li>Proveeduría central (salsas KEBO se compran, no se inventan)</li>
+      </ul>
+      <div class="estado">🔨 SE CONSTRUYE EN LA CAPACITACIÓN DE LOS CHEFS</div>
+    </div>
+    <div class="manual">
+      <div class="idx">M-03</div><h3>Manual de Operación</h3>
+      <ul>
+        <li>Apertura y cierre (checklists firmables)</li>
+        <li>Sistema de estaciones + tiempos objetivo</li>
+        <li>Manejo de tablets (3 plataformas), ítem agotado, picos</li>
+        <li>Higiene y temperaturas (base para COFEPRIS)</li>
+      </ul>
+      <div class="estado">🔨 BASE LISTA (CAP. 06) — SE COMPLETA OPERANDO</div>
+    </div>
+    <div class="manual">
+      <div class="idx">M-04</div><h3>Manual de Gente y Servicio</h3>
+      <ul>
+        <li>Cómo contratar (por actitud — la ficha de entrevista)</li>
+        <li>Ruta de capacitación certificada (Academia Monster)</li>
+        <li>Matriz de quejas y reembolsos (qué puede resolver el turno solo)</li>
+        <li>Cultura: las reglas no negociables</li>
+      </ul>
+      <div class="estado">🔨 SE CONSTRUYE JUNTOS — ES EL FALTANTE CLAVE</div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMIA -->
+<section class="rv">
+  <div class="label">05 — ACADEMIA MONSTER (LA RUTA DE CAPACITACIÓN)</div>
+  <p class="sub" style="margin-bottom:24px">Igual que un cliente "evoluciona a su monstruo", el equipo evoluciona su rango.
+  Nadie opera solo hasta certificar el nivel. Cada nivel tiene examen práctico y quién lo evalúa.</p>
+  <div class="niveles">
+    <div class="nivel"><div class="nn">Huevo</div><div class="nd">Día 1–3</div><p>Inducción: marca, higiene, seguridad. Observa y apoya. No toca la línea solo.</p></div>
+    <div class="nivel"><div class="nn">Cría</div><div class="nd">Semana 1</div><p>Domina UNA estación con foto patrón y tiempo. Certifica el gerente.</p></div>
+    <div class="nivel"><div class="nn">Bestia</div><div class="nd">Mes 1</div><p>Domina las DOS estaciones de cocina. Puede cubrir un turno de pico.</p></div>
+    <div class="nivel"><div class="nn">Kaiju</div><div class="nd">Mes 3</div><p>Multi-estación + abre y cierra + entrena a un Cría. Candidato a gerente.</p></div>
+    <div class="nivel"><div class="nn">Alpha</div><div class="nd">Gerente</div><p>Domina todo + los números + contratación. Certificado por los dueños.</p></div>
+  </div>
+  <div class="callout"><b>Regla McDonald's-Hamburger University:</b> la certificación se documenta con firma y fecha.
+  Un empleado sin certificar en una estación NO opera esa estación solo. Esto es lo que hace que la calidad no dependa de "quién esté ese día".</div>
+</section>
+
+<!-- ESTACIONES -->
+<section class="rv">
+  <div class="label">06 — EL SISTEMA DE ESTACIONES (LA LÍNEA)</div>
+  <p class="sub" style="margin-bottom:24px">Cada persona DUEÑA de su estación, con su tarjeta pegada en la pared. El producto fluye
+  en una sola dirección. Nadie cruza de regreso con comida en la mano.</p>
+  <div class="estaciones">
+    <div class="est"><h4>E1 · Prep AM</h4><div class="et">2.5 H ANTES DE ABRIR</div><p>Trompo montado (marinado del día anterior), papa cambray porcionada, verdura del día, salsas etiquetadas con fecha/hora, bebidas de casa. Checklist de temperaturas firmado.</p></div>
+    <div class="est"><h4>E2 · Línea caliente</h4><div class="et">TROMPO → PLANCHA → FREIDORA</div><p>Corte, pita a la plancha, papas al aceite (timer 3:00). Un chef cubre los 3 pasos en flujo de L. Foto patrón a la vista.</p></div>
+    <div class="est"><h4>E3 · Armado y empaque</h4><div class="et">MESA FRÍA + SELLADO</div><p>Kebab armado, envoltura encerada, caja, sello con hora, sticker coleccionable, bolsa. La prueba de los 25 minutos aplica aquí.</p></div>
+    <div class="est"><h4>E4 · Despacho</h4><div class="et">TABLETS + REPARTIDORES</div><p>3 plataformas, verificación de código, foto de control 1/10 órdenes, entrega al repartidor. El reloj manda: ≤8 min de aceptar a entregar.</p></div>
+  </div>
+</section>
+
+<!-- CUADRO DE MANDO -->
+<section class="rv">
+  <div class="label">07 — EL CUADRO DE MANDO (PARA QUE TÚ NO ESTÉS AHÍ)</div>
+  <p class="sub" style="margin-bottom:24px">El gerente reporta estos números todos los días. Tú los revisas en 15 minutos desde tu celular.
+  Si un número se sale del rango, actúas; si no, la máquina corre sola.</p>
+  <table class="kpis">
+    <tr><th>Indicador</th><th>Meta</th><th>Quién lo reporta / cada cuándo</th></tr>
+    <tr><td><b>Órdenes del día</b></td><td class="meta">curva del plan</td><td>Gerente · diario (captura de las 3 apps)</td></tr>
+    <tr><td><b>Rating por plataforma</b></td><td class="meta">≥ 4.7</td><td>Gerente · diario</td></tr>
+    <tr><td><b>Tiempo aceptar → listo</b></td><td class="meta">≤ 8 min</td><td>Gerente · promedio del día</td></tr>
+    <tr><td><b>Órdenes con error/faltante</b></td><td class="meta">< 2%</td><td>Gerente · diario (quejas y reembolsos)</td></tr>
+    <tr><td><b>Food cost real</b></td><td class="meta">≤ 32%</td><td>Gerente · semanal (compras vs venta)</td></tr>
+    <tr><td><b>Merma</b></td><td class="meta">< 4%</td><td>Gerente · semanal (lo que se tira, se anota)</td></tr>
+    <tr><td><b>% órdenes con combo</b></td><td class="meta">> 45%</td><td>Gerente · semanal</td></tr>
+  </table>
+  <div class="callout"><b>El ritual:</b> lunes 30 minutos, reporte semanal contra la calculadora (<a href="numeros.html" style="color:var(--ember)">numeros.html</a>).
+  Cliente misterioso 1 pedido/semana (lo haces tú o alguien de confianza). Así detectas problemas ANTES de que lleguen a las reseñas.</div>
+</section>
+
+<!-- CONTRATACIÓN -->
+<section class="rv">
+  <div class="label">08 — CONTRATAR (LA FORMA SHAKE SHACK)</div>
+  <p class="frase" style="font-size:clamp(20px,3vw,32px)"><b>Contrata la actitud,</b> entrena la técnica.
+  Un cocinero brillante con mala actitud <span class="fire">rompe el sistema</span>; una buena persona entrenable lo hace crecer.</p>
+  <div class="manuales" style="margin-top:24px">
+    <div class="manual">
+      <div class="idx">✓ BUSCAR</div><h3>Sí contratar</h3>
+      <ul>
+        <li>Puntual y limpio (se ve en la entrevista)</li>
+        <li>Le gusta el detalle y hacer bien las cosas</li>
+        <li>Se lleva bien, no es conflictivo</li>
+        <li>Quiere crecer (el que ve carrera, no chamba)</li>
+      </ul>
+    </div>
+    <div class="manual">
+      <div class="idx">✕ EVITAR</div><h3>No contratar</h3>
+      <ul>
+        <li>"El chef estrella" que no sigue recetas</li>
+        <li>Improvisa "a su gusto" en vez del estándar</li>
+        <li>No acepta que lo evalúen ni corrijan</li>
+        <li>Solo viene por el sueldo, sin interés en la marca</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECUENCIA -->
+<section class="rv">
+  <div class="label">09 — CÓMO CONSTRUIMOS TODO ESTO (LA SECUENCIA)</div>
+  <ol class="secuencia">
+    <li><p><b>Ustedes clavan la receta primero.</b> Antes de contratar a nadie, André + Goyo cocinan el menú hasta que salga idéntico 3 veces seguidas. Eso se fotografía = las fotos patrón del M-02.</p></li>
+    <li><p><b>Se escribe el M-02 (Cocina) mientras cocinan.</b> Cada platillo = 1 ficha con gramajes, pasos, foto y tolerancias. Yo lo redacto contigo a partir de lo que hagan.</p></li>
+    <li><p><b>Contratan a los 2 chefs</b> (por actitud) y ustedes los capacitan con el M-02. Ellos son los primeros en pasar la Academia: Huevo → Cría → Bestia.</p></li>
+    <li><p><b>Operan juntos las primeras 3 semanas.</b> Ahí se completa el M-03 (Operación): apertura, cierre, tiempos reales, qué falló. El manual sale de operar, no de escritorio.</p></li>
+    <li><p><b>Contratan y entrenan al Gerente.</b> Aprende TODAS las estaciones + el cuadro de mando. Certifica nivel Alpha. A partir de aquí, tú te despegas de la cocina.</p></li>
+    <li><p><b>Escribimos el M-04 (Gente).</b> Con lo aprendido entrenando a los chefs y al gerente, se documenta cómo contratar y capacitar al siguiente. Esto es lo que hace replicable el local 2.</p></li>
+    <li><p><b>El gerente prueba que opera sin ti 30 días seguidos.</b> KPIs verdes, tú solo revisando el cuadro de mando. Esa es la compuerta para pensar en el local 2.</p></li>
+    <li><p><b>Local 2 = el molde se copia.</b> El gerente sube a Director de Área, entrena al gerente nuevo con los 4 manuales ya escritos. El sistema se replica solo.</p></li>
+  </ol>
+</section>
+
+<footer class="rv">
+  <div class="big display">El chef cocina.<br>El sistema<span> escala.</span></div>
+  <div class="foot-meta">
+    <span>MONSTER KEBABS® — SISTEMA DE OPERACIÓN V1</span>
+    <span>PARA EL ENCARGADO DE ÁREA</span>
+    <span>MORELIA — 2026</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
