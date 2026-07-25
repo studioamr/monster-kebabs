@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIT DE LANZAMIENTO · INSTAGRAM — MONSTER KEBABS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+<style>
+  .wrap{max-width:1040px;margin:0 auto;padding:0 26px}
+  .head{text-align:center;padding:56px 0 30px;border-bottom:2px solid var(--ember)}
+  .head .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;color:var(--ember);text-transform:uppercase}
+  .head h1{font-family:'Anton',sans-serif;font-size:clamp(38px,7vw,68px);text-transform:uppercase;line-height:.95;margin-top:14px}
+  .head p{color:var(--humo);font-size:14px;line-height:1.7;margin-top:16px;max-width:640px;margin-left:auto;margin-right:auto}
+  .sec{padding:44px 0;border-bottom:1px solid var(--line)}
+  .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--ember);text-transform:uppercase;margin-bottom:8px}
+  .lbl::before{content:"";display:inline-block;width:22px;height:1px;background:var(--ember);vertical-align:middle;margin-right:10px}
+  .sec h2{font-family:'Anton',sans-serif;font-size:clamp(23px,4vw,34px);text-transform:uppercase;line-height:1.05}
+  .sec h2 span{color:var(--ember)}
+  .sec .intro{color:var(--humo);font-size:14px;line-height:1.7;margin-top:12px;max-width:760px}
+  /* estrategia */
+  .fases{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:22px}
+  .fase{background:var(--tinta);padding:22px 22px}
+  .fase .fn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
+  .fase .fw{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;color:var(--ember);text-transform:uppercase;margin:4px 0 10px}
+  .fase p{color:var(--humo);font-size:12.5px;line-height:1.6}
+  /* perfil */
+  .perfil{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:22px}
+  .pf{background:var(--tinta);padding:22px 24px}
+  .pf .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase}
+  .pf .v{font-size:13.5px;color:var(--hueso);margin-top:10px;line-height:1.7;white-space:pre-line}
+  .pf .v b{color:var(--ember)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+  .chips span{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:6px 11px;color:var(--hueso)}
+  /* calendario */
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:22px}
+  .cd{background:var(--tinta2);border:1px solid var(--line);padding:10px 9px;min-height:96px}
+  .cd .d{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--humo);letter-spacing:.1em;text-transform:uppercase}
+  .cd .t{font-size:11px;color:var(--hueso);margin-top:6px;line-height:1.35}
+  .cd.post{border-color:var(--ember)}
+  .cd .badge{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--ember);letter-spacing:.1em;text-transform:uppercase;margin-top:6px;display:block}
+  /* posts */
+  .post-c{display:grid;grid-template-columns:220px 1fr;gap:20px;background:var(--tinta2);border:1px solid var(--line);margin-top:16px}
+  .post-c .im{position:relative}
+  .post-c .im img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1}
+  .post-c .im .num{position:absolute;top:10px;left:10px;font-family:'Anton',sans-serif;font-size:20px;color:var(--hueso);background:rgba(11,10,9,.7);padding:2px 10px}
+  .post-c .bd{padding:18px 22px 20px}
+  .post-c .type{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase}
+  .post-c .title{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;margin:5px 0 10px;line-height:1.05}
+  .post-c .cap{font-size:13px;color:var(--hueso);line-height:1.6;background:var(--tinta);border-left:2px solid var(--ember);padding:12px 14px;white-space:pre-line}
+  .post-c .ht{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--humo);margin-top:10px;line-height:1.6}
+  .post-c .note{font-size:11.5px;color:var(--humo);margin-top:10px;line-height:1.5}
+  .post-c .note b{color:var(--hueso)}
+  /* stories */
+  .stories{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  .st{background:var(--tinta2);border:1px solid var(--line);padding:18px 18px}
+  .st .sn{font-family:'Anton',sans-serif;font-size:16px;text-transform:uppercase}
+  .st .sd{font-size:12px;color:var(--humo);line-height:1.55;margin-top:8px}
+  .st .sd b{color:var(--ember)}
+  /* hashtags maestros */
+  .htbox{background:var(--tinta2);border:1px solid var(--line);padding:20px 22px;margin-top:20px}
+  .htbox .h{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-bottom:10px}
+  .htbox p{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--hueso);line-height:1.9}
+  .tips{list-style:none;margin-top:18px;display:grid;gap:10px}
+  .tips li{display:grid;grid-template-columns:24px 1fr;gap:12px;font-size:13.5px;color:var(--humo);line-height:1.6}
+  .tips li b{color:var(--hueso)}
+  .tips .n{font-family:'Anton',sans-serif;color:var(--ember);font-size:16px}
+  @media(max-width:820px){.fases,.perfil{grid-template-columns:1fr}.cal{grid-template-columns:repeat(3,1fr)}.post-c{grid-template-columns:1fr}.stories{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="head">
+    <div class="tag">KIT DE LANZAMIENTO · INSTAGRAM</div>
+    <h1>Feed the<br>algorithm</h1>
+    <p>Todo listo para prender @monsterkebabs de cero: la estrategia, el perfil, un calendario de 2 semanas
+    y 14 posts con caption listo para copiar y pegar. El objetivo no es "postear bonito" — es construir
+    presencia, reseñas y pedidos desde el día uno.</p>
+  </div>
+
+  <!-- ESTRATEGIA -->
+  <section class="sec">
+    <div class="lbl">01 — LA ESTRATEGIA</div>
+    <h2>3 fases, 2 semanas, <span>un objetivo</span></h2>
+    <p class="intro">Un negocio nuevo vive de dos cosas: que la gente sepa que existe y que otros lo recomienden.
+    Todo el kit empuja hacia allá — intriga primero, producto después, comunidad para que se quede.</p>
+    <div class="fases">
+      <div class="fase"><div class="fn">Fase 1 · Intriga</div><div class="fw">DÍAS -5 A 0 · PRE-APERTURA</div>
+        <p>Nadie conoce a la marca todavía. Se siembra misterio: la garra, el monstruo, la cuenta regresiva. Meta: que quieran saber qué es.</p></div>
+      <div class="fase"><div class="fn">Fase 2 · Apertura</div><div class="fw">DÍAS 1 A 7 · EL PRODUCTO</div>
+        <p>Ya estás en las apps. Aquí entra la comida: los kebabs, los tamaños, las papas, El Alpha. Meta: antojar y decir dónde pedir.</p></div>
+      <div class="fase"><div class="fn">Fase 3 · Comunidad</div><div class="fw">DÍAS 8 A 14 · PRESENCIA</div>
+        <p>El equipo, la Monstruosa, los incentivos (reseña/story) y los reposts de clientes. Meta: que la gente hable de ti y repita.</p></div>
+    </div>
+  </section>
+
+  <!-- PERFIL -->
+  <section class="sec">
+    <div class="lbl">02 — MONTA EL PERFIL PRIMERO</div>
+    <h2>Antes del primer post</h2>
+    <div class="perfil">
+      <div class="pf"><div class="k">BIO (cópiala)</div>
+        <div class="v">🔥 Kebabs de monstruo · al fuego
+Dark kitchen · Morelia
+Pídelo → Uber Eats · Rappi · DiDi
+Reséñanos y gánate tu bebida al 50% ↓</div>
+        <div class="note" style="font-size:11.5px;color:var(--humo);margin-top:10px">Nombre visible: <b style="color:var(--hueso)">MONSTER KEBABS · Morelia</b> (ayuda a que te encuentren por búsqueda). Foto de perfil: la garra sobre negro.</div>
+      </div>
+      <div class="pf"><div class="k">DESTACADAS (highlights)</div>
+        <div class="v">Crea 4 con portada de la garra:</div>
+        <div class="chips"><span>📋 Menú</span><span>🛵 Cómo pedir</span><span>⭐ Premios</span><span>👹 El equipo</span></div>
+        <div class="note" style="font-size:11.5px;color:var(--humo);margin-top:12px"><b style="color:var(--hueso)">Link en bio:</b> el menú público (studioamr.github.io/monster-kebabs/menu-mesa.html) o un Linktree con las 3 apps.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section class="sec">
+    <div class="lbl">03 — EL CALENDARIO</div>
+    <h2>2 semanas, día por <span>día</span></h2>
+    <p class="intro">No hace falta postear todos los días — 4-5 posts por semana + stories diarias es suficiente y sostenible.
+    Los números son los posts de abajo.</p>
+    <div class="cal">
+      <div class="cd post"><div class="d">LUN · pre</div><div class="t">Teaser garra</div><span class="badge">POST 1</span></div>
+      <div class="cd"><div class="d">MAR</div><div class="t">Story: "algo viene"</div></div>
+      <div class="cd post"><div class="d">MIÉ · pre</div><div class="t">Reveal Kebo</div><span class="badge">POST 2</span></div>
+      <div class="cd"><div class="d">JUE</div><div class="t">Story: encuesta</div></div>
+      <div class="cd post"><div class="d">VIE · pre</div><div class="t">Cuenta regresiva</div><span class="badge">POST 3</span></div>
+      <div class="cd"><div class="d">SÁB</div><div class="t">Story: countdown</div></div>
+      <div class="cd post" style="border-color:var(--ember);background:rgba(255,78,27,.08)"><div class="d">DOM · APERTURA</div><div class="t">¡Ya abrimos!</div><span class="badge">POST 4</span></div>
+      <div class="cd post"><div class="d">LUN · s1</div><div class="t">Kebo Clásico</div><span class="badge">POST 5</span></div>
+      <div class="cd"><div class="d">MAR</div><div class="t">Story: los tamaños</div></div>
+      <div class="cd post"><div class="d">MIÉ · s1</div><div class="t">Monster Bites</div><span class="badge">POST 6</span></div>
+      <div class="cd post"><div class="d">JUE · s1</div><div class="t">Reseña = 50%</div><span class="badge">POST 7</span></div>
+      <div class="cd post"><div class="d">VIE · s1</div><div class="t">El Alpha (reto)</div><span class="badge">POST 8</span></div>
+      <div class="cd"><div class="d">SÁB</div><div class="t">Story: pregunta</div></div>
+      <div class="cd post"><div class="d">DOM · s1</div><div class="t">La Monstruosa</div><span class="badge">POST 9</span></div>
+      <div class="cd post"><div class="d">LUN · s2</div><div class="t">El equipo</div><span class="badge">POST 10</span></div>
+      <div class="cd post"><div class="d">MIÉ · s2</div><div class="t">Story = papas</div><span class="badge">POST 11</span></div>
+      <div class="cd post"><div class="d">VIE · s2</div><div class="t">Turbo delivery</div><span class="badge">POST 12</span></div>
+      <div class="cd post"><div class="d">SÁB · s2</div><div class="t">Sabores bites</div><span class="badge">POST 13</span></div>
+      <div class="cd post"><div class="d">DOM · s2</div><div class="t">Repost reseñas</div><span class="badge">POST 14</span></div>
+      <div class="cd"><div class="d">→ luego</div><div class="t">Repetir: producto + UGC</div></div>
+    </div>
+  </section>
+
+  <!-- LOS POSTS -->
+  <section class="sec">
+    <div class="lbl">04 — LOS 14 POSTS · CAPTION LISTO</div>
+    <h2>Copia, pega, <span>publica</span></h2>
+
+    <div class="post-c"><div class="im"><span class="num">01</span><img src="fotos/archivo-01-sala.jpg" alt=""></div>
+      <div class="bd"><div class="type">TEASER · PRE-APERTURA</div><div class="title">La garra en la oscuridad</div>
+      <div class="cap">Algo con hambre acaba de llegar a Morelia. 👹
+No hace filas. No tiene mesas. Solo tiene hambre — y pronto, la tuya.
+
+Feed the monster. Muy pronto.</div>
+      <div class="ht">#MonsterKebabs #Morelia #Kebab #ComidaMorelia #DarkKitchen #ProntoEnMorelia</div>
+      <div class="note"><b>Imagen:</b> la garra sobre negro, o Kebo en penumbra (archivo-01). Misterio total, sin revelar el producto.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">02</span><img src="fotos/estudio-kebo.jpg" alt=""></div>
+      <div class="bd"><div class="type">REVEAL · PRE-APERTURA</div><div class="title">Conoce a Kebo</div>
+      <div class="cap">Él es KEBO. 🖤
+Cuerno roto, sonrisa chueca y un antojo que no perdona.
+
+Es la cara del monstruo que está por soltar los mejores kebabs de Morelia. ¿Ya tienes hambre?</div>
+      <div class="ht">#MonsterKebabs #Kebo #Morelia #Kebab #MascotaMorelia #ComidaMorelia</div>
+      <div class="note"><b>Imagen:</b> el retrato de Kebo en estudio negro. Presenta al personaje sin mostrar comida aún.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">03</span><img src="fotos/empaque-familia.jpg" alt=""></div>
+      <div class="bd"><div class="type">COUNTDOWN · PRE-APERTURA</div><div class="title">Faltan 2 días</div>
+      <div class="cap">La jaula se abre en 2 días. ⏳
+Kebabs al fuego, papas que truenan y salsas que muerden — directo a tu casa por Uber Eats, Rappi y DiDi.
+
+Guarda la fecha. El monstruo no espera.</div>
+      <div class="ht">#MonsterKebabs #Morelia #CuentaRegresiva #Kebab #DeliveryMorelia #UberEatsMorelia</div>
+      <div class="note"><b>Imagen:</b> el empaque negro (misterioso, premium) o un teaser del trompo. Añade sticker de countdown en la story.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">04</span><img src="menu-1-portada.jpg" alt=""></div>
+      <div class="bd"><div class="type">★ APERTURA · EL POST GRANDE</div><div class="title">¡Ya estamos vivos!</div>
+      <div class="cap">EL MONSTRUO YA ESTÁ SUELTO. 🔥
+MONSTER KEBABS ya está en Uber Eats · Rappi · DiDi Food.
+
+Kebabs de monstruo al fuego, marinados 24 horas. Pídelo, aliméntalo, repite.
+👉 Link en bio. Feed the monster.</div>
+      <div class="ht">#MonsterKebabs #YaAbrimos #Morelia #Kebab #DeliveryMorelia #ComidaAMorelia #Foodie</div>
+      <div class="note"><b>Imagen/carrusel:</b> la portada + las 4 imágenes del menú (menu-1 a menu-4) como carrusel. Este es EL post — fíjalo arriba.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">05</span><img src="fotos/kebo-clasico.jpg" alt=""></div>
+      <div class="bd"><div class="type">PRODUCTO · HÉROE</div><div class="title">El Kebo Clásico</div>
+      <div class="cap">El que empezó todo. 🥙
+Pollo marinado 24 horas, verdura fresca y nuestra SALSA KEBO. El favorito de la casa por algo.
+
+Chico, mediano o MONSTER — tú decides qué tan bestia. Desde $99.
+👉 Pídelo en las apps (link en bio).</div>
+      <div class="ht">#MonsterKebabs #KeboClasico #Kebab #Morelia #ComidaMorelia #Antojo #DeliveryMorelia</div>
+      <div class="note"><b>Imagen:</b> foto héroe del Kebo Clásico (el cheese pull vende). Precio + CTA claro.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">06</span><img src="fotos/monster-bites.jpg" alt=""></div>
+      <div class="bd"><div class="type">PRODUCTO · ANTOJO</div><div class="title">Monster Bites</div>
+      <div class="cap">Papa cambray confitada, frita y aplastada. La botana que hace que TODO pedido crezca. 🥔🔥
+Ajo Parmesano, Fuego o Chipotle BBQ — y 5 sazones más.
+
+Cría, Manada o Horda. Nunca pidas solo un kebab.</div>
+      <div class="ht">#MonsterKebabs #MonsterBites #Papas #Morelia #Antojo #ComidaMorelia #Foodie</div>
+      <div class="note"><b>Imagen:</b> las papas humeantes en el vaso con la garra. Puede ser carrusel con los 3 sabores.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">07</span><img src="fotos/limonada-negra.jpg" alt=""></div>
+      <div class="bd"><div class="type">★ INCENTIVO · RESEÑA</div><div class="title">Reséñanos = bebida al 50%</div>
+      <div class="cap">¿Te gustó? Ayúdanos a crecer y te lo pagamos en bebida. ⭐
+Déjanos una reseña de 5 estrellas en Google y obtén 50% en cualquier bebida de la casa en tu próximo pedido.
+
+Rápido para ti, oro para nosotros. 🖤</div>
+      <div class="ht">#MonsterKebabs #Morelia #Reseña #ComidaMorelia #Kebab #Promo</div>
+      <div class="note"><b>Imagen:</b> la Tinta (limonada negra) o Sangre — bebidas fotogénicas. <b>Fija tu link de Google reseñas en la story.</b></div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">08</span><img src="fotos/el-alpha.jpg" alt=""></div>
+      <div class="bd"><div class="type">PRODUCTO · RETO</div><div class="title">El Alpha · el jefe final</div>
+      <div class="cap">EL ALPHA. 👑
+Doble porción de res a la brasa, queso fundido y Monster Bites ADENTRO. Solo existe en tamaño MONSTER.
+
+Nadie ha terminado uno solo. ¿Serás el primero? Etiqueta a quien lo intentaría. 😈</div>
+      <div class="ht">#MonsterKebabs #ElAlpha #Reto #Kebab #Morelia #FoodChallenge #Antojo</div>
+      <div class="note"><b>Imagen:</b> El Alpha gigante. El "reto" + "etiqueta a alguien" dispara comentarios y alcance.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">09</span><img src="fotos/combo-manada.jpg" alt=""></div>
+      <div class="bd"><div class="type">PRODUCTO · COMPARTIR</div><div class="title">La Monstruosa</div>
+      <div class="cap">Para cuando la manada tiene hambre. 🍽️
+4 kebabs + una Horda de 20 Monster Bites + las 3 salsas. Cae al centro de la mesa y se ve desde tres mesas de distancia.
+
+$649 para toda la bola. Etiqueta con quién la pedirías.</div>
+      <div class="ht">#MonsterKebabs #LaMonstruosa #ParaCompartir #Morelia #Kebab #ComidaMorelia #Amigos</div>
+      <div class="note"><b>Imagen:</b> la charola cenital (combo-manada). Perfecta para "etiqueta a tu manada".</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">10</span><img src="menu-4-equipo.jpg" alt=""></div>
+      <div class="bd"><div class="type">COMUNIDAD · MARCA</div><div class="title">Conoce a la cuadrilla</div>
+      <div class="cap">Detrás de cada kebab hay un monstruo (y un humano). 👹
+Kebo, Brasa la cocinera, Coco el aprendiz y Raúl — el único humano, aquí no se asusta a nadie, se alimenta bien.
+
+¿Cuál es tu favorito?</div>
+      <div class="ht">#MonsterKebabs #ElEquipo #Morelia #Personajes #Kebab #DarkKitchen</div>
+      <div class="note"><b>Imagen/carrusel:</b> las fotos del equipo (estudio-kebo, equipo-brasa/coco/raul). Humaniza la marca y genera comentarios.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">11</span><img src="fotos/bites-fuego.jpg" alt=""></div>
+      <div class="bd"><div class="type">★ INCENTIVO · STORY</div><div class="title">Story = papas gratis</div>
+      <div class="cap">Sube una story con tu pedido y etiqueta a @monsterkebabs. 📸
+Te regalamos una Cría de Monster Bites en tu siguiente orden. Así de fácil.
+
+Tu antojo se ve bien. Presúmelo.</div>
+      <div class="ht">#MonsterKebabs #Morelia #PapasGratis #ComidaMorelia #Foodie #Promo</div>
+      <div class="note"><b>Imagen:</b> papas apetitosas. Repite este incentivo cada semana; el UGC es alcance gratis.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">12</span><img src="fotos/equipo-turbo.jpg" alt=""></div>
+      <div class="bd"><div class="type">COMUNIDAD · DELIVERY</div><div class="title">Turbo, el repartidor</div>
+      <div class="cap">¿No puedes venir? Turbo va por ti. 🛵
+El más rápido de la familia — no conoce el "en un momento llega". Caliente, entero y con hambre de que lo abras.
+
+Uber Eats · Rappi · DiDi. Link en bio.</div>
+      <div class="ht">#MonsterKebabs #Delivery #Morelia #ATuCasa #Kebab #DeliveryMorelia</div>
+      <div class="note"><b>Imagen:</b> Turbo en la moto. Refuerza el "te lo llevamos" y las apps.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">13</span><img src="fotos/bites-bbq.jpg" alt=""></div>
+      <div class="bd"><div class="type">PRODUCTO · SABORES</div><div class="title">Elige tu veneno</div>
+      <div class="cap">Ajo Parmesano para los clásicos. Fuego para los valientes. Chipotle BBQ para los que saben. 🥔
+8 sazones para tus Monster Bites — ¿cuál team eres?
+
+Vota en los comentarios. 👇</div>
+      <div class="ht">#MonsterKebabs #MonsterBites #Sabores #Morelia #Papas #Antojo #ComidaMorelia</div>
+      <div class="note"><b>Imagen/carrusel:</b> los 3 sabores de bites. La pregunta "¿cuál team?" dispara comentarios.</div></div></div>
+
+    <div class="post-c"><div class="im"><span class="num">14</span><img src="fotos/archivo-02-antojo.jpg" alt=""></div>
+      <div class="bd"><div class="type">COMUNIDAD · PRUEBA SOCIAL</div><div class="title">Ustedes hablando</div>
+      <div class="cap">Esto es lo que dice la manada. 🖤
+[Repost de la mejor story/reseña de un cliente]
+
+Gracias por alimentar al monstruo. Sigue subiendo tus pedidos y etiquétanos — te repostéamos.</div>
+      <div class="ht">#MonsterKebabs #Morelia #Clientes #ComidaMorelia #Kebab #Gracias</div>
+      <div class="note"><b>Imagen:</b> repost real de un cliente (UGC). En cuanto lleguen reseñas/stories, este post se repite — es el más poderoso.</div></div></div>
+  </section>
+
+  <!-- STORIES -->
+  <section class="sec">
+    <div class="lbl">05 — STORIES · LOS INCENTIVOS EN ACCIÓN</div>
+    <h2>Diarias, rápidas, <span>tocables</span></h2>
+    <p class="intro">Las stories son donde vives el día a día. Úsalas para los incentivos con stickers interactivos (encuestas, preguntas, link).</p>
+    <div class="stories">
+      <div class="st"><div class="sn">⭐ Reseña = 50%</div><div class="sd">Story con <b>sticker de link</b> a tu Google reseñas + "déjanos 5★ y gana 50% en tu bebida". Fíjala en la destacada "Premios".</div></div>
+      <div class="st"><div class="sn">📸 Repost UGC</div><div class="sd">Cada vez que un cliente te etiquete, <b>repóstalo</b> en tu story y agradece. Motiva a los demás y da papas gratis.</div></div>
+      <div class="st"><div class="sn">📊 Encuestas</div><div class="sd">"¿Chico, mediano o MONSTER?" · "¿Fuego o BBQ?" · "¿Te atreves con El Alpha?" — el sticker de encuesta sube el engagement del perfil.</div></div>
+    </div>
+  </section>
+
+  <!-- HASHTAGS + TIPS -->
+  <section class="sec" style="border-bottom:none">
+    <div class="lbl">06 — HASHTAGS Y REGLAS DE ORO</div>
+    <h2>Lo que hace que <span>funcione</span></h2>
+    <div class="htbox">
+      <div class="h">SET MAESTRO (copia y pega, mezcla 8-12 por post)</div>
+      <p>#MonsterKebabs #Morelia #Kebab #ComidaMorelia #DeliveryMorelia #UberEatsMorelia #RappiMorelia #FoodieMorelia #Antojo #DarkKitchen #QuéComerEnMorelia #Michoacán #MoreliaFoodie #ComidaARabe</p>
+    </div>
+    <ul class="tips">
+      <li><span class="n">1</span><div><b>Geolocaliza SIEMPRE</b> — pon "Morelia" en cada post. Tu cliente está a 5 km, no en otro estado.</div></li>
+      <li><span class="n">2</span><div><b>Responde cada comentario y DM</b> en la primera hora — el algoritmo premia la conversación y la gente compra por DM.</div></li>
+      <li><span class="n">3</span><div><b>El video manda:</b> un Reel del cheese pull o del trompo girando rinde 5× más que una foto. Graba en la prueba de cocina.</div></li>
+      <li><span class="n">4</span><div><b>Colabora local:</b> manda kebabs gratis a 3-5 micro-influencers de comida de Morelia la primera semana. Es el marketing más barato que existe.</div></li>
+      <li><span class="n">5</span><div><b>Consistencia > perfección:</b> 4 posts buenos por semana toda la vida le ganan a 14 posts una semana y luego silencio.</div></li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>
