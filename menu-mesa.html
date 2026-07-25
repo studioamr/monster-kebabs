@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MENÚ DE MESA — MONSTER KEBABS @ Iguana Caguama</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+<style>
+  .priv{background:var(--ember);color:var(--tinta);font-family:'IBM Plex Mono',monospace;font-size:10px;
+    letter-spacing:.16em;text-align:center;padding:6px;text-transform:uppercase;position:fixed;top:0;left:0;right:0;z-index:200}
+  .topbar{top:24px}
+  .carta{max-width:680px;margin:0 auto;padding:0 24px}
+  /* HERO */
+  .m-hero{text-align:center;padding:34px 0 26px;border-bottom:2px solid var(--ember)}
+  .m-hero .garra{width:64px;margin:0 auto 16px}
+  .m-hero h1{font-family:'Anton',sans-serif;font-size:clamp(40px,9vw,68px);text-transform:uppercase;line-height:.9}
+  .m-hero h1 span{color:transparent;-webkit-text-stroke:1.4px var(--hueso);display:block}
+  .m-hero .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--ember);text-transform:uppercase;margin-top:16px}
+  .m-hero .pair{font-size:14px;color:var(--humo);margin-top:14px;line-height:1.6}
+  .m-hero .pair b{color:var(--hueso)}
+  /* secciones */
+  .m-sec{padding:26px 0;border-bottom:1px solid var(--line)}
+  .m-sec .m-lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--ember);text-transform:uppercase;margin-bottom:18px}
+  .m-lbl::before{content:"";display:inline-block;width:22px;height:1px;background:var(--ember);vertical-align:middle;margin-right:10px}
+  .item{display:grid;grid-template-columns:1fr auto;gap:14px;padding:12px 0;align-items:baseline}
+  .item .iname{font-family:'Anton',sans-serif;font-size:21px;text-transform:uppercase;letter-spacing:.02em}
+  .item .idesc{font-size:12.5px;color:var(--humo);line-height:1.5;margin-top:3px;max-width:440px}
+  .item .iprice{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--ember);white-space:nowrap}
+  .item .chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;
+    background:var(--ember);color:var(--tinta);padding:2px 8px;text-transform:uppercase;margin-left:8px;vertical-align:middle}
+  .sazon{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .sazon span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--line);padding:7px 13px;color:var(--hueso)}
+  .bites-row{display:flex;gap:22px;margin-bottom:16px}
+  .bites-row .b{text-align:center}
+  .bites-row .bn{font-family:'Anton',sans-serif;font-size:34px;line-height:1}
+  .bites-row .bnm{font-family:'Anton',sans-serif;font-size:13px;color:var(--ember);text-transform:uppercase;margin-top:2px}
+  .bites-row .bp{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--humo);margin-top:4px}
+  .combo-nota{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--humo);letter-spacing:.06em;line-height:1.9;margin-top:6px}
+  .combo-nota em{color:var(--ember);font-style:normal}
+  /* pedir */
+  .pedir{text-align:center;padding:32px 0 40px}
+  .pedir .grande{font-family:'Anton',sans-serif;font-size:clamp(24px,5vw,38px);text-transform:uppercase;line-height:1.1}
+  .pedir .grande span{color:var(--ember)}
+  .pedir .sub{font-size:13px;color:var(--humo);margin-top:12px;line-height:1.7}
+  .pedir .sticker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:18px}
+  @media print{.priv,.topbar{display:none}}
+</style>
+</head>
+<body>
+
+<div class="priv">MENÚ DE MESA PARA IGUANA CAGUAMA — LO REPARTEN LOS MESEROS · IMPRIMIR EN TAMAÑO CARTA O TABLOIDE</div>
+<div class="topbar">
+  <div><b>MONSTER KEBABS</b><span class="dot"> ●</span> MENÚ DE MESA</div>
+  <nav class="nav"><a href="index.html">← MARCA</a><a href="convenio.html">CONVENIO</a><a href="landing.html">LANDING</a></nav>
+</div>
+
+<section class="page-head" style="padding-bottom:0"></section>
+
+<div class="carta">
+  <!-- HERO -->
+  <div class="m-hero">
+    <svg class="garra" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100,12 L188,100 L100,188 L12,100 Z M146,44 a19,19 0 0 0 -24,26 Z" fill="#EFE9DF" fill-rule="evenodd"/>
+      <g fill="#0B0A09">
+        <path d="M74,58 C86,86 88,122 76,152 C66,120 64,86 74,58 Z"/>
+        <path d="M100,48 C114,82 116,124 102,162 C90,122 88,82 100,48 Z"/>
+        <path d="M126,60 C136,88 138,120 128,148 C118,118 116,86 126,60 Z"/>
+      </g>
+    </svg>
+    <h1>MONSTER<span>KEBABS</span></h1>
+    <div class="tag">FEED THE MONSTER.</div>
+    <p class="pair">Ahora en <b>Iguana Caguama</b> 🦎 — <b>el kebab que le va perfecto a tu caguama.</b><br>
+    Carne al fuego marinada 24 horas. Pídelo a tu mesero.</p>
+  </div>
+
+  <!-- KEBABS -->
+  <div class="m-sec">
+    <div class="m-lbl">LOS KEBABS · PAN PITA AL FUEGO</div>
+    <div class="item"><div><div class="iname">Kebo Clásico</div><div class="idesc">Pollo marinado 24 h — yogurt, ajo, paprika, comino. Verdura fresca y SALSA KEBO.</div></div><div class="iprice">$139</div></div>
+    <div class="item"><div><div class="iname">La Bestia</div><div class="idesc">Res al fuego estilo Adana — pimentón y sumac. Para hambres con historial.</div></div><div class="iprice">$159</div></div>
+    <div class="item"><div><div class="iname">Doble Filo</div><div class="idesc">Pollo + res. Cuando tu monstruo no sabe decidir, dale los dos.</div></div><div class="iprice">$169</div></div>
+    <div class="item"><div><div class="iname">El Herbívoro</div><div class="idesc">Falafel crujiente + champiñón al fuego. Los monstruos herbívoros también rugen.</div></div><div class="iprice">$129</div></div>
+    <div class="item"><div><div class="iname">El Alpha <span class="chip">EL JEFE FINAL</span></div><div class="idesc">Res premium, queso fundido, MONSTER BITES adentro y salsa ember. Pídelo si te atreves.</div></div><div class="iprice">$199</div></div>
+  </div>
+
+  <!-- MONSTER BITES -->
+  <div class="m-sec">
+    <div class="m-lbl">MONSTER BITES · PAPA CAMBRAY · LA BOTANA CAGUAMERA</div>
+    <div class="bites-row">
+      <div class="b"><div class="bn">6</div><div class="bnm">Cría</div><div class="bp">$69</div></div>
+      <div class="b"><div class="bn">9</div><div class="bnm">Bestia</div><div class="bp">$89</div></div>
+      <div class="b"><div class="bn">20</div><div class="bnm">Horda</div><div class="bp">$159</div></div>
+    </div>
+    <div class="idesc" style="max-width:none">Papa cambray confitada, frita y aplastada. Elige tu veneno:</div>
+    <div class="sazon">
+      <span>Ajo Parmesano</span><span>Fuego</span><span>Chipotle BBQ</span><span>Buffalo</span>
+      <span>Lemon Pepper</span><span>Trufa Negra</span><span>Za'atar</span><span>Mantequilla Romero</span>
+    </div>
+  </div>
+
+  <!-- COMBOS -->
+  <div class="m-sec">
+    <div class="m-lbl">COMBOS · PARA LA MESA</div>
+    <div class="item"><div><div class="iname">Monster Feed</div><div class="idesc">Un kebab + Cría de papas + bebida.</div></div><div class="iprice">$219</div></div>
+    <div class="item"><div><div class="iname">Alpha Pack <span class="chip">2 PERSONAS</span></div><div class="idesc">2 kebabs + Bestia de papas + 2 bebidas.</div></div><div class="iprice">$379</div></div>
+    <div class="item"><div><div class="iname">La Manada <span class="chip">PARA COMPARTIR</span></div><div class="idesc">4 kebabs + Horda de papas + 4 bebidas + stickers para todos.</div></div><div class="iprice">$749</div></div>
+    <p class="combo-nota">🍺 <em>MARIDAJE MONSTER:</em> CUALQUIER KEBAB + TU CAGUAMA = LA COMBINACIÓN QUE ESTABAS BUSCANDO.</p>
+  </div>
+
+  <!-- BEBIDAS -->
+  <div class="m-sec">
+    <div class="m-lbl">BEBIDAS DE LA CASA</div>
+    <div class="item"><div><div class="iname">Limonada Negra</div><div class="idesc">Carbón activado, negra azabache. Sí, es real. La vas a fotografiar.</div></div><div class="iprice">$55</div></div>
+    <div class="item"><div><div class="iname">Veneno</div><div class="idesc">Té helado durazno-jengibre de la casa.</div></div><div class="iprice">$45</div></div>
+    <div class="item"><div><div class="iname">Sangre</div><div class="idesc">Jamaica concentrada + jengibre + limón.</div></div><div class="iprice">$45</div></div>
+  </div>
+
+  <!-- PEDIR -->
+  <div class="pedir">
+    <div class="grande">Pídelo a tu mesero.<br><span>Aliméntalo aquí mismo.</span></div>
+    <p class="sub">¿No quieres levantarte? También llega a tu casa por Uber Eats · Rappi · DiDi Food.</p>
+    <div class="sticker">★ UN STICKER COLECCIONABLE EN CADA PEDIDO ★</div>
+  </div>
+</div>
+
+<script>
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
