@@ -90,6 +90,7 @@
   /* SALSAS */
   .salsas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:16px}
   .salsas-nota{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:10px}
+  .pic{font-style:normal;color:var(--ember);letter-spacing:1px}
   .salsa{background:var(--tinta);padding:0 0 16px;text-align:center}
   .salsa img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-bottom:12px}
   .salsa .sn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
@@ -156,7 +157,7 @@
     <h1>MONSTER<span>KEBABS</span></h1>
     <div class="tag">FEED THE MONSTER.</div>
     <div class="desde">KEBABS DESDE <b>89</b></div>
-    <div class="stick">★ UN STICKER COLECCIONABLE EN CADA PEDIDO ★</div>
+    <div class="stick">★ UN STICKER COLECCIONABLE POR CUENTA ★</div>
   </div>
 
   <!-- LOS 3 TAMAÑOS (DIBUJO) -->
@@ -228,58 +229,59 @@
   <!-- KEBABS -->
   <div class="m-sec">
     <div class="m-lbl">01 — LOS KEBABS · PAN PITA AL FUEGO</div>
-    <div class="m-sub">Carne marinada 24 horas, asada al fuego. Todos en 3 tamaños. Pídelos por número: <b>"un 2 mediano"</b>.</div>
+    <div class="m-sub"><b>Carne al trompo estilo árabe en pan pita — el primo perdido del pastor.</b> Marinada 24 horas,
+    asada al fuego. Todos en 3 tamaños. Pídelos por clave: <b>"un K2 mediano"</b>.</div>
     <div class="kcards">
 
       <div class="kcard">
         <img src="fotos/kebo-clasico.jpg" alt="Kebo Clásico" loading="lazy">
-        <div class="kbody"><span class="num">1</span>
+        <div class="kbody"><span class="num">K1</span>
           <div><div class="kname">Kebo Clásico<span class="sello">★ EL FAVORITO</span></div>
           <div class="kdesc"><b>pollo</b> · marinado 24 h, verdura fresca y SALSA KEBO</div></div>
         </div>
         <div class="kprecios">
-          <div class="kp"><div class="kpl">CHICO</div><div class="kpn">99</div></div>
-          <div class="kp star"><div class="kpl">MEDIANO</div><div class="kpn">139</div></div>
-          <div class="kp"><div class="kpl">MONSTER</div><div class="kpn">179</div></div>
+          <div class="kp"><div class="kpl">CH · CHICO</div><div class="kpn">99</div></div>
+          <div class="kp star"><div class="kpl">MD · MEDIANO</div><div class="kpn">139</div></div>
+          <div class="kp"><div class="kpl">MX · MONSTER</div><div class="kpn">179</div></div>
         </div>
       </div>
 
       <div class="kcard">
         <img src="fotos/doble-filo.jpg" alt="Doble Filo" loading="lazy">
-        <div class="kbody"><span class="num">2</span>
+        <div class="kbody"><span class="num">K2</span>
           <div><div class="kname">Doble Filo</div>
           <div class="kdesc"><b>mixto</b> · pollo + res en el mismo pan, lo mejor de los dos</div></div>
         </div>
         <div class="kprecios">
-          <div class="kp"><div class="kpl">CHICO</div><div class="kpn">129</div></div>
-          <div class="kp star"><div class="kpl">MEDIANO</div><div class="kpn">169</div></div>
-          <div class="kp"><div class="kpl">MONSTER</div><div class="kpn">209</div></div>
+          <div class="kp"><div class="kpl">CH · CHICO</div><div class="kpn">129</div></div>
+          <div class="kp star"><div class="kpl">MD · MEDIANO</div><div class="kpn">169</div></div>
+          <div class="kp"><div class="kpl">MX · MONSTER</div><div class="kpn">209</div></div>
         </div>
       </div>
 
       <div class="kcard">
         <img src="fotos/la-bestia.jpg" alt="La Bestia" loading="lazy">
-        <div class="kbody"><span class="num">3</span>
+        <div class="kbody"><span class="num">K3</span>
           <div><div class="kname">La Bestia</div>
-          <div class="kdesc"><b>res</b> · al fuego estilo Adana, pimentón y sumac</div></div>
+          <div class="kdesc"><b>res</b> · molida especiada a la brasa, pimentón y sumac</div></div>
         </div>
         <div class="kprecios">
-          <div class="kp"><div class="kpl">CHICO</div><div class="kpn">119</div></div>
-          <div class="kp star"><div class="kpl">MEDIANO</div><div class="kpn">159</div></div>
-          <div class="kp"><div class="kpl">MONSTER</div><div class="kpn">199</div></div>
+          <div class="kp"><div class="kpl">CH · CHICO</div><div class="kpn">129</div></div>
+          <div class="kp star"><div class="kpl">MD · MEDIANO</div><div class="kpn">169</div></div>
+          <div class="kp"><div class="kpl">MX · MONSTER</div><div class="kpn">209</div></div>
         </div>
       </div>
 
       <div class="kcard">
         <img src="fotos/el-herbivoro.jpg" alt="El Herbívoro" loading="lazy">
-        <div class="kbody"><span class="num">4</span>
+        <div class="kbody"><span class="num">K4</span>
           <div><div class="kname">El Herbívoro<span class="sello">EL HUERTO DE RAÚL</span></div>
-          <div class="kdesc"><b>falafel</b> · crujiente, champiñón al fuego y salsa blanca</div></div>
+          <div class="kdesc"><b>falafel</b> · crujiente, champiñón al fuego y salsa blanca · vegano si lo pides sin salsa</div></div>
         </div>
         <div class="kprecios">
-          <div class="kp"><div class="kpl">CHICO</div><div class="kpn">89</div></div>
-          <div class="kp star"><div class="kpl">MEDIANO</div><div class="kpn">129</div></div>
-          <div class="kp"><div class="kpl">MONSTER</div><div class="kpn">169</div></div>
+          <div class="kp"><div class="kpl">CH · CHICO</div><div class="kpn">89</div></div>
+          <div class="kp star"><div class="kpl">MD · MEDIANO</div><div class="kpn">129</div></div>
+          <div class="kp"><div class="kpl">MX · MONSTER</div><div class="kpn">169</div></div>
         </div>
       </div>
 
@@ -288,36 +290,37 @@
     <div class="alpha-box">
       <img src="fotos/el-alpha.jpg" alt="El Alpha">
       <div>
-        <div class="an">El Alpha <span>· EL JEFE FINAL</span></div>
-        <div class="ad">Res premium, queso fundido y Monster Bites adentro. Un jefe final no viene en chico:
-        solo se enfrenta en tamaño MONSTER. Nadie ha terminado uno solo.</div>
+        <div class="an">K5 · El Alpha <span>· EL JEFE FINAL</span></div>
+        <div class="ad">Doble porción de res a la brasa, queso fundido y Monster Bites adentro. Un jefe final
+        no viene en chico: solo se enfrenta en tamaño MONSTER. Nadie ha terminado uno solo.</div>
       </div>
-      <div class="apw"><div class="ap">219</div><div class="au">TAMAÑO ÚNICO</div></div>
+      <div class="apw"><div class="ap">249</div><div class="au">TAMAÑO ÚNICO</div></div>
     </div>
   </div>
 
   <!-- MONSTER BITES -->
   <div class="m-sec">
     <div class="m-lbl">02 — MONSTER BITES · PAPA CAMBRAY</div>
-    <div class="m-sub">La botana de la mesa: llegan <b>mientras salen los kebabs</b>. Maridan con cerveza fría.</div>
+    <div class="m-sub">La botana de la mesa: <b>pídelos de entrada</b>. Maridan con cerveza fría.</div>
     <div class="bites-wrap">
       <div>
         <div class="bites-row">
-          <div class="b"><div class="bn">6</div><div class="bnm">Cría</div><div class="bpz">PIEZAS</div><div class="bp">69</div></div>
-          <div class="b"><div class="bn">9</div><div class="bnm">Manada</div><div class="bpz">PIEZAS</div><div class="bp">89</div></div>
-          <div class="b"><div class="bn">20</div><div class="bnm">Horda</div><div class="bpz">PIEZAS</div><div class="bp">159</div></div>
+          <div class="b"><div class="bn">6</div><div class="bnm">Cría</div><div class="bpz">B6 · PA' UNO</div><div class="bp">69</div></div>
+          <div class="b"><div class="bn">9</div><div class="bnm">Manada</div><div class="bpz">B9 · PA' DOS</div><div class="bp">89</div></div>
+          <div class="b"><div class="bn">20</div><div class="bnm">Horda</div><div class="bpz">B20 · PA' LA MESA</div><div class="bp">159</div></div>
         </div>
-        <div class="bites-desc">Papa cambray confitada, frita y aplastada. Elige tu veneno:</div>
+        <div class="bites-desc">Papa cambray confitada, frita y aplastada. Elige tu sazón:</div>
         <div class="sazon">
-          <span>Ajo Parmesano</span><span>Fuego</span><span>Chipotle BBQ</span><span>Buffalo</span>
+          <span>Ajo Parmesano</span><span>Fuego <i class="pic">●●</i></span><span>Chipotle BBQ <i class="pic">●</i></span><span>Buffalo <i class="pic">●</i></span>
           <span>Lemon Pepper</span><span>Trufa Negra</span><span>Za'atar</span><span>Mantequilla Romero</span>
         </div>
+        <div class="salsas-nota">1 SAZONADOR INCLUIDO POR ORDEN · EXTRA +10 · HORDA MITAD Y MITAD SIN COSTO</div>
         <div class="salsas">
-          <div class="salsa"><img src="fotos/salsa-brasa.jpg" alt="Salsa Brasa" loading="lazy"><div class="sn">Brasa</div><div class="sl">SUAVE</div><div class="sd">para empezar</div></div>
-          <div class="salsa"><img src="fotos/salsa-garra.jpg" alt="Salsa Garra" loading="lazy"><div class="sn">Garra</div><div class="sl">BRAVO</div><div class="sd">para presumir</div></div>
-          <div class="salsa diablo"><img src="fotos/salsa-diablo.jpg" alt="Salsa Modo Diablo" loading="lazy"><div class="sn">Modo Diablo</div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">la mesa reta, tú decides</div></div>
+          <div class="salsa"><img src="fotos/salsa-brasa.jpg" alt="Salsa Brasa" loading="lazy"><div class="sn">S1 · Brasa <i class="pic">●</i></div><div class="sl">SUAVE</div><div class="sd">crema ahumada de chiles suaves</div></div>
+          <div class="salsa"><img src="fotos/salsa-garra.jpg" alt="Salsa Garra" loading="lazy"><div class="sn">S2 · Garra <i class="pic">●●</i></div><div class="sl">BRAVO</div><div class="sd">roja brava de chile de árbol y ajo</div></div>
+          <div class="salsa diablo"><img src="fotos/salsa-diablo.jpg" alt="Salsa Modo Diablo" loading="lazy"><div class="sn">S3 · Modo Diablo <i class="pic">●●●</i></div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">habanero y árbol tatemados — se pregunta antes de servirse</div></div>
         </div>
-        <div class="salsas-nota">LAS 3 SALSAS VAN INCLUIDAS CON TODO PEDIDO — SIN COSTO</div>
+        <div class="salsas-nota">PIDE LAS QUE QUIERAS — VAN POR LA CASA, POR MESA · PICOR: ● SUAVE · ●● BRAVO · ●●● EXTREMO</div>
       </div>
       <img src="fotos/monster-bites.jpg" alt="Monster Bites" loading="lazy">
     </div>
@@ -330,7 +333,8 @@
       <div class="mo-body">
         <div>
           <div class="mn">La Monstruosa <span>· PARA LA MESA</span></div>
-          <div class="md"><b>4 kebabs a tu elección</b> + <b>HORDA de 20 Monster Bites</b> + las 3 salsas.
+          <div class="md"><b>4 kebabs MEDIANOS a tu elección (K1–K4, máx. 2 de res)</b> + <b>HORDA de 20 Monster Bites</b>
+          + las 3 salsas. Súbela a MONSTER <b>+120</b> · El Alpha no entra · Sale en ~20 min.
           Cae al centro de la mesa. <b>Se ve desde tres mesas de distancia.</b></div>
         </div>
         <div class="mp">649</div>
@@ -385,8 +389,9 @@
     <div class="grande">Pídelo a tu mesero.<br><span>Aliméntalo aquí mismo.</span></div>
     <div class="frase">"Esa cerveza pide kebab. ¿Le traigo uno?"</div>
     <p class="sub">Todo lo que ves aquí nació para una cerveza fría. No lo dejes comer solo.<br>
-    ¿Para llevar a casa? Uber Eats · Rappi · DiDi Food.</p>
-    <div class="sticker">★ UN STICKER COLECCIONABLE EN CADA PEDIDO ★</div>
+    <b style="color:var(--hueso)">Va en tu misma cuenta.</b> Precios en pesos mexicanos.</p>
+    <p class="sub" style="font-size:10.5px;margin-top:6px">SALSA KEBO Y SALSA BLANCA CONTIENEN LÁCTEOS · EL HERBÍVORO PUEDE PEDIRSE VEGANO (SIN SALSA BLANCA)</p>
+    <div class="sticker">★ UN STICKER COLECCIONABLE POR CUENTA ★</div>
   </div>
 </div>
 
