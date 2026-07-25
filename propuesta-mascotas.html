@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROPUESTA — LA CUADRILLA UNIFICADA · MONSTER KEBABS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+<style>
+  .wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+  .head{text-align:center;padding:56px 0 30px;border-bottom:2px solid var(--ember)}
+  .head .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;color:var(--ember);text-transform:uppercase}
+  .head h1{font-family:'Anton',sans-serif;font-size:clamp(40px,7vw,72px);text-transform:uppercase;line-height:.95;margin-top:14px}
+  .head p{color:var(--humo);font-size:14px;line-height:1.7;margin-top:16px;max-width:640px;margin-left:auto;margin-right:auto}
+  .sec{padding:44px 0;border-bottom:1px solid var(--line)}
+  .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--ember);text-transform:uppercase;margin-bottom:8px}
+  .lbl::before{content:"";display:inline-block;width:22px;height:1px;background:var(--ember);vertical-align:middle;margin-right:10px}
+  .sec h2{font-family:'Anton',sans-serif;font-size:clamp(24px,4vw,36px);text-transform:uppercase;line-height:1.05}
+  .sec h2 span{color:var(--ember)}
+  .sec .intro{color:var(--humo);font-size:14px;line-height:1.7;margin-top:12px;max-width:720px}
+  /* problema */
+  .actual{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:24px}
+  .ac{background:var(--tinta2);border:1px solid var(--line)}
+  .ac img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;filter:saturate(.95)}
+  .ac .n{font-family:'Anton',sans-serif;font-size:13px;text-transform:uppercase;padding:8px 9px 2px}
+  .ac .w{font-size:10px;color:var(--ember);padding:0 9px 9px;line-height:1.4}
+  .problemas{list-style:none;margin-top:22px;display:grid;gap:10px}
+  .problemas li{display:grid;grid-template-columns:26px 1fr;gap:12px;font-size:13.5px;color:var(--humo);line-height:1.6}
+  .problemas li b{color:var(--hueso)}
+  .problemas .x{color:var(--ember);font-family:'IBM Plex Mono',monospace}
+  /* spec */
+  .spec{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px}
+  .sp{background:var(--tinta);padding:22px 24px}
+  .sp .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase}
+  .sp .v{font-size:14px;color:var(--hueso);margin-top:8px;line-height:1.6}
+  .sp .v b{color:var(--ember)}
+  /* elenco */
+  .cast{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  .cm{background:var(--tinta2);border:1px solid var(--line)}
+  .cm .port{aspect-ratio:1;background:#000;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+  .cm .port img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.05)}
+  .cm .port .badge{position:absolute;top:10px;left:10px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;
+    letter-spacing:.12em;background:var(--ember);color:var(--tinta);padding:3px 8px;text-transform:uppercase}
+  .cm .info{padding:14px 16px 16px}
+  .cm .cn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
+  .cm .cr{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;color:var(--ember);text-transform:uppercase;margin:4px 0 8px}
+  .cm .cd{font-size:12px;color:var(--humo);line-height:1.55}
+  .cm .cd b{color:var(--hueso)}
+  /* kebo canon */
+  .kebo{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;margin-top:24px}
+  .kebo .glyph{background:var(--tinta);border:1px solid var(--line);aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:24px}
+  .kebo .glyph svg{width:100%}
+  .kebo p{color:var(--humo);font-size:13.5px;line-height:1.7}
+  .kebo p b{color:var(--hueso)}
+  /* rollout */
+  .roll{list-style:none;counter-reset:r;margin-top:20px}
+  .roll li{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .roll li:first-child{border-top:1px solid var(--line)}
+  .roll li::before{counter-increment:r;content:counter(r);font-family:'Anton',sans-serif;font-size:24px;color:var(--ember);line-height:1}
+  .roll p{color:var(--humo);font-size:14px;line-height:1.6}
+  .roll b{color:var(--hueso)}
+  .cta{border:1px dashed var(--ember);padding:22px 26px;margin-top:26px;text-align:center}
+  .cta .big{font-family:'Anton',sans-serif;font-size:22px;text-transform:uppercase}
+  .cta p{color:var(--humo);font-size:13px;margin-top:8px;line-height:1.6}
+  .cta b{color:var(--ember)}
+  @media(max-width:820px){.actual{grid-template-columns:repeat(2,1fr)}.spec,.cast{grid-template-columns:1fr}.kebo{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="head">
+    <div class="tag">PROPUESTA DE DISEÑO · PARA ANDRÉ</div>
+    <h1>La cuadrilla<br>unificada</h1>
+    <p>La auditoría marcó las mascotas como el punto más débil del sistema: cinco criaturas fotografiadas
+    en mundos distintos, con acabados que chocan con la comida. Aquí está cómo lo arreglo — sin perder
+    a ninguno, dándoles un solo estudio.</p>
+  </div>
+
+  <!-- EL PROBLEMA -->
+  <section class="sec">
+    <div class="lbl">01 — EL DIAGNÓSTICO</div>
+    <h2>Hoy cada uno vive en <span>otro mundo</span></h2>
+    <p class="intro">Kebo en un sillón, Brasa en una parrilla, Coco en una cocina de cobre, Raúl en un callejón,
+    Turbo en la calle. Fondos, luz y encuadre distintos. Para un cliente se ven como stock de cinco lados diferentes.</p>
+    <div class="actual">
+      <div class="ac"><img src="fotos/archivo-03-retrato.jpg" alt="Kebo"><div class="n">Kebo</div><div class="w">fondo escolar · sillón</div></div>
+      <div class="ac"><img src="fotos/equipo-brasa.jpg" alt="Brasa"><div class="n">Brasa</div><div class="w">cocina naranja</div></div>
+      <div class="ac"><img src="fotos/equipo-coco.jpg" alt="Coco"><div class="n">Coco</div><div class="w">cocina de cobre</div></div>
+      <div class="ac"><img src="fotos/equipo-raul.jpg" alt="Raúl"><div class="n">Raúl</div><div class="w">callejón · humano real</div></div>
+      <div class="ac"><img src="fotos/equipo-turbo.jpg" alt="Turbo"><div class="n">Turbo</div><div class="w">calle de noche</div></div>
+    </div>
+    <ul class="problemas">
+      <li><span class="x">✕</span><div><b>Cinco fondos distintos</b> — no se leen como una familia ni como una marca.</div></li>
+      <li><span class="x">✕</span><div><b>Chocan con la comida:</b> tus platillos son fondo negro de estudio; las mascotas son escenas ambientales.</div></li>
+      <li><span class="x">✕</span><div><b>Raúl rompe el mundo</b> — es foto de un humano real entre monstruos de utilería.</div></li>
+      <li><span class="x">✕</span><div><b>Kebo tiene 3 caras</b> — el logo rombo, el sticker con cuernos y el puppet peludo no son el mismo personaje.</div></li>
+    </ul>
+  </section>
+
+  <!-- LA SOLUCIÓN -->
+  <section class="sec">
+    <div class="lbl">02 — EL TRATAMIENTO UNIFICADO</div>
+    <h2>Un solo estudio para <span>todos</span></h2>
+    <p class="intro">Mismo fondo, misma luz que la comida, mismo encuadre. Los monstruos siguen siendo ellos —
+    solo que ahora pertenecen al mismo universo visual que tus kebabs.</p>
+    <div class="spec">
+      <div class="sp"><div class="k">FONDO</div><div class="v">Negro seamless total (#0B0A09) — <b>el mismo de la comida</b>. Cero escenarios, cero props de ambiente.</div></div>
+      <div class="sp"><div class="k">LUZ</div><div class="v">La misma clave dramática lateral de las fotos de producto. Sombra profunda, un solo foco cálido.</div></div>
+      <div class="sp"><div class="k">ENCUADRE</div><div class="v">Retrato de <b>busto, 1:1</b> (cuadrado) — todos al mismo tamaño y altura, como fichas de colección.</div></div>
+      <div class="sp"><div class="k">ACABADO</div><div class="v">Textura de utilería mate y consistente. Acento ember opcional como luz de recorte (rim) sutil.</div></div>
+    </div>
+  </section>
+
+  <!-- EL ELENCO -->
+  <section class="sec">
+    <div class="lbl">03 — EL ELENCO (6 FICHAS)</div>
+    <h2>Quién es quién — y qué <span>cambia</span></h2>
+    <div class="cast">
+      <div class="cm"><div class="port"><span class="badge">RE-ENCUADRE</span><img src="fotos/archivo-03-retrato.jpg" alt=""></div>
+        <div class="info"><div class="cn">Kebo</div><div class="cr">LA CARA · EL PRIMERO</div><div class="cd">Busto en negro. <b>Se vuelve el rostro canónico</b> de la marca.</div></div></div>
+      <div class="cm"><div class="port"><span class="badge">FONDO NEGRO</span><img src="fotos/equipo-brasa.jpg" alt=""></div>
+        <div class="info"><div class="cn">Brasa</div><div class="cr">LA COCINERA · EL FUEGO</div><div class="cd">Se le quita la parrilla; queda su cresta ember contra el negro.</div></div></div>
+      <div class="cm"><div class="port"><span class="badge">FONDO NEGRO</span><img src="fotos/equipo-coco.jpg" alt=""></div>
+        <div class="info"><div class="cn">Coco</div><div class="cr">APRENDIZ · EL CORAZÓN</div><div class="cd">Fuera la cocina de cobre; el aprendiz sobre negro limpio.</div></div></div>
+      <div class="cm"><div class="port"><span class="badge">CLAVE — RAÚL</span><img src="fotos/equipo-raul.jpg" alt=""></div>
+        <div class="info"><div class="cn">Raúl</div><div class="cr">HUMANO · EL SABIO</div><div class="cd"><b>Sigue humano</b> (el chiste se queda) — pero al MISMO estudio negro, busto, mismo look. Deja de romper el mundo.</div></div></div>
+      <div class="cm"><div class="port"><span class="badge">FONDO NEGRO</span><img src="fotos/equipo-turbo.jpg" alt=""></div>
+        <div class="info"><div class="cn">Turbo</div><div class="cr">EL REPARTIDOR</div><div class="cd">Retrato con casco sobre negro (la moto vive en la sección de delivery, no en su ficha).</div></div></div>
+      <div class="cm"><div class="port" style="align-items:center"><span class="badge">NUEVO</span>
+        <svg viewBox="0 0 200 200" style="width:55%"><path d="M100,16 L126,30 L156,20 L158,48 L186,44 L178,74 L196,86 L182,108 L194,130 L172,140 L180,168 L152,164 L150,190 L122,180 L100,192 L78,180 L50,190 L48,164 L20,168 L28,140 L6,130 L18,108 L4,86 L22,74 L14,44 L42,48 L44,20 L74,30 Z" fill="#1a1815"/><text x="100" y="150" font-family="Anton,sans-serif" font-size="70" fill="#FF4E1B" text-anchor="middle">?</text></svg>
+        <div class="info"><div class="cn">¿El Alpha?</div><div class="cr">EL JEFE FINAL</div><div class="cd">Opción: darle silueta misteriosa a contraluz — "nadie lo ha visto completo".</div></div></div>
+    </div>
+  </section>
+
+  <!-- KEBO CANON -->
+  <section class="sec">
+    <div class="lbl">04 — UN SOLO KEBO</div>
+    <h2>El ícono de marca es <span>uno</span></h2>
+    <div class="kebo">
+      <div class="glyph">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100,12 L188,100 L100,188 L12,100 Z M146,44 a19,19 0 0 0 -24,26 Z" fill="#EFE9DF" fill-rule="evenodd"/>
+          <g fill="#0B0A09"><path d="M74,58 C86,86 88,122 76,152 C66,120 64,86 74,58 Z"/><path d="M100,48 C114,82 116,124 102,162 C90,122 88,82 100,48 Z"/><path d="M126,60 C136,88 138,120 128,148 C118,118 116,86 126,60 Z"/></g>
+        </svg>
+      </div>
+      <p>El <b>rombo mordido con tres zarpazos</b> (La Garra) se queda como logo — funciona a 16px y bordado.
+      Y el personaje Kebo se define con <b>UNA ficha canónica</b> (el busto peludo con cuerno roto sobre negro).
+      Los puppets son "el reparto"; el ícono de la marca no cambia. Se acaban las tres versiones distintas.</p>
+    </div>
+  </section>
+
+  <!-- ROLLOUT -->
+  <section class="sec" style="border-bottom:none">
+    <div class="lbl">05 — CÓMO LO EJECUTO</div>
+    <h2>El plan, paso a <span>paso</span></h2>
+    <ol class="roll">
+      <li><p><b>Genero un estudio de referencia:</b> defino el fondo negro + luz clave con una toma patrón (uso a Kebo como prueba de dirección).</p></li>
+      <li><p><b>Re-genero los 6 retratos</b> en ese mismo estudio, busto 1:1, con la referencia pegada en Gemini para mantener a cada personaje idéntico — solo cambia el fondo y el encuadre.</p></li>
+      <li><p><b>Reemplazo</b> las fotos en la sección "El Equipo" del menú y regenero las 4 imágenes de carrusel + el PDF.</p></li>
+      <li><p><b>La moto de Turbo</b> y el empaque se quedan en la sección de delivery (ahí el ambiente sí suma); las fichas de personaje van todas en negro.</p></li>
+    </ol>
+    <div class="cta">
+      <div class="big">¿Le entramos?</div>
+      <p>Si te late la dirección, arranco por el <b>estudio de referencia + Kebo</b> como prueba, te lo enseño,
+      y si convence sigo con los otros 5. <b>Tú apruebas antes de que regenere todo.</b></p>
+    </div>
+  </section>
+</div>
+</body>
+</html>
