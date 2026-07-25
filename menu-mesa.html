@@ -26,12 +26,12 @@
   .tam-hero{margin-top:26px}
   .tam-dibujo{background:var(--hueso);border:1px solid var(--line);padding:26px 20px 14px}
   .tam-dibujo svg{display:block;width:min(680px,100%);margin:0 auto}
-  .mfloat{transform-box:fill-box;transform-origin:center bottom}
-  .mf1{animation:mbob 3.4s ease-in-out infinite}
-  .mf2{animation:mbob 4.2s ease-in-out infinite .5s}
-  .mf3{animation:mbob 5s ease-in-out infinite 1s}
-  @keyframes mbob{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.03)}}
-  @media(prefers-reduced-motion:reduce){.mfloat{animation:none}}
+  .monster-pulse{transform-box:fill-box;transform-origin:center bottom;animation:mkgrow 1.9s ease-in-out infinite}
+  @keyframes mkgrow{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  @media(prefers-reduced-motion:reduce){.monster-pulse{animation:none}}
+  /* signos de peso en todos los precios */
+  .kp .kpn::before,.alpha-box .ap::before,.bites-row .bp::before,.mo-body .mp::before,
+  .paq .pqp::before,.item .iprice::before,.m-hero .desde b::before{content:"$"}
   .tam-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:none}
   .tam{background:var(--tinta);padding:14px 16px;text-align:center}
   .tam .tn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
@@ -195,23 +195,6 @@
   <div class="tam-hero">
     <div class="tam-dibujo">
       <svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg">
-        <!-- ══ SILUETAS DE MONSTRUO DE FONDO (crecen con el tamaño) ══ -->
-        <g opacity=".13" fill="#0B0A09">
-          <!-- chico: cría chiquita, 1 cuernito -->
-          <g class="mfloat mf1">
-            <path d="M120,150 Q112,150 112,138 Q108,138 110,132 L112,120 Q116,110 124,116 L128,110 L132,116 Q140,110 142,120 L144,132 Q146,138 142,138 Q142,150 134,150 Z"/>
-          </g>
-          <!-- mediano: bestia con 2 cuernos y hombros -->
-          <g class="mfloat mf2">
-            <path d="M340,168 Q326,168 324,150 Q316,150 318,138 L312,118 Q316,108 326,116 L322,96 Q332,102 336,116 Q346,108 356,116 Q360,102 370,96 L366,116 Q376,108 380,118 L374,138 Q376,150 368,150 Q366,168 352,168 Z"/>
-          </g>
-          <!-- MONSTER: kaiju grande de púas y cuernos -->
-          <g class="mfloat mf3">
-            <path d="M566,190 Q548,190 544,168 L536,150 Q532,132 544,140 L534,112 Q546,120 550,140 L544,108 Q556,116 560,138 L560,98 Q572,104 576,130 L588,86 Q600,104 600,132 L612,96 Q622,116 616,140 L626,110 Q636,122 630,144 L642,124 Q650,138 640,156 L634,168 Q632,190 614,190 Z"/>
-            <path d="M556,150 L568,150 L562,138 Z" fill="#EFE9DF"/>
-            <path d="M596,150 L610,150 L604,136 Z" fill="#EFE9DF"/>
-          </g>
-        </g>
         <!-- línea base -->
         <line x1="30" y1="252" x2="730" y2="252" stroke="#0B0A09" stroke-width="3"/>
         <!-- ══ CHICO ══ -->
@@ -242,29 +225,30 @@
           <line x1="456" y1="78" x2="456" y2="252" stroke="#0B0A09" stroke-width="2" stroke-dasharray="6 6" opacity=".5"/>
           <line x1="446" y1="78" x2="466" y2="78" stroke="#0B0A09" stroke-width="2" opacity=".5"/>
         </g>
-        <!-- ══ MONSTER ══ -->
-        <g>
+        <!-- ══ MONSTER (animado para incitar la compra) ══ -->
+        <g class="monster-pulse">
           <path d="M570,74 L570,40 Q588,20 600,36 Q610,14 624,32 Q636,14 646,34 Q660,20 668,40 L668,74 Z" fill="#0B0A09"/>
           <rect x="570" y="72" width="98" height="94" fill="#0B0A09"/>
           <rect x="563" y="164" width="112" height="88" fill="#EFE9DF" stroke="#0B0A09" stroke-width="4"/>
-          <path d="M619,178 L627,187 L619,196 L611,187 Z" fill="#0B0A09"/>
-          <path d="M591,208 L599,217 L591,226 L583,217 Z" fill="#0B0A09"/>
-          <path d="M647,208 L655,217 L647,226 L639,217 Z" fill="#0B0A09"/>
+          <path d="M619,176 L627,185 L619,194 L611,185 Z" fill="#0B0A09"/>
+          <path d="M591,200 L599,209 L591,218 L583,209 Z" fill="#0B0A09"/>
+          <path d="M647,200 L655,209 L647,218 L639,209 Z" fill="#0B0A09"/>
           <path d="M619,16 Q611,10 617,2" stroke="#0B0A09" stroke-width="3" fill="none" stroke-linecap="round" opacity=".45"/>
-          <line x1="704" y1="40" x2="704" y2="252" stroke="#FF4E1B" stroke-width="2.5" stroke-dasharray="6 6"/>
-          <line x1="694" y1="40" x2="714" y2="40" stroke="#FF4E1B" stroke-width="2.5"/>
+          <text x="619" y="243" font-family="Anton,sans-serif" font-size="13" fill="#FF4E1B" text-anchor="middle" letter-spacing=".5">★ EL GRANDE</text>
         </g>
+        <line x1="704" y1="40" x2="704" y2="252" stroke="#FF4E1B" stroke-width="2.5" stroke-dasharray="6 6"/>
+        <line x1="694" y1="40" x2="714" y2="40" stroke="#FF4E1B" stroke-width="2.5"/>
         <!-- etiquetas -->
         <g font-family="Anton,sans-serif" text-anchor="middle">
           <text x="141" y="284" font-size="24" fill="#0B0A09">CHICO</text>
           <text x="377" y="284" font-size="24" fill="#0B0A09">MEDIANO</text>
           <text x="619" y="284" font-size="24" fill="#FF4E1B">MONSTER</text>
         </g>
-        <!-- cm junto a cada cota de medición -->
-        <g font-family="IBM Plex Mono,monospace" font-size="11" letter-spacing="1" font-weight="500">
-          <text x="222" y="188" fill="#0B0A09" opacity=".65" transform="rotate(-90 222 188)" text-anchor="middle">15 CM</text>
-          <text x="466" y="165" fill="#0B0A09" opacity=".65" transform="rotate(-90 466 165)" text-anchor="middle">20 CM</text>
-          <text x="714" y="146" fill="#FF4E1B" transform="rotate(-90 714 146)" text-anchor="middle">28 CM</text>
+        <!-- cm HORIZONTAL sobre cada cota de medición -->
+        <g font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" font-weight="500" text-anchor="middle">
+          <text x="212" y="112" fill="#0B0A09" opacity=".7">15 CM</text>
+          <text x="456" y="70" fill="#0B0A09" opacity=".7">20 CM</text>
+          <text x="704" y="32" fill="#FF4E1B">28 CM</text>
         </g>
         <g font-family="IBM Plex Mono,monospace" text-anchor="middle" font-size="11" letter-spacing="1">
           <text x="141" y="302" fill="#0B0A09" opacity=".6">~90 G PROTEINA</text>
@@ -380,7 +364,7 @@
     <div class="sazon">
       <span>Buffalo <i class="pic">●</i></span><span>Lemon Pepper</span><span>Trufa Negra</span><span>Za'atar</span><span>Mantequilla Romero</span>
     </div>
-    <div class="salsas-nota">1 SAZONADOR INCLUIDO POR ORDEN · EXTRA +10 · HORDA MITAD Y MITAD SIN COSTO</div>
+    <div class="salsas-nota">1 SAZONADOR INCLUIDO POR ORDEN · EXTRA +$10 · HORDA MITAD Y MITAD SIN COSTO</div>
         <div class="salsas">
           <div class="salsa"><img src="fotos/salsa-brasa.jpg" alt="Salsa Brasa" loading="lazy"><div class="sn">S1 · Brasa <i class="pic">●</i></div><div class="sl">SUAVE</div><div class="sd">crema ahumada de chiles suaves</div></div>
           <div class="salsa"><img src="fotos/salsa-garra.jpg" alt="Salsa Garra" loading="lazy"><div class="sn">S2 · Garra <i class="pic">●●</i></div><div class="sl">BRAVO</div><div class="sd">roja brava de chile de árbol y ajo</div></div>
@@ -397,7 +381,7 @@
         <div>
           <div class="mn">La Monstruosa <span>· PARA LA MESA</span></div>
           <div class="md"><b>4 kebabs MEDIANOS a tu elección (K1–K4, máx. 2 de res)</b> + <b>HORDA de 20 Monster Bites</b>
-          + las 3 salsas. Súbela a MONSTER <b>+120</b> · El Alpha no entra · Sale en ~20 min.
+          + las 3 salsas. Súbela a MONSTER <b>+$120</b> · El Alpha no entra · Sale en ~20 min.
           Cae al centro de la mesa. <b>Se ve desde tres mesas de distancia.</b></div>
         </div>
         <div class="mp">649</div>
@@ -408,31 +392,31 @@
   <!-- PAQUETES -->
   <div class="m-sec">
     <div class="m-lbl">03 — PAQUETES · KEBAB + BITES</div>
-    <div class="m-sub">La escalera del hambre: <b>pa' uno, pa' dos, pa' la mesa</b>. Súbelo a MONSTER por <b>+40</b> por kebab.</div>
+    <div class="m-sub">La escalera del hambre: <b>pa' uno, pa' dos, pa' la mesa</b>. Súbelo a MONSTER por <b>+$40</b> por kebab.</div>
     <div class="paqs">
       <div class="paq">
         <div>
           <div class="pqn">Pa' Uno</div>
           <div class="pqd"><b>1 kebab MEDIANO</b> (K1–K4) + <b>Cría de 6 bites</b> con tu sazón. El plan individual completo.</div>
         </div>
-        <div><div class="pqp">199</div><div class="pqa">AHORRAS ~30</div></div>
+        <div><div class="pqp">199</div><div class="pqa">AHORRAS ~$30</div></div>
       </div>
       <div class="paq">
         <div>
           <div class="pqn">Pa' Dos</div>
           <div class="pqd"><b>2 kebabs MEDIANOS</b> (K1–K4) + <b>Manada de 9 bites</b> con tu sazón. Pa' la pareja o el compa.</div>
         </div>
-        <div><div class="pqp">349</div><div class="pqa">AHORRAS ~40</div></div>
+        <div><div class="pqp">349</div><div class="pqa">AHORRAS ~$40</div></div>
       </div>
       <div class="paq" style="border-color:var(--ember);grid-column:1/-1;background:rgba(255,78,27,.05)">
         <div>
           <div class="pqn">Monstruo con Hambre <span style="color:var(--ember)">●</span></div>
           <div class="pqd"><b>1 kebab MONSTER</b> (K1–K4, el de 200 g) + <b>Manada de 9 bites</b> con tu sazón + <b>bebida de la casa</b>. Pa' cuando no vienes a jugar.</div>
         </div>
-        <div><div class="pqp">289</div><div class="pqa">AHORRAS ~50</div></div>
+        <div><div class="pqp">289</div><div class="pqa">AHORRAS ~$50</div></div>
       </div>
     </div>
-    <div class="salsas-nota">¿SON 4 O MÁS? LA MONSTRUOSA ES SU PAQUETE — 649 · LAS 3 SALSAS VAN INCLUIDAS EN TODO PAQUETE</div>
+    <div class="salsas-nota">¿SON 4 O MÁS? LA MONSTRUOSA ES SU PAQUETE — $649 · LAS 3 SALSAS VAN INCLUIDAS EN TODO PAQUETE</div>
   </div>
 
   <!-- BEBIDAS -->
