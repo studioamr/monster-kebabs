@@ -12,58 +12,127 @@
   .priv{background:var(--ember);color:var(--tinta);font-family:'IBM Plex Mono',monospace;font-size:10px;
     letter-spacing:.16em;text-align:center;padding:6px;text-transform:uppercase;position:fixed;top:0;left:0;right:0;z-index:200}
   .topbar{top:24px}
-  .carta{max-width:760px;margin:0 auto;padding:0 24px}
+  .carta{max-width:860px;margin:0 auto;padding:0 24px}
   /* HERO */
-  .m-hero{text-align:center;padding:34px 0 26px;border-bottom:2px solid var(--ember)}
-  .m-hero .garra{width:64px;margin:0 auto 16px}
+  .m-hero{text-align:center;padding:34px 0 24px;border-bottom:2px solid var(--ember)}
+  .m-hero .garra{width:60px;margin:0 auto 14px}
   .m-hero h1{font-family:'Anton',sans-serif;font-size:clamp(40px,9vw,68px);text-transform:uppercase;line-height:.9}
   .m-hero h1 span{color:transparent;-webkit-text-stroke:1.4px var(--hueso);display:block}
-  .m-hero .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--ember);text-transform:uppercase;margin-top:16px}
-  .m-hero .pair{font-size:14px;color:var(--humo);margin-top:14px;line-height:1.6}
-  .m-hero .pair b{color:var(--hueso)}
-  /* secciones */
-  .m-sec{padding:28px 0;border-bottom:1px solid var(--line)}
-  .m-sec .m-lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--ember);text-transform:uppercase;margin-bottom:20px}
-  .m-lbl::before{content:"";display:inline-block;width:22px;height:1px;background:var(--ember);vertical-align:middle;margin-right:10px}
-  /* destacados con foto */
-  .destacados{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
-  .dcard{background:var(--tinta2);border:1px solid var(--line)}
-  .dcard img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
-  .dcard .dc{padding:12px 14px}
-  .dcard .dn{font-family:'Anton',sans-serif;font-size:17px;text-transform:uppercase;line-height:1}
-  .dcard .dd{font-size:11px;color:var(--humo);line-height:1.45;margin:5px 0 8px}
-  .dcard .dp{font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--ember)}
-  /* items lista */
-  .item{display:grid;grid-template-columns:1fr auto;gap:14px;padding:11px 0;align-items:baseline}
-  .item .iname{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:.02em}
-  .item .idesc{font-size:12.5px;color:var(--humo);line-height:1.5;margin-top:3px;max-width:460px}
-  .item .iprice{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--ember);white-space:nowrap}
-  .item .chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;
-    background:var(--ember);color:var(--tinta);padding:2px 8px;text-transform:uppercase;margin-left:8px;vertical-align:middle}
-  /* bites con foto */
-  .bites-wrap{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:center}
-  .bites-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--line)}
-  .bites-row{display:flex;gap:22px;margin-bottom:16px}
+  .m-hero .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;color:var(--ember);text-transform:uppercase;margin-top:14px}
+  .m-hero .desde{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase;margin-top:12px}
+  .m-hero .desde b{color:var(--ember)}
+  .m-hero .stick{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--humo);text-transform:uppercase;margin-top:8px}
+  /* FOTO TAMAÑOS */
+  .tam-hero{margin-top:26px}
+  .tam-hero img{width:100%;aspect-ratio:16/8.2;object-fit:cover;display:block;border:1px solid var(--line)}
+  .tam-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:none}
+  .tam{background:var(--tinta);padding:14px 16px;text-align:center}
+  .tam .tn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
+  .tam .tn.monster{color:var(--ember)}
+  .tam .tg{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--ember);letter-spacing:.12em;margin-top:2px}
+  .tam .td{font-size:11px;color:var(--humo);line-height:1.5;margin-top:6px}
+  /* SECCIONES */
+  .m-sec{padding:30px 0;border-bottom:1px solid var(--line)}
+  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  .sec-head .patron{width:74px;min-width:74px;background:var(--hueso);border:1px solid var(--line)}
+  .sec-head .patron svg{display:block;width:100%}
+  .sec-head .m-lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--ember);text-transform:uppercase}
+  .sec-head .m-sub{font-size:12.5px;color:var(--humo);margin-top:5px;line-height:1.5}
+  .sec-head .m-sub b{color:var(--hueso)}
+  /* MATRIZ KEBABS */
+  .tabla{width:100%;border-collapse:collapse}
+  .tabla th{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;
+    padding:10px 8px;border-bottom:1px solid var(--line);font-weight:400;text-align:center}
+  .tabla th:first-child{text-align:left;padding-left:0}
+  .tabla td{padding:13px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+  .tabla tr:last-child td{border-bottom:none}
+  .tabla .num{font-family:'Anton',sans-serif;font-size:20px;color:var(--ember);width:34px}
+  .tabla .kname{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;line-height:1}
+  .tabla .kdesc{font-size:11.5px;color:var(--humo);margin-top:3px;line-height:1.45}
+  .tabla .kdesc b{color:var(--ember);font-weight:500}
+  .tabla .p{font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--hueso);text-align:center;white-space:nowrap;width:74px}
+  .tabla .p.star{color:var(--ember)}
+  .tabla .fav td{border-top:1px solid var(--ember);border-bottom:1px solid var(--ember)}
+  .sello{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;
+    background:var(--ember);color:var(--tinta);padding:2px 7px;text-transform:uppercase;margin-left:8px;vertical-align:2px}
+  .gramos{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--humo);letter-spacing:.1em;text-align:right;margin-top:8px;text-transform:uppercase}
+  /* ALPHA BOX */
+  .alpha-box{border:1px solid var(--ember);background:rgba(255,78,27,.05);padding:20px 22px;margin-top:20px;
+    display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+  .alpha-box .an{font-family:'Anton',sans-serif;font-size:24px;text-transform:uppercase}
+  .alpha-box .an span{color:var(--ember)}
+  .alpha-box .ad{font-size:12.5px;color:var(--humo);margin-top:5px;line-height:1.55}
+  .alpha-box .ap{font-family:'IBM Plex Mono',monospace;font-size:26px;color:var(--ember)}
+  .alpha-box .au{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--humo);letter-spacing:.12em;text-align:center;margin-top:4px;text-transform:uppercase}
+  /* BITES */
+  .bites-wrap{display:grid;grid-template-columns:1fr 230px;gap:22px;align-items:center}
+  .bites-wrap img{width:100%;aspect-ratio:4/4.6;object-fit:cover;display:block;border:1px solid var(--line)}
+  .bites-row{display:flex;gap:26px;margin-bottom:14px}
   .bites-row .b{text-align:center}
-  .bites-row .bn{font-family:'Anton',sans-serif;font-size:34px;line-height:1}
+  .bites-row .bn{font-family:'Anton',sans-serif;font-size:32px;line-height:1}
   .bites-row .bnm{font-family:'Anton',sans-serif;font-size:13px;color:var(--ember);text-transform:uppercase;margin-top:2px}
-  .bites-row .bp{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--humo);margin-top:4px}
-  .sazon{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-  .sazon span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-    border:1px solid var(--line);padding:7px 13px;color:var(--hueso)}
-  .combo-nota{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--humo);letter-spacing:.06em;line-height:1.9;margin-top:6px}
-  .combo-nota em{color:var(--ember);font-style:normal}
-  /* bebida con foto */
-  .beb-wrap{display:grid;grid-template-columns:1fr 200px;gap:24px;align-items:center}
-  .beb-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--line)}
-  /* pedir */
-  .pedir{text-align:center;padding:32px 0 40px}
+  .bites-row .bp{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--hueso);margin-top:4px}
+  .bites-row .bpz{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--humo);letter-spacing:.1em}
+  .sazon{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+  .sazon span{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--line);padding:6px 11px;color:var(--hueso)}
+  /* MONSTRUOSA */
+  .monstruosa{border:1px solid var(--ember)}
+  .monstruosa img{width:100%;aspect-ratio:16/7.5;object-fit:cover;display:block}
+  .mo-body{padding:20px 24px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:rgba(255,78,27,.05)}
+  .mo-body .mn{font-family:'Anton',sans-serif;font-size:28px;text-transform:uppercase}
+  .mo-body .mn span{color:var(--ember)}
+  .mo-body .md{font-size:13px;color:var(--humo);margin-top:5px;line-height:1.6}
+  .mo-body .md b{color:var(--hueso)}
+  .mo-body .mp{font-family:'IBM Plex Mono',monospace;font-size:30px;color:var(--ember)}
+  /* SALSAS */
+  .salsas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .salsa{background:var(--tinta);padding:18px 20px;text-align:center}
+  .salsa .sn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
+  .salsa .sl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:4px}
+  .salsa .sd{font-size:11.5px;color:var(--humo);margin-top:6px}
+  .salsa.diablo .sn{color:var(--ember)}
+  /* HUERTO */
+  .huerto{display:grid;grid-template-columns:250px 1fr;gap:22px;align-items:center}
+  .huerto img{width:100%;aspect-ratio:4/4.4;object-fit:cover;display:block;border:1px solid var(--line)}
+  .huerto .hq{font-family:'Anton',sans-serif;font-size:clamp(19px,3vw,26px);text-transform:uppercase;line-height:1.2}
+  .huerto .hq span{color:var(--ember)}
+  .huerto .hd{font-size:13px;color:var(--humo);margin-top:10px;line-height:1.65}
+  .huerto .hd b{color:var(--hueso)}
+  .huerto .hp{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--hueso);margin-top:12px}
+  .huerto .hp b{color:var(--ember)}
+  /* BEBIDAS */
+  .beb-wrap{display:grid;grid-template-columns:1fr 190px;gap:22px;align-items:center}
+  .beb-wrap img{width:100%;aspect-ratio:4/4.6;object-fit:cover;display:block;border:1px solid var(--line)}
+  .item{display:grid;grid-template-columns:1fr auto;gap:14px;padding:10px 0;align-items:baseline}
+  .item .iname{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
+  .item .idesc{font-size:12px;color:var(--humo);line-height:1.5;margin-top:2px;max-width:420px}
+  .item .iprice{font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--hueso);white-space:nowrap}
+  /* CUADRILLA */
+  .crew{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .cmember{background:var(--tinta2);border:1px solid var(--line)}
+  .cport{background:var(--hueso);aspect-ratio:1;padding:8px}
+  .cport svg{display:block;width:100%;height:100%}
+  .cinfo{padding:13px 14px 15px}
+  .cinfo .cn{font-family:'Anton',sans-serif;font-size:17px;text-transform:uppercase;line-height:1}
+  .cinfo .ca{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:var(--ember);text-transform:uppercase;margin:5px 0 7px}
+  .cinfo .cb{font-size:11px;color:var(--humo);line-height:1.5}
+  /* PEDIR */
+  .pedir{text-align:center;padding:34px 0 42px}
   .pedir .grande{font-family:'Anton',sans-serif;font-size:clamp(24px,5vw,38px);text-transform:uppercase;line-height:1.1}
   .pedir .grande span{color:var(--ember)}
-  .pedir .sub{font-size:13px;color:var(--humo);margin-top:12px;line-height:1.7}
-  .pedir .sticker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:18px}
+  .pedir .frase{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--hueso);margin-top:16px;letter-spacing:.04em}
+  .pedir .sub{font-size:12.5px;color:var(--humo);margin-top:10px;line-height:1.7}
+  .pedir .sticker{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:16px}
   @media print{.priv,.topbar{display:none}}
-  @media(max-width:640px){.destacados{grid-template-columns:1fr}.bites-wrap,.beb-wrap{grid-template-columns:1fr}}
+  @media(max-width:720px){
+    .crew{grid-template-columns:repeat(2,1fr)}
+    .bites-wrap,.beb-wrap,.huerto{grid-template-columns:1fr}
+    .huerto img{aspect-ratio:16/9}
+    .tam-row{grid-template-columns:1fr}
+    .tabla .p{font-size:14px;width:52px}
+    .tabla .kname{font-size:16px}
+  }
 </style>
 </head>
 <body>
@@ -71,7 +140,7 @@
 <div class="priv">MENÚ BRANDEADO — LO REPARTEN LOS MESEROS EN LAS MESAS · IMPRIMIR EN CARTA O TABLOIDE</div>
 <div class="topbar">
   <div><b>MONSTER KEBABS</b><span class="dot"> ●</span> MENÚ</div>
-  <nav class="nav"><a href="index.html">← MARCA</a><a href="convenio.html">CONVENIO</a><a href="landing.html">LANDING</a></nav>
+  <nav class="nav"><a href="index.html">← MARCA</a><a href="convenio.html">CONVENIO</a><a href="sistema.html">SISTEMA</a><a href="landing.html">LANDING</a></nav>
 </div>
 
 <section class="page-head" style="padding-bottom:0"></section>
@@ -89,78 +158,409 @@
     </svg>
     <h1>MONSTER<span>KEBABS</span></h1>
     <div class="tag">FEED THE MONSTER.</div>
-    <p class="pair"><b>El kebab que le va perfecto a tu cerveza bien fría.</b><br>
-    Carne al fuego marinada 24 horas. Pídelo a tu mesero.</p>
+    <div class="desde">KEBABS DESDE <b>89</b></div>
+    <div class="stick">★ CADA PEDIDO TRAE UN STICKER COLECCIONABLE DE LA MANADA ★</div>
   </div>
 
-  <!-- KEBABS DESTACADOS CON FOTO -->
+  <!-- LOS 3 TAMAÑOS -->
+  <div class="tam-hero">
+    <img src="fotos/tamanos-trio.jpg" alt="Los tres tamaños: chico, mediano y MONSTER">
+    <div class="tam-row">
+      <div class="tam"><div class="tn">Chico</div><div class="tg">≈ 90 G DE PROTEÍNA</div><div class="td">Pa' abrir boca. Advertencia: sabe a que quieres más.</div></div>
+      <div class="tam"><div class="tn">Mediano</div><div class="tg">≈ 130 G DE PROTEÍNA</div><div class="td">La medida sensata. Nadie te juzga… pero el MONSTER te está mirando.</div></div>
+      <div class="tam"><div class="tn monster">Monster</div><div class="tg">≈ 200 G DE PROTEÍNA</div><div class="td">El tamaño con nombre propio. Se pide con hambre y se carga con las dos manos.</div></div>
+    </div>
+  </div>
+
+  <!-- KEBABS -->
   <div class="m-sec">
-    <div class="m-lbl">LOS KEBABS · PAN PITA AL FUEGO</div>
-    <div class="destacados">
-      <div class="dcard">
-        <img src="fotos/kebo-clasico.jpg" alt="Kebo Clásico" loading="lazy">
-        <div class="dc"><div class="dn">Kebo Clásico</div><div class="dd">Pollo marinado 24 h, verdura fresca y SALSA KEBO.</div><div class="dp">$139</div></div>
+    <div class="sec-head">
+      <div class="patron">
+        <!-- TATEMO -->
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <g fill="#0B0A09">
+            <path d="M150,70 L178,54 L166,84 Z"/><path d="M162,96 L192,88 L174,116 Z"/><path d="M166,128 L196,128 L176,150 Z"/>
+            <path d="M56,70 L28,54 L40,84 Z"/><path d="M44,96 L14,88 L32,116 Z"/><path d="M40,128 L10,128 L30,150 Z"/>
+            <path d="M103,58 L118,66 L134,60 L138,78 L154,82 L148,98 L160,108 L148,120 L156,134 L140,140 L142,156 L124,154 L118,168 L103,160 L88,168 L82,154 L64,156 L66,140 L50,134 L58,120 L46,108 L58,98 L52,82 L68,78 L72,60 L88,66 Z"/>
+          </g>
+          <path d="M72,44 L72,26 Q78,10 90,16 Q96,2 106,10 Q120,2 126,16 Q136,12 134,28 L134,44 Z" fill="#EFE9DF" stroke="#0B0A09" stroke-width="5"/>
+          <rect x="66" y="44" width="74" height="13" fill="#EFE9DF" stroke="#0B0A09" stroke-width="5"/>
+          <path d="M76,96 L96,103" stroke="#EFE9DF" stroke-width="6" stroke-linecap="round"/>
+          <path d="M130,103 L150,96" stroke="#EFE9DF" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="88" cy="115" r="10" fill="#EFE9DF"/><circle cx="91" cy="117" r="4" fill="#0B0A09"/>
+          <circle cx="126" cy="115" r="7.5" fill="#EFE9DF"/><circle cx="124" cy="117" r="3" fill="#0B0A09"/>
+          <path d="M82,138 L103,132 L124,138 L120,151 L103,157 L86,151 Z" fill="#EFE9DF"/>
+          <path d="M92,139 L97,148 L102,139 Z" fill="#0B0A09"/><path d="M108,139 L113,148 L118,139 Z" fill="#0B0A09"/>
+          <path d="M86,151 L91,162 L96,151 Z" fill="#EFE9DF"/><path d="M112,151 L117,162 L122,151 Z" fill="#EFE9DF"/>
+          <line x1="28" y1="188" x2="172" y2="176" stroke="#0B0A09" stroke-width="4"/>
+          <rect x="62" y="173" width="15" height="15" fill="#0B0A09" transform="rotate(12 70 180)"/>
+          <rect x="94" y="170" width="15" height="15" fill="#0B0A09" transform="rotate(-8 102 178)"/>
+          <rect x="126" y="167" width="15" height="15" fill="#0B0A09" transform="rotate(15 134 175)"/>
+        </svg>
       </div>
-      <div class="dcard">
-        <img src="fotos/la-bestia.jpg" alt="La Bestia" loading="lazy">
-        <div class="dc"><div class="dn">La Bestia</div><div class="dd">Res al fuego estilo Adana — pimentón y sumac.</div><div class="dp">$159</div></div>
-      </div>
-      <div class="dcard">
-        <img src="fotos/el-alpha.jpg" alt="El Alpha" loading="lazy">
-        <div class="dc"><div class="dn">El Alpha</div><div class="dd">Res premium, queso fundido y papas adentro. El jefe final.</div><div class="dp">$199</div></div>
+      <div>
+        <div class="m-lbl">01 — LOS KEBABS · PAN PITA AL FUEGO</div>
+        <div class="m-sub">Los asa <b>TATEMO</b>, el jefe de la cocina. Marinado de 24 horas, fuego real.
+        Pídelos por número: <b>"un 2 mediano"</b>.</div>
       </div>
     </div>
-    <div class="item"><div><div class="iname">Doble Filo</div><div class="idesc">Pollo + res. Cuando tu monstruo no sabe decidir, dale los dos.</div></div><div class="iprice">$169</div></div>
-    <div class="item"><div><div class="iname">El Herbívoro</div><div class="idesc">Falafel crujiente + champiñón al fuego. Los herbívoros también rugen.</div></div><div class="iprice">$129</div></div>
+    <table class="tabla">
+      <tr><th></th><th></th><th>CHICO</th><th>MEDIANO</th><th>MONSTER</th></tr>
+      <tr class="fav">
+        <td class="num">1</td>
+        <td><div class="kname">Kebo Clásico<span class="sello">★ EL FAVORITO DE KEBO</span></div>
+        <div class="kdesc"><b>pollo</b> · marinado 24 h, verdura fresca y SALSA KEBO</div></td>
+        <td class="p">99</td><td class="p star">139</td><td class="p">179</td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td><div class="kname">Doble Filo</div>
+        <div class="kdesc"><b>mixto</b> · pollo + res, porque Los Cuates nunca se ponen de acuerdo</div></td>
+        <td class="p">129</td><td class="p">169</td><td class="p">209</td>
+      </tr>
+      <tr>
+        <td class="num">3</td>
+        <td><div class="kname">La Bestia</div>
+        <div class="kdesc"><b>res</b> · al fuego estilo Adana, pimentón y sumac</div></td>
+        <td class="p">119</td><td class="p">159</td><td class="p">199</td>
+      </tr>
+      <tr>
+        <td class="num">4</td>
+        <td><div class="kname">El Herbívoro<span class="sello">EL HUERTO DE RAÚL</span></div>
+        <div class="kdesc"><b>falafel</b> · crujiente, champiñón al fuego y salsa blanca</div></td>
+        <td class="p">89</td><td class="p">129</td><td class="p">169</td>
+      </tr>
+    </table>
+    <div class="gramos">PRECIOS EN PESOS · PROTEÍNA APROX. 90 G · 130 G · 200 G POR TAMAÑO</div>
+
+    <div class="alpha-box">
+      <div>
+        <div class="an">El Alpha <span>· EL JEFE FINAL</span></div>
+        <div class="ad">Res premium, queso fundido y Monster Bites adentro. Un jefe final no viene en chico:
+        solo se enfrenta en tamaño MONSTER. Nadie de la cuadrilla ha terminado uno solo.</div>
+      </div>
+      <div><div class="ap">219</div><div class="au">TAMAÑO ÚNICO</div></div>
+    </div>
   </div>
 
-  <!-- MONSTER BITES CON FOTO -->
+  <!-- MONSTER BITES -->
   <div class="m-sec">
-    <div class="m-lbl">MONSTER BITES · PAPA CAMBRAY · LA BOTANA PARA COMPARTIR</div>
+    <div class="sec-head">
+      <div class="patron">
+        <!-- BUCHE -->
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100,30 L120,40 L142,32 L148,52 L170,52 L166,74 L186,84 L172,100 L184,120 L164,128 L170,150 L148,148 L146,170 L124,162 L100,174 L76,162 L54,170 L52,148 L30,150 L36,128 L16,120 L28,100 L14,84 L34,74 L30,52 L52,52 L58,32 L80,40 Z" fill="#0B0A09"/>
+          <circle cx="64" cy="64" r="8" fill="#EFE9DF"/><circle cx="66" cy="66" r="3" fill="#0B0A09"/>
+          <circle cx="136" cy="64" r="6" fill="#EFE9DF"/><circle cx="134" cy="66" r="2.5" fill="#0B0A09"/>
+          <path d="M42,92 L100,80 L158,92 L150,142 L100,156 L50,142 Z" fill="#EFE9DF"/>
+          <path d="M58,96 L66,114 L76,97 Z" fill="#0B0A09"/><path d="M80,99 L88,118 L98,100 Z" fill="#0B0A09"/>
+          <path d="M102,100 L110,118 L120,99 Z" fill="#0B0A09"/><path d="M124,98 L132,114 L140,96 Z" fill="#0B0A09"/>
+          <path d="M62,138 L70,120 L80,137 Z" fill="#0B0A09"/><path d="M86,140 L94,122 L104,139 Z" fill="#0B0A09"/>
+          <path d="M108,139 L116,122 L126,138 Z" fill="#0B0A09"/><path d="M130,136 L138,120 L146,134 Z" fill="#0B0A09"/>
+          <circle cx="152" cy="40" r="12" fill="#EFE9DF" stroke="#0B0A09" stroke-width="4"/>
+          <line x1="152" y1="14" x2="152" y2="22" stroke="#0B0A09" stroke-width="3"/>
+          <line x1="168" y1="20" x2="163" y2="27" stroke="#0B0A09" stroke-width="3"/>
+        </svg>
+      </div>
+      <div>
+        <div class="m-lbl">02 — MONSTER BITES · PAPA CAMBRAY</div>
+        <div class="m-sub">La botana de la mesa: llegan <b>mientras salen los kebabs</b>. Custodiadas (mal) por
+        <b>BUCHE</b>. Maridan con cerveza fría.</div>
+      </div>
+    </div>
     <div class="bites-wrap">
-      <img src="fotos/monster-bites.jpg" alt="Monster Bites" loading="lazy">
       <div>
         <div class="bites-row">
-          <div class="b"><div class="bn">6</div><div class="bnm">Cría</div><div class="bp">$69</div></div>
-          <div class="b"><div class="bn">9</div><div class="bnm">Bestia</div><div class="bp">$89</div></div>
-          <div class="b"><div class="bn">20</div><div class="bnm">Horda</div><div class="bp">$159</div></div>
+          <div class="b"><div class="bn">6</div><div class="bnm">Cría</div><div class="bpz">PIEZAS</div><div class="bp">69</div></div>
+          <div class="b"><div class="bn">9</div><div class="bnm">Manada</div><div class="bpz">PIEZAS</div><div class="bp">89</div></div>
+          <div class="b"><div class="bn">20</div><div class="bnm">Horda</div><div class="bpz">PIEZAS</div><div class="bp">159</div></div>
         </div>
-        <div class="idesc" style="max-width:none">Papa cambray confitada, frita y aplastada. Elige tu veneno:</div>
+        <div class="idesc" style="max-width:none;color:var(--humo);font-size:12.5px">Papa cambray confitada, frita y aplastada. Elige tu veneno:</div>
         <div class="sazon">
           <span>Ajo Parmesano</span><span>Fuego</span><span>Chipotle BBQ</span><span>Buffalo</span>
           <span>Lemon Pepper</span><span>Trufa Negra</span><span>Za'atar</span><span>Mantequilla Romero</span>
         </div>
       </div>
+      <img src="fotos/monster-bites.jpg" alt="Monster Bites" loading="lazy">
     </div>
   </div>
 
-  <!-- COMBOS -->
+  <!-- LA MONSTRUOSA -->
   <div class="m-sec">
-    <div class="m-lbl">COMBOS · PARA LA MESA</div>
-    <div class="item"><div><div class="iname">Monster Feed</div><div class="idesc">Un kebab + Cría de papas + bebida.</div></div><div class="iprice">$219</div></div>
-    <div class="item"><div><div class="iname">Alpha Pack <span class="chip">2 PERSONAS</span></div><div class="idesc">2 kebabs + Bestia de papas + 2 bebidas.</div></div><div class="iprice">$379</div></div>
-    <div class="item"><div><div class="iname">La Manada <span class="chip">PARA COMPARTIR</span></div><div class="idesc">4 kebabs + Horda de papas + 4 bebidas + stickers para todos.</div></div><div class="iprice">$749</div></div>
-    <p class="combo-nota">🍺 <em>MARIDAJE MONSTER:</em> CUALQUIER KEBAB + UNA CERVEZA BIEN FRÍA = LA COMBINACIÓN QUE ESTABAS BUSCANDO.</p>
+    <div class="monstruosa">
+      <img src="fotos/la-monstruosa.jpg" alt="La Monstruosa — charola para compartir" loading="lazy">
+      <div class="mo-body">
+        <div>
+          <div class="mn">La Monstruosa <span>· PARA LA MESA</span></div>
+          <div class="md">Kebab MONSTER rebanado a tu elección + <b>HORDA de 20 bites</b> + las 3 salsas.
+          Cae al centro de la mesa. <b>Se ve desde tres mesas de distancia.</b></div>
+        </div>
+        <div class="mp">329</div>
+      </div>
+    </div>
   </div>
 
-  <!-- BEBIDAS CON FOTO -->
+  <!-- SALSAS -->
   <div class="m-sec">
-    <div class="m-lbl">BEBIDAS DE LA CASA</div>
+    <div class="sec-head" style="margin-bottom:16px">
+      <div>
+        <div class="m-lbl">03 — LAS SALSAS · INCLUIDAS CON TODO PEDIDO</div>
+        <div class="m-sub">Hechas en casa. Sin costo. <b>El maridaje real de la cerveza.</b></div>
+      </div>
+    </div>
+    <div class="salsas">
+      <div class="salsa"><div class="sn">Brasa</div><div class="sl">SUAVE</div><div class="sd">para empezar</div></div>
+      <div class="salsa"><div class="sn">Garra</div><div class="sl">BRAVO</div><div class="sd">para presumir</div></div>
+      <div class="salsa diablo"><div class="sn">Modo Diablo</div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">la mesa reta, tú decides</div></div>
+    </div>
+  </div>
+
+  <!-- EL HUERTO DE RAÚL -->
+  <div class="m-sec">
+    <div class="huerto">
+      <img src="fotos/el-herbivoro.jpg" alt="El Herbívoro — falafel" loading="lazy">
+      <div>
+        <div class="hq">El huerto de <span>Raúl</span></div>
+        <div class="hd">Raúl no es un monstruo. Es un señor. Sin cuerno, sin garras, sin colmillos:
+        puro bigote y buen sazón. Los monstruos lo adoptaron el día que su falafel los hizo llorar — de gusto.
+        <b>Aquí no se asusta a nadie. Se alimenta bien.</b></div>
+        <div class="hp">EL HERBÍVORO (#4) · CHICO <b>89</b> · MEDIANO <b>129</b> · MONSTER <b>169</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEBIDAS -->
+  <div class="m-sec">
+    <div class="sec-head">
+      <div class="patron">
+        <!-- SORBO -->
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100,74 L112,86 L124,84 L124,100 L136,108 L126,120 L130,134 L114,134 L108,148 L96,140 L82,146 L80,130 L66,128 L74,114 L64,104 L78,98 L80,84 L92,88 Z" fill="#0B0A09"/>
+          <circle cx="90" cy="106" r="9" fill="#EFE9DF"/><circle cx="92" cy="108" r="3.5" fill="#0B0A09"/>
+          <circle cx="112" cy="104" r="6" fill="#EFE9DF"/><circle cx="110" cy="106" r="2.5" fill="#0B0A09"/>
+          <circle cx="101" cy="126" r="5" fill="#EFE9DF"/>
+          <line x1="103" y1="128" x2="130" y2="160" stroke="#0B0A09" stroke-width="4"/>
+          <rect x="120" y="156" width="24" height="28" rx="2" fill="#0B0A09"/>
+          <line x1="120" y1="164" x2="144" y2="164" stroke="#EFE9DF" stroke-width="3"/>
+          <circle cx="66" cy="68" r="6" fill="none" stroke="#0B0A09" stroke-width="3"/>
+          <circle cx="140" cy="74" r="4" fill="none" stroke="#0B0A09" stroke-width="3"/>
+          <circle cx="74" cy="160" r="5" fill="none" stroke="#0B0A09" stroke-width="3"/>
+        </svg>
+      </div>
+      <div>
+        <div class="m-lbl">04 — BEBIDAS DE LA CASA</div>
+        <div class="m-sub">Las cata <b>SORBO</b>, el más chiquito de la cuadrilla. (La cerveza pídesela al mesero — de eso sabe la casa.)</div>
+      </div>
+    </div>
     <div class="beb-wrap">
       <div>
-        <div class="item"><div><div class="iname">Limonada Negra</div><div class="idesc">Carbón activado, negra azabache. Sí, es real. La vas a fotografiar.</div></div><div class="iprice">$55</div></div>
-        <div class="item"><div><div class="iname">Veneno</div><div class="idesc">Té helado durazno-jengibre de la casa.</div></div><div class="iprice">$45</div></div>
-        <div class="item"><div><div class="iname">Sangre</div><div class="idesc">Jamaica concentrada + jengibre + limón.</div></div><div class="iprice">$45</div></div>
+        <div class="item"><div><div class="iname">Limonada Negra</div><div class="idesc">Carbón activado, negra azabache. Sí, es real. La vas a fotografiar.</div></div><div class="iprice">55</div></div>
+        <div class="item"><div><div class="iname">Veneno</div><div class="idesc">Té helado durazno-jengibre de la casa.</div></div><div class="iprice">45</div></div>
+        <div class="item"><div><div class="iname">Sangre</div><div class="idesc">Jamaica concentrada + jengibre + limón.</div></div><div class="iprice">45</div></div>
       </div>
       <img src="fotos/limonada-negra.jpg" alt="Limonada Negra" loading="lazy">
+    </div>
+  </div>
+
+  <!-- LA CUADRILLA -->
+  <div class="m-sec">
+    <div class="sec-head" style="margin-bottom:16px">
+      <div>
+        <div class="m-lbl">05 — LA CUADRILLA DE COCINA</div>
+        <div class="m-sub">Cada platillo tiene dueño. <b>Colecciona sus stickers</b> — uno en cada pedido.</div>
+      </div>
+    </div>
+    <div class="crew">
+
+      <div class="cmember">
+        <div class="cport">
+          <!-- KEBO -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(8,20) scale(0.46)">
+              <g fill="#0B0A09">
+                <path d="M258,86 C292,48 326,30 362,20 C328,52 308,76 294,104 Z"/>
+                <path d="M142,88 L108,48 L82,56 L122,100 Z"/>
+                <path d="M200,42 L214,61 L235,45 L242,69 L266,59 L266,83 L288,83 L286,102 L313,105 L298,126 L323,136 L304,152 L319,167 L299,178 L310,197 L286,202 L288,221 L268,223 L264,242 L242,235 L235,259 L215,245 L200,263 L185,245 L166,257 L157,237 L137,241 L134,221 L111,222 L113,202 L87,199 L103,178 L82,167 L99,152 L80,136 L102,126 L92,108 L115,103 L108,80 L134,83 L133,58 L157,67 L166,48 L185,59 Z"/>
+              </g>
+              <circle cx="158" cy="148" r="30" fill="#EFE9DF"/><circle cx="164" cy="153" r="11" fill="#0B0A09"/>
+              <circle cx="248" cy="150" r="21" fill="#EFE9DF"/><circle cx="244" cy="154" r="8" fill="#0B0A09"/>
+              <path d="M128,204 L200,190 L272,204 L266,240 L200,252 L134,240 Z" fill="#EFE9DF"/>
+              <path d="M148,208 L156,226 L166,208 Z" fill="#0B0A09"/><path d="M176,211 L184,229 L194,211 Z" fill="#0B0A09"/>
+              <path d="M206,211 L214,229 L224,210 Z" fill="#0B0A09"/><path d="M236,207 L244,223 L252,206 Z" fill="#0B0A09"/>
+              <path d="M160,240 L168,224 L176,239 Z" fill="#0B0A09"/><path d="M188,242 L196,226 L204,241 Z" fill="#0B0A09"/>
+              <path d="M216,240 L224,224 L232,238 Z" fill="#0B0A09"/>
+              <path d="M140,240 L148,262 L156,240 Z" fill="#EFE9DF"/><path d="M246,238 L254,258 L262,236 Z" fill="#EFE9DF"/>
+            </g>
+          </svg>
+        </div>
+        <div class="cinfo"><div class="cn">Kebo</div><div class="ca">AMA: KEBO CLÁSICO (#1)</div>
+        <div class="cb">El primero de la manada. Sonrisa 13, cuerno roto. Desde que nació pide lo mismo: el Clásico.</div></div>
+      </div>
+
+      <div class="cmember">
+        <div class="cport">
+          <!-- TATEMO -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#0B0A09">
+              <path d="M150,70 L178,54 L166,84 Z"/><path d="M162,96 L192,88 L174,116 Z"/><path d="M166,128 L196,128 L176,150 Z"/>
+              <path d="M56,70 L28,54 L40,84 Z"/><path d="M44,96 L14,88 L32,116 Z"/><path d="M40,128 L10,128 L30,150 Z"/>
+              <path d="M103,58 L118,66 L134,60 L138,78 L154,82 L148,98 L160,108 L148,120 L156,134 L140,140 L142,156 L124,154 L118,168 L103,160 L88,168 L82,154 L64,156 L66,140 L50,134 L58,120 L46,108 L58,98 L52,82 L68,78 L72,60 L88,66 Z"/>
+            </g>
+            <path d="M72,44 L72,26 Q78,10 90,16 Q96,2 106,10 Q120,2 126,16 Q136,12 134,28 L134,44 Z" fill="#EFE9DF" stroke="#0B0A09" stroke-width="5"/>
+            <rect x="66" y="44" width="74" height="13" fill="#EFE9DF" stroke="#0B0A09" stroke-width="5"/>
+            <path d="M76,96 L96,103" stroke="#EFE9DF" stroke-width="6" stroke-linecap="round"/>
+            <path d="M130,103 L150,96" stroke="#EFE9DF" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="88" cy="115" r="10" fill="#EFE9DF"/><circle cx="91" cy="117" r="4" fill="#0B0A09"/>
+            <circle cx="126" cy="115" r="7.5" fill="#EFE9DF"/><circle cx="124" cy="117" r="3" fill="#0B0A09"/>
+            <path d="M82,138 L103,132 L124,138 L120,151 L103,157 L86,151 Z" fill="#EFE9DF"/>
+            <path d="M92,139 L97,148 L102,139 Z" fill="#0B0A09"/><path d="M108,139 L113,148 L118,139 Z" fill="#0B0A09"/>
+            <path d="M86,151 L91,162 L96,151 Z" fill="#EFE9DF"/><path d="M112,151 L117,162 L122,151 Z" fill="#EFE9DF"/>
+            <line x1="28" y1="188" x2="172" y2="176" stroke="#0B0A09" stroke-width="4"/>
+            <rect x="62" y="173" width="15" height="15" fill="#0B0A09" transform="rotate(12 70 180)"/>
+            <rect x="94" y="170" width="15" height="15" fill="#0B0A09" transform="rotate(-8 102 178)"/>
+            <rect x="126" y="167" width="15" height="15" fill="#0B0A09" transform="rotate(15 134 175)"/>
+          </svg>
+        </div>
+        <div class="cinfo"><div class="cn">Tatemo</div><div class="ca">EL JEFE DE LA COCINA</div>
+        <div class="cb">Espinas en la espalda, fuego en las manos. Dicen que aprendió a asar dentro de un volcán. Él solo dice que al trompo no se le apura.</div></div>
+      </div>
+
+      <div class="cmember">
+        <div class="cport">
+          <!-- BRAMA -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#0B0A09">
+              <path d="M28,86 Q18,48 44,30 Q40,58 54,74 Z"/>
+              <path d="M172,86 Q182,48 156,30 Q160,58 146,74 Z"/>
+              <path d="M100,42 L122,50 L146,46 L152,64 L172,70 L166,88 L180,100 L168,114 L174,132 L154,138 L152,156 L128,152 L122,166 L100,160 L78,166 L72,152 L48,156 L46,138 L26,132 L32,114 L20,100 L34,88 L28,70 L48,64 L54,46 L78,50 Z"/>
+            </g>
+            <path d="M58,94 L92,90" stroke="#EFE9DF" stroke-width="7" stroke-linecap="round"/>
+            <path d="M108,90 L142,94" stroke="#EFE9DF" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="80" cy="106" r="7" fill="#EFE9DF"/><circle cx="82" cy="107" r="3" fill="#0B0A09"/>
+            <circle cx="120" cy="106" r="5.5" fill="#EFE9DF"/><circle cx="118" cy="107" r="2.5" fill="#0B0A09"/>
+            <path d="M50,126 L100,118 L150,126 L146,152 L100,160 L54,152 Z" fill="#EFE9DF"/>
+            <ellipse cx="88" cy="132" rx="4.5" ry="5.5" fill="#0B0A09"/><ellipse cx="112" cy="132" rx="4.5" ry="5.5" fill="#0B0A09"/>
+            <path d="M66,152 L72,138 L80,152 Z" fill="#0B0A09"/><path d="M120,152 L128,138 L136,152 Z" fill="#0B0A09"/>
+          </svg>
+        </div>
+        <div class="cinfo"><div class="cn">Brama</div><div class="ca">AMA: LA BESTIA (#3)</div>
+        <div class="cb">Enorme. Tranquilo. Habla en bramidos cortos. Solo una cosa lo hace sonreír: la res al fuego.</div></div>
+      </div>
+
+      <div class="cmember">
+        <div class="cport">
+          <!-- LOS CUATES -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#0B0A09">
+              <path d="M100,132 L124,140 L146,134 L152,154 L170,160 L160,176 L166,192 L100,196 L34,192 L40,176 L30,160 L48,154 L54,134 L76,140 Z"/>
+              <path d="M66,44 L78,52 L92,48 L94,64 L108,70 L100,84 L108,98 L92,102 L90,118 L74,112 L60,120 L54,104 L38,102 L44,86 L34,74 L48,68 L48,52 L60,56 Z"/>
+              <path d="M134,44 L122,52 L108,48 L106,64 L92,70 L100,84 L92,98 L108,102 L110,118 L126,112 L140,120 L146,104 L162,102 L156,86 L166,74 L152,68 L152,52 L140,56 Z"/>
+            </g>
+            <circle cx="58" cy="78" r="9" fill="#EFE9DF"/><circle cx="60" cy="80" r="3.5" fill="#0B0A09"/>
+            <circle cx="80" cy="80" r="6.5" fill="#EFE9DF"/><circle cx="78" cy="82" r="2.5" fill="#0B0A09"/>
+            <path d="M52,94 Q66,106 84,96" stroke="#EFE9DF" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M118,74 L134,80" stroke="#EFE9DF" stroke-width="5" stroke-linecap="round"/>
+            <path d="M166,74 L150,80" stroke="#EFE9DF" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="128" cy="92" r="6" fill="#EFE9DF"/><circle cx="126" cy="94" r="2.5" fill="#0B0A09"/>
+            <circle cx="152" cy="92" r="8" fill="#EFE9DF"/><circle cx="154" cy="94" r="3" fill="#0B0A09"/>
+            <path d="M120,108 Q136,98 152,108" stroke="#EFE9DF" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M100,56 L95,70 L104,68 L97,84" stroke="#FF4E1B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="cinfo"><div class="cn">Los Cuates</div><div class="ca">AMAN: DOBLE FILO (#2)</div>
+        <div class="cb">Dos cabezas, cero acuerdos. Una pedía pollo, la otra res. El Doble Filo fue el único armisticio.</div></div>
+      </div>
+
+      <div class="cmember">
+        <div class="cport">
+          <!-- BUCHE -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100,30 L120,40 L142,32 L148,52 L170,52 L166,74 L186,84 L172,100 L184,120 L164,128 L170,150 L148,148 L146,170 L124,162 L100,174 L76,162 L54,170 L52,148 L30,150 L36,128 L16,120 L28,100 L14,84 L34,74 L30,52 L52,52 L58,32 L80,40 Z" fill="#0B0A09"/>
+            <circle cx="64" cy="64" r="8" fill="#EFE9DF"/><circle cx="66" cy="66" r="3" fill="#0B0A09"/>
+            <circle cx="136" cy="64" r="6" fill="#EFE9DF"/><circle cx="134" cy="66" r="2.5" fill="#0B0A09"/>
+            <path d="M42,92 L100,80 L158,92 L150,142 L100,156 L50,142 Z" fill="#EFE9DF"/>
+            <path d="M58,96 L66,114 L76,97 Z" fill="#0B0A09"/><path d="M80,99 L88,118 L98,100 Z" fill="#0B0A09"/>
+            <path d="M102,100 L110,118 L120,99 Z" fill="#0B0A09"/><path d="M124,98 L132,114 L140,96 Z" fill="#0B0A09"/>
+            <path d="M62,138 L70,120 L80,137 Z" fill="#0B0A09"/><path d="M86,140 L94,122 L104,139 Z" fill="#0B0A09"/>
+            <path d="M108,139 L116,122 L126,138 Z" fill="#0B0A09"/><path d="M130,136 L138,120 L146,134 Z" fill="#0B0A09"/>
+            <circle cx="152" cy="40" r="12" fill="#EFE9DF" stroke="#0B0A09" stroke-width="4"/>
+            <line x1="152" y1="14" x2="152" y2="22" stroke="#0B0A09" stroke-width="3"/>
+            <line x1="168" y1="20" x2="163" y2="27" stroke="#0B0A09" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="cinfo"><div class="cn">Buche</div><div class="ca">AMA: MONSTER BITES</div>
+        <div class="cb">Los ama con una intensidad que preocupa. Récord: 20 piezas en un parpadeo. "Eran pa' compartir, perdón."</div></div>
+      </div>
+
+      <div class="cmember">
+        <div class="cport">
+          <!-- RAÚL -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="104" r="48" fill="#EFE9DF" stroke="#0B0A09" stroke-width="5"/>
+            <path d="M60,58 Q100,24 140,58 L140,68 L60,68 Z" fill="#0B0A09"/>
+            <path d="M58,62 Q26,64 20,74 Q50,82 60,76 Z" fill="#0B0A09"/>
+            <circle cx="100" cy="38" r="4" fill="#0B0A09"/>
+            <path d="M68,82 L92,79" stroke="#0B0A09" stroke-width="4" stroke-linecap="round"/>
+            <path d="M108,79 L132,82" stroke="#0B0A09" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="80" cy="98" r="14" fill="#EFE9DF" stroke="#0B0A09" stroke-width="4"/>
+            <circle cx="120" cy="98" r="14" fill="#EFE9DF" stroke="#0B0A09" stroke-width="4"/>
+            <line x1="94" y1="98" x2="106" y2="98" stroke="#0B0A09" stroke-width="4"/>
+            <line x1="66" y1="96" x2="54" y2="94" stroke="#0B0A09" stroke-width="4"/>
+            <line x1="134" y1="96" x2="146" y2="94" stroke="#0B0A09" stroke-width="4"/>
+            <circle cx="81" cy="100" r="4.5" fill="#0B0A09"/><circle cx="119" cy="100" r="4.5" fill="#0B0A09"/>
+            <path d="M64,120 L76,114 L84,122 L94,114 L100,122 L106,114 L116,122 L124,114 L136,120 L128,134 L114,128 L106,136 L100,130 L94,136 L86,128 L72,134 Z" fill="#0B0A09"/>
+            <path d="M88,144 Q100,150 112,144" stroke="#0B0A09" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M64,168 L84,186 L100,172 L116,186 L136,168 L140,196 L60,196 Z" fill="#0B0A09"/>
+          </svg>
+        </div>
+        <div class="cinfo"><div class="cn">Raúl</div><div class="ca">AMA: EL HERBÍVORO (#4)</div>
+        <div class="cb">No es un monstruo. Es un señor. Su falafel hizo llorar a la cuadrilla — de gusto. Firma "El Huerto de Raúl".</div></div>
+      </div>
+
+      <div class="cmember">
+        <div class="cport">
+          <!-- SORBO -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100,74 L112,86 L124,84 L124,100 L136,108 L126,120 L130,134 L114,134 L108,148 L96,140 L82,146 L80,130 L66,128 L74,114 L64,104 L78,98 L80,84 L92,88 Z" fill="#0B0A09"/>
+            <circle cx="90" cy="106" r="9" fill="#EFE9DF"/><circle cx="92" cy="108" r="3.5" fill="#0B0A09"/>
+            <circle cx="112" cy="104" r="6" fill="#EFE9DF"/><circle cx="110" cy="106" r="2.5" fill="#0B0A09"/>
+            <circle cx="101" cy="126" r="5" fill="#EFE9DF"/>
+            <line x1="103" y1="128" x2="130" y2="160" stroke="#0B0A09" stroke-width="4"/>
+            <rect x="120" y="156" width="24" height="28" rx="2" fill="#0B0A09"/>
+            <line x1="120" y1="164" x2="144" y2="164" stroke="#EFE9DF" stroke-width="3"/>
+            <circle cx="66" cy="68" r="6" fill="none" stroke="#0B0A09" stroke-width="3"/>
+            <circle cx="140" cy="74" r="4" fill="none" stroke="#0B0A09" stroke-width="3"/>
+            <circle cx="74" cy="160" r="5" fill="none" stroke="#0B0A09" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="cinfo"><div class="cn">Sorbo</div><div class="ca">AMA: LIMONADA NEGRA</div>
+        <div class="cb">El más chiquito de la cuadrilla. Flota, hace burbujas y se bebió la primera Limonada Negra antes de que tuviera nombre.</div></div>
+      </div>
+
+      <div class="cmember">
+        <div class="cport">
+          <!-- ¿? EL ALPHA -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100,16 L126,30 L156,20 L158,48 L186,44 L178,74 L196,86 L182,108 L194,130 L172,140 L180,168 L152,164 L150,190 L122,180 L100,192 L78,180 L50,190 L48,164 L20,168 L28,140 L6,130 L18,108 L4,86 L22,74 L14,44 L42,48 L44,20 L74,30 Z" fill="#0B0A09"/>
+            <path d="M64,92 L90,97 L64,102 Z" fill="#EFE9DF"/>
+            <path d="M136,92 L110,97 L136,102 Z" fill="#EFE9DF"/>
+            <text x="100" y="158" font-family="Anton,sans-serif" font-size="54" fill="#FF4E1B" text-anchor="middle">?</text>
+          </svg>
+        </div>
+        <div class="cinfo"><div class="cn">¿?</div><div class="ca">EL ALPHA (219)</div>
+        <div class="cb">Nadie lo ha visto completo. Solo sabemos que el platillo del jefe final lleva su nombre — y que nadie ha terminado uno solo.</div></div>
+      </div>
+
     </div>
   </div>
 
   <!-- PEDIR -->
   <div class="pedir">
     <div class="grande">Pídelo a tu mesero.<br><span>Aliméntalo aquí mismo.</span></div>
-    <p class="sub">¿No quieres levantarte? También llega a tu casa por Uber Eats · Rappi · DiDi Food.</p>
-    <div class="sticker">★ UN STICKER COLECCIONABLE EN CADA PEDIDO ★</div>
+    <div class="frase">"Esa cerveza pide kebab. ¿Le traigo uno?"</div>
+    <p class="sub">Todo lo que ves aquí nació para una cerveza fría. No lo dejes comer solo.<br>
+    ¿Para llevar a casa? Uber Eats · Rappi · DiDi Food.</p>
+    <div class="sticker">★ COLECCIONA A LA CUADRILLA — UN STICKER EN CADA PEDIDO ★</div>
   </div>
 </div>
 
