@@ -91,6 +91,22 @@
   .salsas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:16px}
   .salsas-nota{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:10px}
   .pic{font-style:normal;color:var(--ember);letter-spacing:1px}
+  /* SABORES BITES */
+  .sab-lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--ember);text-transform:uppercase;margin-bottom:12px}
+  .sabores{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .sabor{background:var(--tinta2);border:1px solid var(--line)}
+  .sabor img{width:100%;aspect-ratio:4/3.6;object-fit:cover;display:block}
+  .sac{padding:12px 14px 14px}
+  .san{font-family:'Anton',sans-serif;font-size:17px;text-transform:uppercase}
+  .sad{font-size:11px;color:var(--humo);line-height:1.5;margin-top:4px}
+  /* PAQUETES */
+  .paqs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .paq{background:var(--tinta2);border:1px solid var(--line);padding:20px 22px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+  .paq .pqn{font-family:'Anton',sans-serif;font-size:22px;text-transform:uppercase}
+  .paq .pqd{font-size:12px;color:var(--humo);line-height:1.55;margin-top:5px}
+  .paq .pqd b{color:var(--hueso)}
+  .paq .pqp{font-family:'IBM Plex Mono',monospace;font-size:24px;color:var(--ember)}
+  .paq .pqa{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--humo);letter-spacing:.1em;text-align:center;margin-top:3px;text-transform:uppercase}
   .salsa{background:var(--tinta);padding:0 0 16px;text-align:center}
   .salsa img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-bottom:12px}
   .salsa .sn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
@@ -125,6 +141,8 @@
     .equipo{grid-template-columns:repeat(2,1fr)}
     .salsas{grid-template-columns:1fr}
     .bites-wrap,.beb-wrap{grid-template-columns:1fr}
+    .sabores{grid-template-columns:1fr}
+    .paqs{grid-template-columns:1fr}
     .tam-row{grid-template-columns:1fr}
     .alpha-box{grid-template-columns:1fr;gap:0}
     .alpha-box img{width:100%;aspect-ratio:16/9}
@@ -301,29 +319,38 @@
   <!-- MONSTER BITES -->
   <div class="m-sec">
     <div class="m-lbl">02 — MONSTER BITES · PAPA CAMBRAY</div>
-    <div class="m-sub">La botana de la mesa: <b>pídelos de entrada</b>. Maridan con cerveza fría.</div>
-    <div class="bites-wrap">
-      <div>
-        <div class="bites-row">
-          <div class="b"><div class="bn">6</div><div class="bnm">Cría</div><div class="bpz">B6 · PA' UNO</div><div class="bp">69</div></div>
-          <div class="b"><div class="bn">9</div><div class="bnm">Manada</div><div class="bpz">B9 · PA' DOS</div><div class="bp">89</div></div>
-          <div class="b"><div class="bn">20</div><div class="bnm">Horda</div><div class="bpz">B20 · PA' LA MESA</div><div class="bp">159</div></div>
-        </div>
-        <div class="bites-desc">Papa cambray confitada, frita y aplastada. Elige tu sazón:</div>
-        <div class="sazon">
-          <span>Ajo Parmesano</span><span>Fuego <i class="pic">●●</i></span><span>Chipotle BBQ <i class="pic">●</i></span><span>Buffalo <i class="pic">●</i></span>
-          <span>Lemon Pepper</span><span>Trufa Negra</span><span>Za'atar</span><span>Mantequilla Romero</span>
-        </div>
-        <div class="salsas-nota">1 SAZONADOR INCLUIDO POR ORDEN · EXTRA +10 · HORDA MITAD Y MITAD SIN COSTO</div>
+    <div class="m-sub">Papa cambray confitada, frita y aplastada. La botana de la mesa: <b>pídelos de entrada</b>. Maridan con cerveza fría.</div>
+    <div class="bites-row" style="justify-content:center;gap:40px;margin-bottom:20px">
+      <div class="b"><div class="bn">6</div><div class="bnm">Cría</div><div class="bpz">B6 · PA' UNO</div><div class="bp">69</div></div>
+      <div class="b"><div class="bn">9</div><div class="bnm">Manada</div><div class="bpz">B9 · PA' DOS</div><div class="bp">89</div></div>
+      <div class="b"><div class="bn">20</div><div class="bnm">Horda</div><div class="bpz">B20 · PA' LA MESA</div><div class="bp">159</div></div>
+    </div>
+    <div class="sab-lbl">LOS 3 DE LA CASA — ELIGE TU SAZÓN</div>
+    <div class="sabores">
+      <div class="sabor">
+        <img src="fotos/bites-ajo.jpg" alt="Monster Bites Ajo Parmesano" loading="lazy">
+        <div class="sac"><div class="san">Ajo Parmesano</div><div class="sad">parmesano rallado + perejil — el consentido</div></div>
+      </div>
+      <div class="sabor">
+        <img src="fotos/bites-fuego.jpg" alt="Monster Bites Fuego" loading="lazy">
+        <div class="sac"><div class="san">Fuego <i class="pic">●●</i></div><div class="sad">polvo de chiles rojos — pica sabroso</div></div>
+      </div>
+      <div class="sabor">
+        <img src="fotos/bites-bbq.jpg" alt="Monster Bites Chipotle BBQ" loading="lazy">
+        <div class="sac"><div class="san">Chipotle BBQ <i class="pic">●</i></div><div class="sad">glaseado ahumado dulce — el de los niños grandes</div></div>
+      </div>
+    </div>
+    <div class="bites-desc" style="margin-top:14px">Y 5 sazones más pa' los repetidores:</div>
+    <div class="sazon">
+      <span>Buffalo <i class="pic">●</i></span><span>Lemon Pepper</span><span>Trufa Negra</span><span>Za'atar</span><span>Mantequilla Romero</span>
+    </div>
+    <div class="salsas-nota">1 SAZONADOR INCLUIDO POR ORDEN · EXTRA +10 · HORDA MITAD Y MITAD SIN COSTO</div>
         <div class="salsas">
           <div class="salsa"><img src="fotos/salsa-brasa.jpg" alt="Salsa Brasa" loading="lazy"><div class="sn">S1 · Brasa <i class="pic">●</i></div><div class="sl">SUAVE</div><div class="sd">crema ahumada de chiles suaves</div></div>
           <div class="salsa"><img src="fotos/salsa-garra.jpg" alt="Salsa Garra" loading="lazy"><div class="sn">S2 · Garra <i class="pic">●●</i></div><div class="sl">BRAVO</div><div class="sd">roja brava de chile de árbol y ajo</div></div>
           <div class="salsa diablo"><img src="fotos/salsa-diablo.jpg" alt="Salsa Modo Diablo" loading="lazy"><div class="sn">S3 · Modo Diablo <i class="pic">●●●</i></div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">habanero y árbol tatemados — se pregunta antes de servirse</div></div>
         </div>
         <div class="salsas-nota">PIDE LAS QUE QUIERAS — VAN POR LA CASA, POR MESA · PICOR: ● SUAVE · ●● BRAVO · ●●● EXTREMO</div>
-      </div>
-      <img src="fotos/monster-bites.jpg" alt="Monster Bites" loading="lazy">
-    </div>
   </div>
 
   <!-- LA MONSTRUOSA -->
@@ -342,9 +369,32 @@
     </div>
   </div>
 
+  <!-- PAQUETES -->
+  <div class="m-sec">
+    <div class="m-lbl">03 — PAQUETES · KEBAB + BITES</div>
+    <div class="m-sub">La escalera del hambre: <b>pa' uno, pa' dos, pa' la mesa</b>. Súbelo a MONSTER por <b>+40</b> por kebab.</div>
+    <div class="paqs">
+      <div class="paq">
+        <div>
+          <div class="pqn">Pa' Uno</div>
+          <div class="pqd"><b>1 kebab MEDIANO</b> (K1–K4) + <b>Cría de 6 bites</b> con tu sazón. El plan individual completo.</div>
+        </div>
+        <div><div class="pqp">199</div><div class="pqa">AHORRAS ~30</div></div>
+      </div>
+      <div class="paq">
+        <div>
+          <div class="pqn">Pa' Dos</div>
+          <div class="pqd"><b>2 kebabs MEDIANOS</b> (K1–K4) + <b>Manada de 9 bites</b> con tu sazón. Pa' la pareja o el compa.</div>
+        </div>
+        <div><div class="pqp">349</div><div class="pqa">AHORRAS ~40</div></div>
+      </div>
+    </div>
+    <div class="salsas-nota">¿SON 4 O MÁS? LA MONSTRUOSA ES SU PAQUETE — 649 · LAS 3 SALSAS VAN INCLUIDAS EN TODO PAQUETE</div>
+  </div>
+
   <!-- BEBIDAS -->
   <div class="m-sec">
-    <div class="m-lbl">03 — BEBIDAS DE LA CASA</div>
+    <div class="m-lbl">04 — BEBIDAS DE LA CASA</div>
     <div class="m-sub">(La cerveza pídesela al mesero — de eso sabe la casa.)</div>
     <div class="beb-wrap">
       <div>
@@ -358,7 +408,7 @@
 
   <!-- EL EQUIPO -->
   <div class="m-sec">
-    <div class="m-lbl">04 — EL EQUIPO DE LA COCINA</div>
+    <div class="m-lbl">05 — EL EQUIPO DE LA COCINA</div>
     <div class="m-sub">La cocina no se maneja sola. <b>Colecciona sus stickers</b> — uno en cada pedido.</div>
     <div class="equipo">
       <div class="emember">
