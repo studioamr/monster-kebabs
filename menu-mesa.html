@@ -26,6 +26,12 @@
   .tam-hero{margin-top:26px}
   .tam-dibujo{background:var(--hueso);border:1px solid var(--line);padding:26px 20px 14px}
   .tam-dibujo svg{display:block;width:min(680px,100%);margin:0 auto}
+  .mfloat{transform-box:fill-box;transform-origin:center bottom}
+  .mf1{animation:mbob 3.4s ease-in-out infinite}
+  .mf2{animation:mbob 4.2s ease-in-out infinite .5s}
+  .mf3{animation:mbob 5s ease-in-out infinite 1s}
+  @keyframes mbob{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-5px) scale(1.03)}}
+  @media(prefers-reduced-motion:reduce){.mfloat{animation:none}}
   .tam-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:none}
   .tam{background:var(--tinta);padding:14px 16px;text-align:center}
   .tam .tn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
@@ -189,6 +195,23 @@
   <div class="tam-hero">
     <div class="tam-dibujo">
       <svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg">
+        <!-- ══ SILUETAS DE MONSTRUO DE FONDO (crecen con el tamaño) ══ -->
+        <g opacity=".13" fill="#0B0A09">
+          <!-- chico: cría chiquita, 1 cuernito -->
+          <g class="mfloat mf1">
+            <path d="M120,150 Q112,150 112,138 Q108,138 110,132 L112,120 Q116,110 124,116 L128,110 L132,116 Q140,110 142,120 L144,132 Q146,138 142,138 Q142,150 134,150 Z"/>
+          </g>
+          <!-- mediano: bestia con 2 cuernos y hombros -->
+          <g class="mfloat mf2">
+            <path d="M340,168 Q326,168 324,150 Q316,150 318,138 L312,118 Q316,108 326,116 L322,96 Q332,102 336,116 Q346,108 356,116 Q360,102 370,96 L366,116 Q376,108 380,118 L374,138 Q376,150 368,150 Q366,168 352,168 Z"/>
+          </g>
+          <!-- MONSTER: kaiju grande de púas y cuernos -->
+          <g class="mfloat mf3">
+            <path d="M566,190 Q548,190 544,168 L536,150 Q532,132 544,140 L534,112 Q546,120 550,140 L544,108 Q556,116 560,138 L560,98 Q572,104 576,130 L588,86 Q600,104 600,132 L612,96 Q622,116 616,140 L626,110 Q636,122 630,144 L642,124 Q650,138 640,156 L634,168 Q632,190 614,190 Z"/>
+            <path d="M556,150 L568,150 L562,138 Z" fill="#EFE9DF"/>
+            <path d="M596,150 L610,150 L604,136 Z" fill="#EFE9DF"/>
+          </g>
+        </g>
         <!-- línea base -->
         <line x1="30" y1="252" x2="730" y2="252" stroke="#0B0A09" stroke-width="3"/>
         <!-- ══ CHICO ══ -->
@@ -237,10 +260,16 @@
           <text x="377" y="284" font-size="24" fill="#0B0A09">MEDIANO</text>
           <text x="619" y="284" font-size="24" fill="#FF4E1B">MONSTER</text>
         </g>
+        <!-- cm junto a cada cota de medición -->
+        <g font-family="IBM Plex Mono,monospace" font-size="11" letter-spacing="1" font-weight="500">
+          <text x="222" y="188" fill="#0B0A09" opacity=".65" transform="rotate(-90 222 188)" text-anchor="middle">15 CM</text>
+          <text x="466" y="165" fill="#0B0A09" opacity=".65" transform="rotate(-90 466 165)" text-anchor="middle">20 CM</text>
+          <text x="714" y="146" fill="#FF4E1B" transform="rotate(-90 714 146)" text-anchor="middle">28 CM</text>
+        </g>
         <g font-family="IBM Plex Mono,monospace" text-anchor="middle" font-size="11" letter-spacing="1">
-          <text x="141" y="302" fill="#0B0A09" opacity=".6">15 CM · ~90 G</text>
-          <text x="377" y="302" fill="#0B0A09" opacity=".6">20 CM · ~130 G</text>
-          <text x="619" y="302" fill="#FF4E1B">28 CM · ~200 G</text>
+          <text x="141" y="302" fill="#0B0A09" opacity=".6">~90 G PROTEINA</text>
+          <text x="377" y="302" fill="#0B0A09" opacity=".6">~130 G PROTEINA</text>
+          <text x="619" y="302" fill="#FF4E1B">~200 G PROTEINA</text>
         </g>
       </svg>
     </div>
