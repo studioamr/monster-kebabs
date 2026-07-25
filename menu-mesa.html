@@ -90,7 +90,8 @@
   /* SALSAS */
   .salsas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:16px}
   .salsas-nota{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:10px}
-  .salsa{background:var(--tinta);padding:18px 20px;text-align:center}
+  .salsa{background:var(--tinta);padding:0 0 16px;text-align:center}
+  .salsa img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-bottom:12px}
   .salsa .sn{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase}
   .salsa .sl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;color:var(--ember);text-transform:uppercase;margin-top:4px}
   .salsa .sd{font-size:11.5px;color:var(--humo);margin-top:6px}
@@ -312,9 +313,9 @@
           <span>Lemon Pepper</span><span>Trufa Negra</span><span>Za'atar</span><span>Mantequilla Romero</span>
         </div>
         <div class="salsas">
-          <div class="salsa"><div class="sn">Brasa</div><div class="sl">SUAVE</div><div class="sd">para empezar</div></div>
-          <div class="salsa"><div class="sn">Garra</div><div class="sl">BRAVO</div><div class="sd">para presumir</div></div>
-          <div class="salsa diablo"><div class="sn">Modo Diablo</div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">la mesa reta, tú decides</div></div>
+          <div class="salsa"><img src="fotos/salsa-brasa.jpg" alt="Salsa Brasa" loading="lazy"><div class="sn">Brasa</div><div class="sl">SUAVE</div><div class="sd">para empezar</div></div>
+          <div class="salsa"><img src="fotos/salsa-garra.jpg" alt="Salsa Garra" loading="lazy"><div class="sn">Garra</div><div class="sl">BRAVO</div><div class="sd">para presumir</div></div>
+          <div class="salsa diablo"><img src="fotos/salsa-diablo.jpg" alt="Salsa Modo Diablo" loading="lazy"><div class="sn">Modo Diablo</div><div class="sl">BAJO TU PROPIO RIESGO</div><div class="sd">la mesa reta, tú decides</div></div>
         </div>
         <div class="salsas-nota">LAS 3 SALSAS VAN INCLUIDAS CON TODO PEDIDO — SIN COSTO</div>
       </div>
@@ -343,11 +344,11 @@
     <div class="m-sub">(La cerveza pídesela al mesero — de eso sabe la casa.)</div>
     <div class="beb-wrap">
       <div>
-        <div class="item"><div><div class="iname">Limonada Negra</div><div class="idesc">Carbón activado, negra azabache. Sí, es real. La vas a fotografiar.</div></div><div class="iprice">55</div></div>
+        <div class="item"><div><div class="iname">Tinta</div><div class="idesc">Limonada negra de carbón activado. Sí, es real. La vas a fotografiar.</div></div><div class="iprice">55</div></div>
         <div class="item"><div><div class="iname">Veneno</div><div class="idesc">Té helado durazno-jengibre de la casa.</div></div><div class="iprice">45</div></div>
         <div class="item"><div><div class="iname">Sangre</div><div class="idesc">Jamaica concentrada + jengibre + limón.</div></div><div class="iprice">45</div></div>
       </div>
-      <img src="fotos/limonada-negra.jpg" alt="Limonada Negra" loading="lazy">
+      <img src="fotos/limonada-negra.jpg" alt="Tinta — limonada negra" loading="lazy">
     </div>
   </div>
 
